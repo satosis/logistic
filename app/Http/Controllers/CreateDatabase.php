@@ -11,21 +11,21 @@ class CreateDatabase extends Controller
     public function index(){
         $password=Hash::make(123456789);
         //admin 
-        DB::statement("INSERT INTO 'admins' ('id', 'name', 'email', 'password', 'created_at', 'updated_at') VALUES
+        DB::statement("INSERT INTO admins (id, name, email, password, created_at, created_at) VALUES
         (1, 'Nguyễn Thị Phượng', 'admin@gmail.com', '".$password."' , '2020-08-05 06:42:53',  '2020-08-05 06:42:53'),
         (2, 'Quỳnh Nhi', 'quynhnhi@gmail.com', '".$password."',  '2020-08-05 06:42:53',  '2020-08-05 06:42:53');
         ");
 
         //articles
         DB::statement("
-INSERT INTO 'articles' ('id', 'a_name', 'a_slug', 'a_hot', 'a_active', 'a_menu_id', 'a_view', 'a_description', 'a_avatar', 'a_content', 'created_at', 'updated_at', '_wysihtml5_mode') VALUES
+INSERT INTO articles (id, a_name, a_slug, a_hot, a_active, a_menu_id, a_view, a_description, a_avatar, a_content, created_at, created_at, _wysihtml5_mode) VALUES
 (5, 'Hoài Thương', 'hoai-thuong', 0, 1, 'EVENT', 0, 'Hoài Thương xinh gái', '2020-08-05__be-giang-1.png', 'Tuyệt vời', '2020-08-05 04:44:36', '2020-08-05 04:47:21', 1),
 (6, 'Tại sao đồng hồ Thụy Sỹ lại có sức hút lớn đến vậy', 'tai-sao-dong-ho-thuy-sy-lai-co-suc-hut-lon-den-vay', 0, 1, 'EVENT', 0, 'Khi nhắc đến đồng hồ người ta sẽ nghĩ ngay đến đồng hồ Thụy Sỹ nổi tiếng thế giới. Các quý ông thường rỉ tai nhau rằng “đến Đức mua ô tô, tới Thụy Sỹ mua đồng hồ”. Bởi vậy, đối với các đấng mày râu được sở hữu một chiếc đồng hồ Thụy Sỹ dường như là một niềm ao ước và thước đo kinh tế, đẳng cấp của một người. Vì dù là đồng hồ có giá bạc tỷ hay bình dân thì chúng vẫn có giá cao hơn rất nhiều so với các thương hiệu đồng hồ đến từ các nước khác trên thế giới.', NULL, '<p><em>Khi nhắc đến đồng hồ người ta sẽ nghĩ ngay đến đồng hồ Thụy Sỹ nổi tiếng thế giới. C&aacute;c qu&yacute; &ocirc;ng thường rỉ tai nhau rằng &ldquo;đến Đức mua &ocirc; t&ocirc;, tới Thụy Sỹ mua đồng hồ&rdquo;. Bởi vậy, đối với c&aacute;c đấng m&agrave;y r&acirc;u được sở hữu một chiếc đồng hồ Thụy Sỹ dường như l&agrave; một niềm ao ước v&agrave; thước đo kinh tế, đẳng cấp của một người. V&igrave; d&ugrave; l&agrave; đồng hồ c&oacute; gi&aacute; bạc tỷ hay b&igrave;nh d&acirc;n th&igrave; ch&uacute;ng vẫn c&oacute; gi&aacute; cao hơn rất nhiều so với c&aacute;c thương hiệu đồng hồ đến từ c&aacute;c nước kh&aacute;c tr&ecirc;n thế giới.</em></p>\r\n\r\n<p><strong>Thụy Sỹ - Nơi đưa nền sản xuất đồng hồ thế giới l&ecirc;n tầm cao mới</strong></p>\r\n\r\n<p><strong><img alt=\"\" src=\"https://www.dangquangwatch.vn/lib/ckfinder/images/11.jpg\" style=\"height:600px; width:898px\" /></strong></p>\r\n\r\n<p>V&agrave;o khoảng thế kỷ 16, nh&agrave; cải c&aacute;ch t&ocirc;n gi&aacute;o Jean Calvin từng k&ecirc;u gọi d&acirc;n ch&uacute;ng từ bỏ th&oacute;i quen đeo trang sức v&agrave; &ocirc;ng đ&atilde; nghĩ ra c&aacute;ch vận động giới kim ho&agrave;n chế tạo trang sức chuyển sang sản xuất đồng hồ. Sau sự kiện n&agrave;y, số lượng nghệ nh&acirc;n chế t&aacute;c đồng hồ tăng vọt v&agrave; biến th&agrave;nh phố Geneva trở th&agrave;nh nơi sản xuất đồng hồ nổi tiếng. Tuy nhi&ecirc;n, sự thay đổi n&agrave;y đ&atilde; đem lại hệ quả l&agrave; chỉ sau v&agrave;i thế kỷ số lượng người l&agrave;m đồng hồ tăng vọt, nhiều tới mức họ phải di cư đến những v&ugrave;ng đất kh&aacute;c để mưu sinh. Để trở th&agrave;nh thợ đồng hồ l&agrave;nh nghề đ&uacute;ng nghĩa, một người sau khi học việc 5 năm phải l&agrave;m được một chiếc đồng hồ nhỏ c&oacute; chu&ocirc;ng b&aacute;o thức đeo tr&ecirc;n cổ v&agrave; một chiếc đồng hồ đặt b&agrave;n với k&iacute;ch thước kh&aacute;c biệt.</p>\r\n\r\n<p>Tuy nhi&ecirc;n phải cho đến khi c&aacute;c nghệ nh&acirc;n chế t&aacute;c như Fr&eacute;d&eacute;ric Ingold&nbsp; v&agrave; Georges Leschot c&oacute; những ph&aacute;t minh vĩ đại n&acirc;ng tầm độ ch&iacute;nh x&aacute;c v&agrave; chất lượng c&aacute;c mẫu đồng hồ Thụy Sỹ l&ecirc;n th&igrave; ch&uacute;ng mới thực sự được thế giới biết đến nhiều hơn. Tiếp sau đ&oacute; l&agrave; t&ecirc;n tuổi c&aacute;c h&atilde;ng đồng hồ Thụy Sỹ nổi tiếng lần lượt xuất hiện tr&ecirc;n thị trường đồng hồ.</p>\r\n\r\n<p><img alt=\"\" src=\"https://www.dangquangwatch.vn/lib/ckfinder/images/dong%20ho%20thuy%20sy%20atlantic%20(5)(4).jpg\" style=\"height:263px; width:397px\" /></p>\r\n\r\n<p>Theo thống kế v&agrave;o những năm 1845, nhờ sự tiến bộ của kỹ thuật, nền sản xuất đồng hồ gặp nhiều thuận lợi đ&atilde; đưa sản lượng&nbsp;đồng hồ Thụy Sỹ chiếm 40% tổng sản lượng đồng hồ đeo tay tr&ecirc;n to&agrave;n thế giới. Theo đ&oacute;, cứ 10 đồng hồ xuất khẩu tr&ecirc;n thế giới th&igrave; c&oacute; tới 7 chiếc c&oacute; nguồn gốc Thụy Sỹ. Đến nửa đầu thế kỷ 20,&nbsp;đồng hồ Thụy Sỹ hầu như chiếm hết thị trường thế giới. Tuy từng c&oacute; thời gian rơi v&agrave;o khủng hoảng khiến số lượng ti&ecirc;u thụ tụt giảm, thế nhưng đồng hồ vẫn l&agrave; mặt h&agrave;ng xuất khẩu đứng thứ 3 sau T&acirc;n dược v&agrave; Điện tử ở đất nước n&agrave;y. Về sản lượng, đồng hồ đeo tay Thụy Sỹ đạt 33.000.000 chiếc/ năm, chiếm1/10 sản lượng đồng hồ của thế giới.</p>\r\n\r\n<p><img alt=\"\" src=\"https://www.dangquangwatch.vn/lib/ckfinder/images/64550_1.jpg\" style=\"height:205px; width:307px\" /></p>\r\n\r\n<p>Từ những tinh hoa được khơi dậy trong h&agrave;ng trăm năm ph&aacute;t triển những chiếc đồng hồ đến từ c&aacute;c thương hiệu Thụy Sỹ như Omega, Rolex, Breitling, IWC, Audemars Piguet, Baume &amp; Mercier, Zenith, TAG Heuer... được tung ra thị trường với gi&aacute; th&agrave;nh cao ngất ngưỡng đ&atilde; khẳng định được chất lượng, gi&aacute; trị đẳng cấp của ch&uacute;ng. Ngay cả với những t&ecirc;n tuổi lớn như Lacoste hay Armani Exchange cũng đ&atilde; bị đồng hồ Thụy Sĩ vượt xa cả gi&aacute; cả lẫn chất lượng.</p>\r\n\r\n<p>Từ năm 1919, Thụy Sỹ đ&atilde; l&agrave;m nhiều loại đồng hồ mỏng, đẹp, thời thượng. V&agrave; kh&ocirc;ng chỉ dừng lại ở những mẫu đồng hồ đeo tay xem thời gian th&ocirc;ng thường, Thụy Sỹ c&ograve;n nơi nơi ph&aacute;t minh ra nhiều loại đồng hồ phục vụ cho lĩnh vực khoa học kỹ thuật như: Đồng hồ theo d&otilde;i bệnh nh&acirc;n; đồng hồ đo nhịp tim; hay đồng hồ chống nắng&hellip;</p>', '2020-08-05 06:42:53', NULL, NULL);
 ");
 
         // category
         DB::statement("
-        INSERT INTO 'category' ('id', 'c_name', 'c_slug', 'c_cate', 'created_at', 'updated_at') VALUES
+        INSERT INTO category (id, c_name, c_slug, c_cate, created_at, created_at) VALUES
 (1, 'Đồng hồ Philippe Auguste', 'dong-ho-philippe-auguste', 'watch', '2020-07-04 16:07:39', NULL),
 (2, 'Đồng hồ Epos Swiss', 'dong-ho-epos-swiss', 'watch', '2020-07-04 16:09:19', NULL),
 (3, 'Đồng hồ Atlantic Swiss', 'dong-ho-atlantic-swiss', 'watch', '2020-07-04 16:09:34', NULL),
@@ -62,7 +62,7 @@ INSERT INTO 'articles' ('id', 'a_name', 'a_slug', 'a_hot', 'a_active', 'a_menu_i
 
         //keyword
         DB::statement("
-        INSERT INTO 'keyword' ('k_name', 'k_slug', 'k_description', 'k_hot', 'k_active', 'created_at', 'updated_at') VALUES
+        INSERT INTO keyword (k_name, k_slug, k_description, k_hot, k_active, created_at, created_at) VALUES
         ( 'Hot', 'hot', 'Hàng bán chạy', 0, 0, '2020-07-22 06:24:28', NULL),
         ( 'Siêu giảm giá', 'sieu-giam-gia', 'Giảm giá lên tới 20%', 0, 0, '2020-07-22 06:24:53', NULL),
         ( 'Nguyễn Thùy Linh', 'nguyen-thuy-linh', 'Hot girl', 0, 0, '2020-09-24 02:23:37', NULL),
@@ -71,7 +71,7 @@ INSERT INTO 'articles' ('id', 'a_name', 'a_slug', 'a_hot', 'a_active', 'a_menu_i
 
     //orders
     DB::statement("
-    INSERT INTO 'orders' ('id', 'od_transaction_id', 'od_product_id', 'od_sale', 'od_qty', 'od_price', 'created_at', 'updated_at') VALUES
+    INSERT INTO orders (id, od_transaction_id, od_product_id, od_sale, od_qty, od_price, created_at, created_at) VALUES
     (45, 43, 10, 10, 2, 11359000, NULL, NULL),
     (46, 44, 10, 10, 2, 11359000, NULL, NULL),
     (47, 45, 7, 0, 1, 9694000, NULL, NULL),
@@ -101,7 +101,7 @@ INSERT INTO 'articles' ('id', 'a_name', 'a_slug', 'a_hot', 'a_active', 'a_menu_i
 
 //product
     DB::statement("
-    INSERT INTO 'product' ('id', 'pro_name', 'pro_amount', 'pro_view', 'pro_slug', 'pro_price', 'pro_sale', 'pro_category', 'pro_avatar', 'pro_favourite', 'pro_hot', 'pro_active', 'pro_admin_id', 'pro_pay', 'pro_description', 'pro_content', 'pro_review_total', 'keywordseo', 'pro_review_star', '_wysihtml5_mode', 'created_at', 'updated_at') VALUES
+    INSERT INTO product (id, pro_name, pro_amount, pro_view, pro_slug, pro_price, pro_sale, pro_category, pro_avatar, pro_favourite, pro_hot, pro_active, pro_admin_id, pro_pay, pro_description, pro_content, pro_review_total, keywordseo, pro_review_star, _wysihtml5_mode, created_at, created_at) VALUES
     (6, 'Đồng hồ Philippe Auguste PA5001A', 100, 11, 'dong-ho-philippe-auguste-pa5001a', 1500000, 0, '1', '2020-07-06__784610833-dong-ho-nhap-khau.jpg', -3, 1, 0, 0, 0, 'THÔNG SỐ KỸ THUẬT<br> Đường kính mặt:40 mm<br> Chống nước:5 ATM<br> Chất liệu mặt:Sapphire<br> Năng lượng sử dụng:Automatic <br> Size dây<br> Chất liệu dây:Dây da chính hãng<br> Chất liệu vỏ:Stainless Steel<br> Kiểu dáng:Nam<br> Xuất xứ:Áo<br> Chế độ bảo hành:Bảo hành quốc tế 02 năm<br>', '<p> </p><div>Content</div><p></p>', 0, '', 0, '1', '2020-07-05 06:15:35', '2020-07-12 04:47:02'),
     (7, 'Đồng hồ Philippe Auguste PA5001B', 100, 30, 'dong-ho-philippe-auguste-pa5001b', 150000000, 0, '1', '2020-07-06__202451360-dong-ho-nhap-khau2.jpg', -1, 1, 0, 0, 11, 'Đang cập nhật', 'Content', 0, '', 0, '1', '2020-07-05 06:17:21', '2020-09-18 15:39:05'),
     (8, 'Đồng hồ Philippe Auguste PA5001C', 100, 4, 'dong-ho-philippe-auguste-pa5001c', 120000000, 0, '1', '2020-07-06__1494321812-dong-ho-nhap-khau3.jpg', 0, 0, 0, 0, 0, 'Đang cập nhật', 'Content', 0, '', 0, '1', '2020-07-05 06:17:56', NULL),
@@ -313,7 +313,7 @@ INSERT INTO 'articles' ('id', 'a_name', 'a_slug', 'a_hot', 'a_active', 'a_menu_i
 
     DB::statement("
     
-    INSERT INTO 'product' ('id', 'pro_name', 'pro_amount', 'pro_view', 'pro_slug', 'pro_price', 'pro_sale', 'pro_category', 'pro_avatar', 'pro_favourite', 'pro_hot', 'pro_active', 'pro_admin_id', 'pro_pay', 'pro_description', 'pro_content', 'pro_review_total', 'keywordseo', 'pro_review_star', '_wysihtml5_mode', 'created_at', 'updated_at') VALUES
+    INSERT INTO product (id, pro_name, pro_amount, pro_view, pro_slug, pro_price, pro_sale, pro_category, pro_avatar, pro_favourite, pro_hot, pro_active, pro_admin_id, pro_pay, pro_description, pro_content, pro_review_total, keywordseo, pro_review_star, _wysihtml5_mode, created_at, created_at) VALUES
     (214, 'Kính RAYBAN RB-4195F-601/71', 100, 0, 'kinh-rayban-rb-4195f-6017152it', 7950000, 0, '15', '2020-07-06__1968672020-knh-rayban314.jpg', 0, 0, 0, 0, 0, 'Đang cập nhật', 'Content', 0, '', 0, '1', '2020-07-05 11:43:59', NULL),
     (215, 'Kính RAYBAN RB-3025-003/32', 100, 0, 'kinh-rayban-rb-3025-0033258it', 5250000, 0, '14', '2020-07-06__594592928-knh-rayban320.jpg', 0, 0, 0, 0, 0, 'Đang cập nhật', 'Content', 0, '', 0, '1', '2020-07-05 11:44:22', '2020-09-18 16:06:54'),
     (216, 'Kính mát Rayban RB-3025-181', 100, 0, 'kinh-mat-rayban-rb-3025-18158it', 4950000, 0, '14', '2020-07-06__1435031173-knh-rayban170.jpg', 0, 0, 0, 0, 0, 'Đang cập nhật', 'Content', 0, '', 0, '1', '2020-07-05 11:44:39', NULL),
@@ -385,7 +385,7 @@ INSERT INTO 'articles' ('id', 'a_name', 'a_slug', 'a_hot', 'a_active', 'a_menu_i
     ");
  //product_images 
          DB::statement("
-INSERT INTO 'product_images' ('id', 'al_name', 'al_slug', 'product_id', 'created_at', 'updated_at') VALUES
+INSERT INTO product_images (id, al_name, al_slug, product_id, created_at, created_at) VALUES
 (1, 'address.png', '2020-09-24__addresspng.png', 281, '2020-09-24 02:45:49', NULL),
 (2, 'AriesGold.jpg', '2020-09-24__ariesgoldjpg.jpg', 281, '2020-09-24 02:45:49', NULL),
 (3, 'b_dayda1.jpg', '2020-09-24__b-dayda1jpg.jpg', 281, '2020-09-24 02:45:49', NULL),
@@ -398,7 +398,7 @@ INSERT INTO 'product_images' ('id', 'al_name', 'al_slug', 'product_id', 'created
 
  //rating 
  DB::statement("
- INSERT INTO 'ratings' ('id', 'r_user_id', 'r_product_id', 'r_number', 'r_status', 'r_content', 'created_at', 'updated_at') VALUES
+ INSERT INTO ratings (id, r_user_id, r_product_id, r_number, r_status, r_content, created_at, created_at) VALUES
  (9, 13, 7, 3, 0, 'Đẹp', '2020-09-22 01:06:38', '2020-09-22 01:06:38'),
  (10, 13, 11, 3, 0, 'grsgrsgs', '2020-09-23 08:22:55', '2020-09-23 08:22:55'),
  (11, 13, 11, 1, 0, 'grsgrsgs', '2020-09-23 08:28:27', '2020-09-23 08:28:27'),
@@ -441,7 +441,7 @@ INSERT INTO 'product_images' ('id', 'al_name', 'al_slug', 'product_id', 'created
 
 //transaction
 DB::statement("
-INSERT INTO 'transactions' ('id', 'tst_user_id', 'tst_total_money', 'tst_name', 'tst_email', 'tst_phone', 'tst_address', 'tst_note', 'tst_status', 'tst_type', 'created_at', 'updated_at') VALUES
+INSERT INTO transactions (id, tst_user_id, tst_total_money, tst_name, tst_email, tst_phone, tst_address, tst_note, tst_status, tst_type, created_at, created_at) VALUES
 (61, 13, '24.000.000', 'Satosis', 'shopsoda1pk@gmail.com', '0948561668', NULL, NULL, 1, 1, '2020-09-12 23:56:20', NULL),
 (62, 13, '22.718.000', 'Satosis', 'shopsoda1pk@gmail.com', '0948561668', NULL, NULL, 1, 1, '2020-09-13 05:26:00', NULL),
 (63, 13, '22.718.000', 'Satosis', 'shopsoda1pk@gmail.com', '0948561668', NULL, NULL, 1, 1, '2020-09-13 05:26:19', NULL),
@@ -479,7 +479,7 @@ INSERT INTO 'transactions' ('id', 'tst_user_id', 'tst_total_money', 'tst_name', 
 //user
 DB::statement("
 
-INSERT INTO 'users' ('id', 'name', 'provider', 'provider_id', 'email', 'phone', 'address', 'password', 'avatar', 'remember_token', 'created_at', 'updated_at') VALUES
+INSERT INTO users (id, name, provider, provider_id, email, phone, address, password, avatar, remember_token, created_at, created_at) VALUES
 (13, 'Satosis', NULL, NULL, 'user@gmail.com', '0948561668', NULL,  '".$password."' , NULL, NULL, '2020-09-12 20:11:30', NULL),
 (14, 'Hùng Nguyễn', 'google', '100195086957714365762', 'hung0913003358@gmail.com', NULL, NULL, NULL, NULL, NULL, '2020-09-15 01:58:37', '2020-09-15 01:58:37'),
 (17, 'Đặng Thư', NULL, NULL, 'dangthu@gmail.com', '0948561669', NULL,  '".$password."' , NULL, NULL, '2020-09-18 02:24:42', NULL),
@@ -488,7 +488,7 @@ INSERT INTO 'users' ('id', 'name', 'provider', 'provider_id', 'email', 'phone', 
 //user favorite
 DB::statement("
 
-INSERT INTO 'user_favourite' ('id', 'uf_product_id', 'uf_user_id') VALUES
+INSERT INTO user_favourite (id, uf_product_id, uf_user_id) VALUES
 (69, 131, 13),
 (73, 217, 13),
 (98, 188, 13),
