@@ -101,7 +101,7 @@
         attribution="page_inbox"
         page_id="103980634638551">
       </div>
-      
+
 <div id='status'></div>
 <div id='loader'></div>
 <div id="commonHead">   
@@ -141,7 +141,7 @@
         <div id="menuMain">
             <ul>
                 <li class="hasChild">
-                    <a href="/sp/dong-ho-chinh-hang.html" title="Đồng hồ chính hãng" >Đồng hồ chính hãng</a>
+                    <a href="javascript:;" title="Đồng hồ chính hãng" >Đồng hồ chính hãng</a>
                     <ul>
                         <li>
                             <div class="subMenu" style="width: 250px;">                                             
@@ -157,7 +157,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="/kinh-mat-thoi-trang.html" title="Kinh mat thoi trang" >Kính mắt thời trang</a>
+                    <a href="javascript:;" title="Kinh mat thoi trang" >Kính mắt thời trang</a>
                     <ul>
                         <li>
                             <div class="subMenu" style="width: 250px;">
