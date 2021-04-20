@@ -38,7 +38,7 @@
   
   <div class="form-group {{ $errors->first('email') ? ' has-error':'' }}"  >
     <label for="xampleInputEmail1">Email <b class="red">(*)</b> </label>
-    <input type="text" name ="email" class="form-control" id="xampleInputEmail1"  value="{{ isset($login->email) ?? old('email','user@gmail.com')  }}" autocomplete="off">
+    <input type="text" name ="email" class="form-control" id="xampleInputEmail1"  value="user@gmail.com" autocomplete="off">
     @if ($errors->first('email'))
     <p class="text-danger">{{$errors->first('email') }}  </p>
     @endif
