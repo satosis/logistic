@@ -11,7 +11,7 @@ class CreateDatabase extends Controller
     public function index(){
         $password=Hash::make(123456789);
         //admin 
-        DB::statement("INSERT INTO admins (id, name, email, password, created_at, created_at) VALUES
+        DB::statement("INSERT INTO admins (id, name, email, password, created_at, updated_at) VALUES
         (1, 'Nguyễn Thị Phượng', 'admin@gmail.com', '".$password."' , '2020-08-05 06:42:53',  '2020-08-05 06:42:53'),
         (2, 'Quỳnh Nhi', 'quynhnhi@gmail.com', '".$password."',  '2020-08-05 06:42:53',  '2020-08-05 06:42:53');
         ");
@@ -25,7 +25,7 @@ INSERT INTO articles (id, a_name, a_slug, a_hot, a_active, a_menu_id, a_view, a_
 
         // category
         DB::statement("
-        INSERT INTO category (id, c_name, c_slug, c_cate, created_at, created_at) VALUES
+        INSERT INTO category (id, c_name, c_slug, c_cate, created_at, updated_at) VALUES
 (1, 'Đồng hồ Philippe Auguste', 'dong-ho-philippe-auguste', 'watch', '2020-07-04 16:07:39', NULL),
 (2, 'Đồng hồ Epos Swiss', 'dong-ho-epos-swiss', 'watch', '2020-07-04 16:09:19', NULL),
 (3, 'Đồng hồ Atlantic Swiss', 'dong-ho-atlantic-swiss', 'watch', '2020-07-04 16:09:34', NULL),
@@ -62,7 +62,7 @@ INSERT INTO articles (id, a_name, a_slug, a_hot, a_active, a_menu_id, a_view, a_
 
         //keyword
         DB::statement("
-        INSERT INTO keyword (k_name, k_slug, k_description, k_hot, k_active, created_at, created_at) VALUES
+        INSERT INTO keyword (k_name, k_slug, k_description, k_hot, k_active, created_at, updated_at) VALUES
         ( 'Hot', 'hot', 'Hàng bán chạy', 0, 0, '2020-07-22 06:24:28', NULL),
         ( 'Siêu giảm giá', 'sieu-giam-gia', 'Giảm giá lên tới 20%', 0, 0, '2020-07-22 06:24:53', NULL),
         ( 'Nguyễn Thùy Linh', 'nguyen-thuy-linh', 'Hot girl', 0, 0, '2020-09-24 02:23:37', NULL),
@@ -71,7 +71,7 @@ INSERT INTO articles (id, a_name, a_slug, a_hot, a_active, a_menu_id, a_view, a_
 
     //orders
     DB::statement("
-    INSERT INTO orders (id, od_transaction_id, od_product_id, od_sale, od_qty, od_price, created_at, created_at) VALUES
+    INSERT INTO orders (id, od_transaction_id, od_product_id, od_sale, od_qty, od_price, created_at, updated_at) VALUES
     (45, 43, 10, 10, 2, 11359000, NULL, NULL),
     (46, 44, 10, 10, 2, 11359000, NULL, NULL),
     (47, 45, 7, 0, 1, 9694000, NULL, NULL),
@@ -101,7 +101,7 @@ INSERT INTO articles (id, a_name, a_slug, a_hot, a_active, a_menu_id, a_view, a_
 
 //product
     DB::statement("
-    INSERT INTO product (id, pro_name, pro_amount, pro_view, pro_slug, pro_price, pro_sale, pro_category, pro_avatar, pro_favourite, pro_hot, pro_active, pro_admin_id, pro_pay, pro_description, pro_content, pro_review_total, keywordseo, pro_review_star, _wysihtml5_mode, created_at, created_at) VALUES
+    INSERT INTO product (id, pro_name, pro_amount, pro_view, pro_slug, pro_price, pro_sale, pro_category, pro_avatar, pro_favourite, pro_hot, pro_active, pro_admin_id, pro_pay, pro_description, pro_content, pro_review_total, keywordseo, pro_review_star, _wysihtml5_mode, created_at, updated_at) VALUES
     (6, 'Đồng hồ Philippe Auguste PA5001A', 100, 11, 'dong-ho-philippe-auguste-pa5001a', 1500000, 0, '1', '2020-07-06__784610833-dong-ho-nhap-khau.jpg', -3, 1, 0, 0, 0, 'THÔNG SỐ KỸ THUẬT<br> Đường kính mặt:40 mm<br> Chống nước:5 ATM<br> Chất liệu mặt:Sapphire<br> Năng lượng sử dụng:Automatic <br> Size dây<br> Chất liệu dây:Dây da chính hãng<br> Chất liệu vỏ:Stainless Steel<br> Kiểu dáng:Nam<br> Xuất xứ:Áo<br> Chế độ bảo hành:Bảo hành quốc tế 02 năm<br>', '<p> </p><div>Content</div><p></p>', 0, '', 0, '1', '2020-07-05 06:15:35', '2020-07-12 04:47:02'),
     (7, 'Đồng hồ Philippe Auguste PA5001B', 100, 30, 'dong-ho-philippe-auguste-pa5001b', 150000000, 0, '1', '2020-07-06__202451360-dong-ho-nhap-khau2.jpg', -1, 1, 0, 0, 11, 'Đang cập nhật', 'Content', 0, '', 0, '1', '2020-07-05 06:17:21', '2020-09-18 15:39:05'),
     (8, 'Đồng hồ Philippe Auguste PA5001C', 100, 4, 'dong-ho-philippe-auguste-pa5001c', 120000000, 0, '1', '2020-07-06__1494321812-dong-ho-nhap-khau3.jpg', 0, 0, 0, 0, 0, 'Đang cập nhật', 'Content', 0, '', 0, '1', '2020-07-05 06:17:56', NULL),
@@ -313,7 +313,7 @@ INSERT INTO articles (id, a_name, a_slug, a_hot, a_active, a_menu_id, a_view, a_
 
     DB::statement("
     
-    INSERT INTO product (id, pro_name, pro_amount, pro_view, pro_slug, pro_price, pro_sale, pro_category, pro_avatar, pro_favourite, pro_hot, pro_active, pro_admin_id, pro_pay, pro_description, pro_content, pro_review_total, keywordseo, pro_review_star, _wysihtml5_mode, created_at, created_at) VALUES
+    INSERT INTO product (id, pro_name, pro_amount, pro_view, pro_slug, pro_price, pro_sale, pro_category, pro_avatar, pro_favourite, pro_hot, pro_active, pro_admin_id, pro_pay, pro_description, pro_content, pro_review_total, keywordseo, pro_review_star, _wysihtml5_mode, created_at, updated_at) VALUES
     (214, 'Kính RAYBAN RB-4195F-601/71', 100, 0, 'kinh-rayban-rb-4195f-6017152it', 7950000, 0, '15', '2020-07-06__1968672020-knh-rayban314.jpg', 0, 0, 0, 0, 0, 'Đang cập nhật', 'Content', 0, '', 0, '1', '2020-07-05 11:43:59', NULL),
     (215, 'Kính RAYBAN RB-3025-003/32', 100, 0, 'kinh-rayban-rb-3025-0033258it', 5250000, 0, '14', '2020-07-06__594592928-knh-rayban320.jpg', 0, 0, 0, 0, 0, 'Đang cập nhật', 'Content', 0, '', 0, '1', '2020-07-05 11:44:22', '2020-09-18 16:06:54'),
     (216, 'Kính mát Rayban RB-3025-181', 100, 0, 'kinh-mat-rayban-rb-3025-18158it', 4950000, 0, '14', '2020-07-06__1435031173-knh-rayban170.jpg', 0, 0, 0, 0, 0, 'Đang cập nhật', 'Content', 0, '', 0, '1', '2020-07-05 11:44:39', NULL),
@@ -385,7 +385,7 @@ INSERT INTO articles (id, a_name, a_slug, a_hot, a_active, a_menu_id, a_view, a_
     ");
  //product_images 
          DB::statement("
-INSERT INTO product_images (id, al_name, al_slug, product_id, created_at, created_at) VALUES
+INSERT INTO product_images (id, al_name, al_slug, product_id, created_at, updated_at) VALUES
 (1, 'address.png', '2020-09-24__addresspng.png', 281, '2020-09-24 02:45:49', NULL),
 (2, 'AriesGold.jpg', '2020-09-24__ariesgoldjpg.jpg', 281, '2020-09-24 02:45:49', NULL),
 (3, 'b_dayda1.jpg', '2020-09-24__b-dayda1jpg.jpg', 281, '2020-09-24 02:45:49', NULL),
@@ -398,7 +398,7 @@ INSERT INTO product_images (id, al_name, al_slug, product_id, created_at, create
 
  //rating 
  DB::statement("
- INSERT INTO ratings (id, r_user_id, r_product_id, r_number, r_status, r_content, created_at, created_at) VALUES
+ INSERT INTO ratings (id, r_user_id, r_product_id, r_number, r_status, r_content, created_at, updated_at) VALUES
  (9, 13, 7, 3, 0, 'Đẹp', '2020-09-22 01:06:38', '2020-09-22 01:06:38'),
  (10, 13, 11, 3, 0, 'grsgrsgs', '2020-09-23 08:22:55', '2020-09-23 08:22:55'),
  (11, 13, 11, 1, 0, 'grsgrsgs', '2020-09-23 08:28:27', '2020-09-23 08:28:27'),
@@ -441,7 +441,7 @@ INSERT INTO product_images (id, al_name, al_slug, product_id, created_at, create
 
 //transaction
 DB::statement("
-INSERT INTO transactions (id, tst_user_id, tst_total_money, tst_name, tst_email, tst_phone, tst_address, tst_note, tst_status, tst_type, created_at, created_at) VALUES
+INSERT INTO transactions (id, tst_user_id, tst_total_money, tst_name, tst_email, tst_phone, tst_address, tst_note, tst_status, tst_type, created_at, updated_at) VALUES
 (61, 13, '24.000.000', 'Satosis', 'shopsoda1pk@gmail.com', '0948561668', NULL, NULL, 1, 1, '2020-09-12 23:56:20', NULL),
 (62, 13, '22.718.000', 'Satosis', 'shopsoda1pk@gmail.com', '0948561668', NULL, NULL, 1, 1, '2020-09-13 05:26:00', NULL),
 (63, 13, '22.718.000', 'Satosis', 'shopsoda1pk@gmail.com', '0948561668', NULL, NULL, 1, 1, '2020-09-13 05:26:19', NULL),
@@ -479,7 +479,7 @@ INSERT INTO transactions (id, tst_user_id, tst_total_money, tst_name, tst_email,
 //user
 DB::statement("
 
-INSERT INTO users (id, name, provider, provider_id, email, phone, address, password, avatar, remember_token, created_at, created_at) VALUES
+INSERT INTO users (id, name, provider, provider_id, email, phone, address, password, avatar, remember_token, created_at, updated_at) VALUES
 (13, 'Satosis', NULL, NULL, 'user@gmail.com', '0948561668', NULL,  '".$password."' , NULL, NULL, '2020-09-12 20:11:30', NULL),
 (14, 'Hùng Nguyễn', 'google', '100195086957714365762', 'hung0913003358@gmail.com', NULL, NULL, NULL, NULL, NULL, '2020-09-15 01:58:37', '2020-09-15 01:58:37'),
 (17, 'Đặng Thư', NULL, NULL, 'dangthu@gmail.com', '0948561669', NULL,  '".$password."' , NULL, NULL, '2020-09-18 02:24:42', NULL),
