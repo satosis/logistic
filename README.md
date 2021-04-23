@@ -1,5 +1,5 @@
 
-## Trang mạng xã hội (instagram)
+## Trang thương mại điện tử (Source:Đăng quang watch)
 
 Đây là website giúp mọi người có thể tham khảo và mua đồng hồ một cách dễ dàng , nhận xét về sản phẩm một cách trực quan .
 ## Công nghệ   
@@ -10,6 +10,7 @@
 - HTML
 - CSS
 ### Cài đặt 
+- Yêu cầu : Xampp , composer
 + Tải xuống bằng cmd : https://github.com/satosis/watch.git
 + Cài đặt bằng cmd :
 - composer install

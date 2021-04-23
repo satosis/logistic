@@ -40,10 +40,7 @@ class ShoppingCartController extends Controller
                     'sale'   => $product->pro_sale,
             ]
         ]);
-    \Session::flash('toastr',[
-        'type'      =>'success',
-        'message'   =>'Thêm sản phẩm vào giỏ hàng thành công'
-    ]);
+     
     return redirect()->back();
     }
 

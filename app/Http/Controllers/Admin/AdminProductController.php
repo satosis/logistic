@@ -10,6 +10,7 @@ use App\Models\Keyword;
 use App\Http\Requests\AdminRequestProduct;
 use Illuminate\Support\Str;
 use Carbon\Carbon;
+use DB;
 class AdminProductController extends Controller
 {
     public function index(){
@@ -52,12 +53,12 @@ class AdminProductController extends Controller
         $category =Category::all();
         $product =Product::findOrFail($id);
         $keywords=Keyword::all();
-        $keywordOld =\DB::table('product_keywords')
+        $keywordOld =DB::table('product_keywords')
                         ->where('pk_product_id',$id)
                         ->pluck('pk_keyword_id')
                         ->toArray();
         if(!$keywordOld) $keywordOld=[];
-        $image =\DB::table('product_images')
+        $image =DB::table('product_images')
                 ->where('product_id',$id)->get();
         $viewData =[
             'category' =>$category,
@@ -99,7 +100,7 @@ class AdminProductController extends Controller
                 mkdir($path,0777,true);
             }
             $fileImage->move($path,$filename);
-            \DB::table('product_images')
+            DB::table('product_images')
             ->insert([
                 'al_name' =>$fileImage->getClientOriginalName(),
                 'al_slug' =>$filename,
@@ -126,7 +127,7 @@ class AdminProductController extends Controller
         return redirect()->back(); 
     }
     public function deleteImage($id){
-        \DB::table('product_images')->where('id',$id)->delete();
+        DB::table('product_images')->where('id',$id)->delete();
         return redirect()->back();
     }
     private function syncKeyword($keyword,$idProduct){
@@ -138,8 +139,8 @@ class AdminProductController extends Controller
                     'pk_keyword_id' =>$keywords
                 ];
             }
-           \DB::table('product_keywords')->where('pk_product_id',$idProduct)->delete();
-           \DB::table('product_attributes')->insert($data);
+           DB::table('product_keywords')->where('pk_product_id',$idProduct)->delete();
+           DB::table('product_attributes')->insert($data);
         }
     }
 
