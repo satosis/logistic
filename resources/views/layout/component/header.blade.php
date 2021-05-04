@@ -57,7 +57,7 @@
         left: 50%;
         z-index: 100;
         top: 50%;
-        background-image: url('{{ asset('view/img/loader.gif') }}');
+        background-image: url("{{ asset('view/img/loader.gif') }}");
         background-repeat: no-repeat;
         background-position: center;
         margin: -100px 0 0 -100px;
