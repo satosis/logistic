@@ -8,12 +8,12 @@ use App\Models\Category;
 use App\Models\Product;
 use App\Providers\ProcessViewService;
 use App\Models\Rating; 
+use Carbon\Carbon;  
+
 class ProductDetailController extends Controller
 {
-    public function getProductDetail(Request $request ,$slug){
-        
-        $category    =Category::all(); 
-
+    public function getProductDetail(Request $request ,$slug){ 
+        $category    =Category::all();  
         $arraySlug =explode('-',$slug);
         $id =array_pop($arraySlug);
        
@@ -21,7 +21,7 @@ class ProductDetailController extends Controller
         ->where('uf_user_id',\Auth::id())->count();
         if($id){
             
-         ProcessViewService::view('product','pro_view','product',$id);
+        ProcessViewService::view('product','pro_view','product',$id);
         $product =Product::with('category:id,c_name,c_slug','keyword')->findOrFail($id);
    
             //bài viết đánh giá chung
@@ -59,6 +59,8 @@ class ProductDetailController extends Controller
         foreach($ratingsDashboard as $key =>$item){
             $ratingDefault[$item['r_number']] =$item;
         } 
+        $now =Carbon::now(); 
+
         $viewData=[
             'ratingDefault' => $ratingDefault,
             'product'       => $product, 
@@ -66,8 +68,9 @@ class ProductDetailController extends Controller
             'title_page'    => $product->pro_name,
             'ratings'       => $ratings, 
             'rating'        => $rating,
-            'user_favourite'=>$user_favourite,
-            'query'         =>$request->query(),
+            'user_favourite'=> $user_favourite,
+            'query'         => $request->query(),
+            'now'           => $now,
             'productSuggest'=> $this->getProductsSuggest($product->pro_category)
 
         ];
