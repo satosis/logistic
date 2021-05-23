@@ -36,9 +36,10 @@
     <td>Khách hàng</td>
     <td>Tài khoản</td>
     <td>Số tiền</td>
-    <td>Status</td>
-    <td>Time</td>
-    <td>Action</td>
+    <td>Cổng thanh toán</td>
+    <td>Trạng thái</td>
+    <td>Thời gian</td>
+    <td>Hành động</td>
     </thead>
     @foreach($transaction as $key =>$list)
     <tbody>
@@ -59,6 +60,12 @@
         @endif
       </td>
       <td>{{ $list->tst_total_money}}đ</td>
+      <td>@if($list->tst_type ==1 )
+        Trực tiếp
+        @elseif($list->tst_type ==2 )
+        Paypals 
+        @endif
+      </td>
       <td>
       <span class="{{ $list->getStatus($list->tst_status)['class'] }}">
       {{ $list->getStatus($list->tst_status)['name']}}

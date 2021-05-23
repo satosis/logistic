@@ -24,7 +24,7 @@ class AdminRequestProduct extends FormRequest
     public function rules()
     {
         return [
-            'pro_name'                  =>'required|unique:product,pro_name',
+            'pro_name'                  =>'required',
             'pro_description'           =>'required',
             'pro_category'              =>'required',
             'pro_price'                 =>'required',
@@ -34,7 +34,6 @@ class AdminRequestProduct extends FormRequest
     public function messages(){
         return [
             'pro_name.required'         =>'Tên sản phẩm không được để trống',
-            'pro_name.unique'           =>'Sản phẩm đã tồn tại',
             'pro_description.required'  =>'Mô tả sản phẩm không được để trống',
             'pro_category.required'     =>"Bạn chưa chọn thể loại sản phẩm",
             'pro_price.required'        => 'Bạn chưa điền giá sản phẩm',

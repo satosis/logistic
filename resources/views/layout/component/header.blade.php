@@ -36,18 +36,11 @@
         </script>
     @endif
     <script>
-    
-    $(function() {
-    $(".js-login").on('click',function(event){
-                 event.preventDefault();
-                 toastr.warning('Bạn cần đăng nhập');
-             })
-             }) 
-    $(window).bind("load", function() {
-        jQuery("#status").fadeOut();
-        jQuery("#loader").fadeOut();
-    });
-             </script>
+        $(window).bind("load", function() {
+            jQuery("#status").fadeOut();
+            jQuery("#loader").fadeOut();
+        });
+    </script>
 </head>
 <style>.desktop{display:none}
     #status {
@@ -63,7 +56,7 @@
         margin: -100px 0 0 -100px;
         z-index: 1001
     }
-
+    *{outline:none}
     #loader {
         position: fixed;
         top: 0;
@@ -211,7 +204,7 @@
                     <span class="bot">Cửa hàng</span>
                 </span>
             </a>
-            <a href="{{ route('get.shopping.index')}}" class="btnCart {{ !\Auth::id() ? 'js-login' :''}}">
+            <a href="{{ route('get.shopping.index')}}" class="btnCart">
     <i class="fas fa-shopping-cart"></i>
     <span class="number">{{ get_data_user('web','id') ? \Cart::count() : '0'}}</span>
 </a>

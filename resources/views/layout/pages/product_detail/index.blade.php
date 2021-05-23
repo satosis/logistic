@@ -57,16 +57,14 @@
             </div>
             <div class="right">
                <h1  style="position:relative"><a href="javascript://"  class="namePro">{{ $product->pro_name}}</a> <i class="fa fa-eye"></i>&nbsp; {{ $product->pro_view }}
-                  <a href="{{ route('ajax_get.user.favourite', $product->id) }}" class=" {{ !\Auth::id() ? 'js-login' :''}} js-add-favourite"><i class="{{ !$user_favourite ?'far fa-heart' : 'fa fa-heart red' }}"></i></a>&nbsp;<div class="favourite" style="position: absolute;bottom: 0;margin-left: 60px;"> {{ $product->pro_favourite }}</div>
+                  <a href="{{ route('ajax_get.user.favourite', $product->id) }}" class="js-add-favourite"><i class="{{ !$user_favourite ?'far fa-heart' : 'fa fa-heart red' }}"></i></a>&nbsp;<div class="favourite" style="position: absolute;bottom: 0;margin-left: 60px;"> {{ $product->pro_favourite }}</div>
                </h1>
                <div class="price">
                   <div class="price1">
-                     <span class="text">Giá niêm yết </span>                                
-                     <span class="numb cc4161c">{{ number_format($product->pro_price,0,',','.')}}đ</span>
-                  </div>
-                  <div style="color: #3498db;">
-                     <span><i>Miễn phí vận chuyển! Xuất hóa đơn VAT</i></span>
-                  </div>
+                     <span class="text">Giá niêm yết </span>  
+                     <span class="numb cc4161c">{{ number_price($product->pro_price,$product->pro_sale)}}đ</span>
+                     <span class="numb cc4161c" style="text-decoration: line-through;position: absolute;padding: 20px 150px;">{{ number_format($product->pro_price,0,',','.')}}đ</span>
+                  </div> 
                </div>
                <h3 class="descript">
                   <div class="item">
@@ -85,14 +83,9 @@
                      <span class="text">Năng lượng sử dụng</span>
                      <span class="num">Quartz/Pin </span>
                   </div>
-               </h3>
-               <div class="hotline">
-                  <span>Gọi đặt mua: </span>
-                  <a href="tel:18006005" ><span class="icon"><i class="fas fa-phone"></i></span> 1800.6005</a>
-                  <span>(8:30 - 21:30)</span>
-               </div>
+               </h3> 
                <div class="btnCart">
-                  <a class="muangay {{ !\Auth::id() ? 'js-login' :''}}" href="{{ route('get.shopping.add',$product->id) }}">
+                  <a class="muangay" href="{{ route('get.shopping.add',$product->id) }}">
                   <span>Mua ngay</span>
                   <span>Giao hàng miễn phí - Thanh toán tại nhà</span>
                   </a>
@@ -265,7 +258,7 @@
                         </div>
                      </div>
                      <div class="lstBtn">
-                        <a href="{{ route('get.shopping.add' ,$product->id) }}"class="  {{ !\Auth::id() ? 'js-login' :''}} buttn muangay" >Mua ngay</a>
+                        <a href="{{ route('get.shopping.add' ,$product->id) }}"class="buttn muangay" >Mua ngay</a>
                         <a href="javascript://"  class="buttn">Mua trả góp 0%</a>                                   
                      </div>
                   </div>

@@ -1,2 +1,1 @@
-@extends('layout.login.app')
-
+@extends('auth.app')

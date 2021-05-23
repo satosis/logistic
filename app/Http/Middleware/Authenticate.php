@@ -15,7 +15,11 @@ class Authenticate extends Middleware
     protected function redirectTo($request)
     {
         if (! $request->expectsJson()) {
-            return route('login');
+            \Session::flash('toastr',[
+                'type'  =>'error',
+                'message' =>'Bạn cần đăng nhập để đặt hàng'
+            ]);
+            return route('get.login');
         }
     }
 }

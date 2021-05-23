@@ -2,18 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-Route::get('/home', 'CompaniesController@store')->name('hoe');
 Route::get('/data', 'CreateDatabase@index');
 Route::post('/message/send', ['uses' => 'FrontController@addFeedback', 'as' => 'front.fb']);
 Route::group(['namespace'=>'Auth','prefix'=>'account'],function(){
@@ -48,7 +36,8 @@ Route::group(['namespace'=>'Frontend'], function () {
         Route::get('delete/{id}','ShoppingCartController@delete')->name('get.shopping.delete');
         Route::get('update/{id}','ShoppingCartController@update')->name('ajax_get.shopping.update');
         Route::post('pay','ShoppingCartController@postPay')->name('post.shopping.pay');
-    });
+    Route::get('/status', 'ShoppingCartController@getPaymentStatus')->name('status');
+});
 });  
 Route::post('ckeditor/image_upload', 'CKEditorController@upload')->name('upload');
 
