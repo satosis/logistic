@@ -29,15 +29,9 @@ Route::group(['namespace'=>'Frontend'], function () {
     Route::get('bai-viet/{slug}','ArticleDetailController@index')->name('get.blog.detail');
     //giỏ hàng
     //https://github.com/bumbummen99/LaravelShoppingcart
-    Route::get('don-hang','ShoppingCartController@index')->name('get.shopping.index');
+    Route::get('don-hang','ShoppingCartController@index')->name('get.shopping.index')->middleware('auth');
    
-    Route::prefix('shopping') ->group(function(){
-        Route::get('add/{id}','ShoppingCartController@add')->name('get.shopping.add');
-        Route::get('delete/{id}','ShoppingCartController@delete')->name('get.shopping.delete');
-        Route::get('update/{id}','ShoppingCartController@update')->name('ajax_get.shopping.update');
-        Route::post('pay','ShoppingCartController@postPay')->name('post.shopping.pay');
-    Route::get('/status', 'ShoppingCartController@getPaymentStatus')->name('status');
-});
+   
 });  
 Route::post('ckeditor/image_upload', 'CKEditorController@upload')->name('upload');
 
@@ -47,4 +41,5 @@ Route::get('/callback/{provider}', 'SocialController@callback');
 // Route::get('','HomeController@index')->name('get.home');
 include('route-admin.php'); 
 include('route-user.php');
+include('cart.php');
 Auth::routes();

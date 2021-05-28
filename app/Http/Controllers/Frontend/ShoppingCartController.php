@@ -37,8 +37,7 @@ class ShoppingCartController extends Controller
 {
     private $_api_context;
     public function __construct()
-    {
-        $this->middleware('auth');
+    { 
         $paypal_conf = \Config::get('paypal');
         $this->_api_context = new ApiContext(new OAuthTokenCredential(
             $paypal_conf['client_id'],
@@ -71,11 +70,8 @@ class ShoppingCartController extends Controller
                 'sale'   => $product->pro_sale,
             ]
         ]);
-     
-    return redirect()->back();
+        return redirect()->back();
     }
-
-
     public function delete($rowId){
         \Session::flash('toastr',[
             'type'=>'success',
