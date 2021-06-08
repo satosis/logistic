@@ -109,6 +109,7 @@ class ShoppingCartController extends Controller
         $data['created_at']=Carbon::now();
         //Thanh toán khi nhận hàng
         if($request->submit == 1){
+            $data['tst_type'] = 1;
             $data['tst_total_money'] = $request->amount;
         } 
         
@@ -198,8 +199,7 @@ class ShoppingCartController extends Controller
             ]);
             return redirect()->back();
     
-        }
-
+        } 
             $this->storeTransaction($data);
             return redirect()->intended('/');
     }
@@ -231,43 +231,5 @@ class ShoppingCartController extends Controller
         return 1;
     } 
 
-    public function getPaymentStatus()
-    {
-        
-        $request=request();//try get from method
-
-        /** Get the payment ID before session clear **/
-        $payment_id = Session::get('paypal_payment_id');
-
-        /** clear the session payment ID **/
-        Session::forget('paypal_payment_id');
-        //if (empty(Input::get('PayerID')) || empty(Input::get('token'))) {
-        if (empty($request->PayerID) || empty($request->token)) {
-            Session::put('error', 'Thanh toán thất bại');
-            return Redirect::to('/');
-        }
-
-        $payment = Payment::get($payment_id, $this->_api_context);
-        $execution = new PaymentExecution();
-        //$execution->setPayerId(Input::get('PayerID'));
-        $execution->setPayerId($request->PayerID);
-
-        /**Execute the payment **/
-        $result = $payment->execute($execution, $this->_api_context);
-
-        if ($result->getState() == 'approved') {
-
-            Session::put('success', 'Thanh toán thành công');
-            //add update record for cart
-            $email='yangcheebeng@hotmail.com';
-	        Notification::route('mail', $email)->notify(new \App\Notifications\orderPaid($email));
-            return Redirect::to('products');  //back to product page
-
-        }
-
-        Session::put('error', 'Thanh toán thất bại');
-        return Redirect::to('/'); 
-
-    }
 
 }

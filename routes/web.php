@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+\PWA::routes();
 
 Route::get('/data', 'CreateDatabase@index');
 Route::post('/message/send', ['uses' => 'FrontController@addFeedback', 'as' => 'front.fb']);
@@ -27,11 +28,8 @@ Route::group(['namespace'=>'Frontend'], function () {
     //bài viết
     Route::get('bai-viet','BlogController@index')->name('get.blog.home');
     Route::get('bai-viet/{slug}','ArticleDetailController@index')->name('get.blog.detail');
-    //giỏ hàng
-    //https://github.com/bumbummen99/LaravelShoppingcart
+    //giỏ hàng (https://github.com/bumbummen99/LaravelShoppingcart)
     Route::get('don-hang','ShoppingCartController@index')->name('get.shopping.index')->middleware('auth');
-   
-   
 });  
 Route::post('ckeditor/image_upload', 'CKEditorController@upload')->name('upload');
 
@@ -43,3 +41,4 @@ include('route-admin.php');
 include('route-user.php');
 include('cart.php');
 Auth::routes();
+

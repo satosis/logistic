@@ -3,8 +3,9 @@
 <html lang="vi" xml:lang="vi" >
 <head>
        <!--CSS-->
-       <title>{{ $title_page ?? 'Đồng hồ Thụy Sỹ, đồng hồ nam, đồng hồ nữ chính hãng cao cấp' }}</title>
-       <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>{{ $title_page ?? 'Đồng hồ Thụy Sỹ, đồng hồ nam, đồng hồ nữ chính hãng cao cấp' }}</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="manifest" href="{{ asset('manifest.json') }}">
     <link href="{{ asset('view/css/display.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('view/css/animate.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('view/css/font/font.min.css') }}" rel="stylesheet" />
@@ -23,10 +24,9 @@
     <link rel="stylesheet" href="{{ asset('toastr/toastr.min.css') }}">
     <!-- jquery -->
     <script src="{{ asset('view/js/jquery-1.9.1.min.js') }}"></script>
-     
+    <script src="{{ asset('active.js')}}"></script>
     <script src="{{ asset('view/js/stv_new.js') }}"></script> 
     <link rel="shortcut icon" href="https://www.dangquangwatch.vn/view/favicon.ico" type="image/x-icon"/>  
-      
         
     @if(session('toastr'))
         <script>    
@@ -41,6 +41,7 @@
             jQuery("#loader").fadeOut();
         });
     </script>
+    @PWA
 </head>
 <style>.desktop{display:none}
     #status {
