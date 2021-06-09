@@ -12,10 +12,10 @@
     </div>
     <div class="contents">
         <div class="widget-chat-content my-chat">  
-            <div class="widget-chat-content-text">Bao giờ được sờ bướm Nguyệt nhể</div>
+            <div class="widget-chat-content-text">Hello</div>
         </div>
         <div class="widget-chat-content friend-chat">  
-            <div class="widget-chat-content-text">Rủ rê nhiều vào thì nó cho cởi quần</div>
+            <div class="widget-chat-content-text">Hi</div>
         </div>
     </div>
     <div class="widget-chat-input">  
