@@ -3,10 +3,10 @@
 <html lang="vi" xml:lang="vi" >
 <head>
        <!--CSS-->
-    <title>{{ $title_page ?? 'Đồng hồ Thụy Sỹ, đồng hồ nam, đồng hồ nữ chính hãng cao cấp' }}</title>
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="manifest" href="{{ asset('manifest.json') }}">
+       <title>{{ $title_page ?? 'Đồng hồ Thụy Sỹ, đồng hồ nam, đồng hồ nữ chính hãng cao cấp' }}</title>
+       <meta name="csrf-token" content="{{ csrf_token() }}">
     <link href="{{ asset('view/css/display.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('view/css/chat.css') }}" rel="stylesheet" />
     <link href="{{ asset('view/css/animate.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('view/css/font/font.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('view/js/owl.carousel.min.css') }}" rel="stylesheet" />
@@ -24,9 +24,10 @@
     <link rel="stylesheet" href="{{ asset('toastr/toastr.min.css') }}">
     <!-- jquery -->
     <script src="{{ asset('view/js/jquery-1.9.1.min.js') }}"></script>
-    <script src="{{ asset('active.js')}}"></script>
+     
     <script src="{{ asset('view/js/stv_new.js') }}"></script> 
     <link rel="shortcut icon" href="https://www.dangquangwatch.vn/view/favicon.ico" type="image/x-icon"/>  
+      
         
     @if(session('toastr'))
         <script>    
@@ -41,23 +42,24 @@
             jQuery("#loader").fadeOut();
         });
     </script>
-    @PWA
 </head>
-<style>.desktop{display:none}
-    #status {
+<style>
+  #status {
         width: 200px;
         height: 200px;
         position: fixed;
         left: 50%;
-        z-index: 100;
         top: 50%;
         background-image: url("{{ asset('view/img/loader.gif') }}");
         background-repeat: no-repeat;
         background-position: center;
         margin: -100px 0 0 -100px;
-        z-index: 1001
+        z-index: 100001
     }
-    *{outline:none}
+    *{
+        outline:none;
+        font-family: Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji' !important;
+    }
     #loader {
         position: fixed;
         top: 0;
@@ -66,7 +68,7 @@
         width: 100%;
         height: 100%;
         background-color: #FFF;
-        z-index: 1000
+        z-index: 100000
     }
         </style>
  
@@ -95,7 +97,7 @@
         attribution="page_inbox"
         page_id="103980634638551">
       </div>
-
+@include('layout.component.chat')
 <div id='status'></div>
 <div id='loader'></div>
 <div id="commonHead">   

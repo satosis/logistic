@@ -62,12 +62,8 @@
                <div class="price">
                   <div class="price1">
                      <span class="text">Giá niêm yết </span>  
-                     @if($product->pro_sale)
                      <span class="numb cc4161c">{{ number_price($product->pro_price,$product->pro_sale)}}đ</span>
                      <span class="numb cc4161c" style="text-decoration: line-through;position: absolute;padding: 20px 150px;">{{ number_format($product->pro_price,0,',','.')}}đ</span>
-                     @else
-                     <span class="numb cc4161c">{{ number_format($product->pro_price,0,',','.')}}đ</span>
-                     @endif
                   </div> 
                </div>
                <h3 class="descript">
