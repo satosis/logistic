@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 
+Route::get('send-message','RedisController@index');
+Route::post('send-message','RedisController@postSendMessage');
+
+
 Route::get('/data', 'CreateDatabase@index');
 Route::post('/message/send', ['uses' => 'FrontController@addFeedback', 'as' => 'front.fb']);
 Route::group(['namespace'=>'Auth','prefix'=>'account'],function(){

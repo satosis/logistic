@@ -76,13 +76,13 @@
     background: transparent;
     width: 13%;
     border: none;
-    height:100%
+    height:100%;
+    color:#0a6cff;
+    cursor: pointer;
 }
-.button-undisable{
-    color:#63eef4
-}
-.button-disable{
-    color:#33bde6a3
+.disable{
+    opacity: 0.5;
+    pointer-events: none;
 }
 .widget-chat .contents{
     height: 80%;

@@ -20,8 +20,25 @@
     </div>
     <div class="widget-chat-input">  
         <form action="" method="post">
-            <input type="text" name="chat" placeholder="Gửi tin nhắn">
-            <button type="button" class="button-undisable">Gửi</button>
+            <input type="text" name="chat" id="chat" placeholder="Gửi tin nhắn">
+            <button type="button" class="chat-submit disable">Gửi</button>
         </form>
     </div>
 </div>
+<script>
+    var socket = io('http://localhost:6000/');
+    $(function(){
+        $("#chat").on('keyup',function(){
+            var chat = $(this).val();
+            if(chat.length > 2){ 
+                $('.chat-submit').removeClass('disable');
+            }
+            else{ 
+                $('.chat-submit').addClass('disable');
+            }
+        });
+        $(".chat-submit").on('click',function(){
+            alert(2)
+        })
+    })
+</script>
