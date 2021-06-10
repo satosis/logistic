@@ -207,11 +207,11 @@ class ShoppingCartController extends Controller
         $transactionId =Trans::insertGetId($data);
         if($transactionId){
             $shopping =Cart::content();
-        // Mail::to($request->tst_email)->send(new TransactionSuccess($shopping));
+        Mail::to($data['tst_email'])->send(new TransactionSuccess($shopping));
             foreach($shopping as $key =>$item){
                 Order::insert([
                     'od_transaction_id'=>$transactionId,
-                    'od_product_id'    =>$item->id,
+                    'od_product_id'    =>$item->id, 
                     'od_sale'          =>$item->options->sale,
                     'od_qty'           =>$item->qty,
                     'od_price'         =>$item->price

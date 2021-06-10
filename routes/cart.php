@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-Route::group(['namespace'=>'Frontend'], function () {
+Route::group(['namespace'=>'Frontend','middleware'=>'auth'], function () {
     Route::prefix('shopping') ->group(function(){
         Route::get('add/{id}','ShoppingCartController@add')->name('get.shopping.add');
         Route::get('delete/{id}','ShoppingCartController@delete')->name('get.shopping.delete');

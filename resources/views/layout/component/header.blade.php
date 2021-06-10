@@ -12,8 +12,7 @@
     <link href="{{ asset('view/js/owl.carousel.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('view/js/Lightbox/lightbox.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('view/js/slick/slick.css') }}" rel="stylesheet" />
-    <link href="{{ asset('view/css/Common.css') }}" rel="stylesheet" />    
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link href="{{ asset('view/css/Common.css') }}" rel="stylesheet" />     
     <!--CSS Responsive-->
     <link href="{{ asset('view/css/css_rwd_common.css') }}" rel="stylesheet" />
     <link href="{{ asset('view/css/css_rwd.min.css') }}" rel="stylesheet" />
@@ -44,6 +43,9 @@
     </script>
 </head>
 <style>
+.d-none{
+    display: none;
+}
   #status {
         width: 200px;
         height: 200px;
@@ -215,6 +217,7 @@
         </div>
     </div>
 </div>
+<script src="https://use.fontawesome.com/452826394c.js"></script>
 <!-- Load Facebook SDK for JavaScript -->
 <div id="fb-root"></div>
       <script>
