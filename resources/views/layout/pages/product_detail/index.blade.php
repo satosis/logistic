@@ -57,7 +57,7 @@
             </div>
             <div class="right">
                <h1  style="position:relative"><a href="javascript://"  class="namePro">{{ $product->pro_name}}</a> <i class="fa fa-eye"></i>&nbsp; {{ $product->pro_view }}
-                  <a href="{{ route('ajax_get.user.favourite', $product->id) }}" class="js-add-favourite"><i class="{{ !$user_favourite ?'far fa-heart' : 'fa fa-heart red' }}"></i></a>&nbsp;<div class="favourite" style="position: absolute;bottom: 0;margin-left: 60px;"> {{ $product->pro_favourite }}</div>
+                  <a href="{{ route('ajax_get.user.favourite', $product->id) }}" class="{{ !\Auth::id() ? 'js-login' :''}} js-add-favourite"><i class="{{ !$user_favourite ?'fa fa-heart-o' : 'fa fa-heart red' }}"></i></a>&nbsp;<div class="favourite" style="position: absolute;bottom: 0;margin-left: 50px;"> {{ $product->pro_favourite }}</div>
                </h1>
                <div class="price">
                   <div class="price1">
@@ -89,11 +89,6 @@
                   <span>Mua ngay</span>
                   <span>Giao hàng miễn phí - Thanh toán tại nhà</span>
                   </a>
-                  <a href="javascript://"  onclick="add_cart_detail('11590',1);" class="muatragop">
-                  <span>Trả góp 0% dễ dàng qua thẻ</span>
-                  <span>Visa, Master, JCB</span>
-                  </a>
-               
                </div>  
                
                   @php 
@@ -165,47 +160,7 @@
                         </div>
                      </div>
                   </div>
-                  <div class="tuvanbanhang">
-                     <div class="titleR">Tư vấn bán hàng</div>
-                     <div class="group">
-                        <a href="tel:0867515555"  class="item">
-                        <img src="/view/css/icon/sale_phone.png" class="lazy" src="/view/lazy.jpg"/>
-                        <span class="text">
-                        086.751.5555
-                        </span>
-                        </a>
-                        <a href="tel:0865059090"   class="item">
-                        <img src="/view/css/icon/sale_phone.png" class="lazy" src="/view/lazy.jpg"/>
-                        <span class="text">
-                        086.505.9090
-                        </span>
-                        </a>
-                        <a href="tel:0938669090"  class="item">
-                        <img src="/view/css/icon/sale_phone.png" class="lazy" src="/view/lazy.jpg"/>
-                        <span class="text">
-                        093.866.9090
-                        </span>
-                        </a>
-                        <a href="tel:0986681189"  class="item">
-                        <img src="/view/css/icon/sale_phone.png" class="lazy" src="/view/lazy.jpg"/>
-                        <span class="text">
-                        098.668.1189
-                        </span>
-                        </a>
-                        <a href="tel:0985681189"  class="item">
-                        <img src="/view/css/icon/sale_phone.png" class="lazy" src="/view/lazy.jpg"/>
-                        <span class="text">
-                        098.568.1189
-                        </span>
-                        </a>
-                        <a href="tel:18006005"  class="item">
-                        <img src="/view/css/icon/sale_phone.png" class="lazy" src="/view/lazy.jpg"/>
-                        <span class="text">
-                        1800.6005
-                        </span>
-                        </a>
-                     </div>
-                  </div>
+                 
                   <div class="box_policy">
                      <div class="fs14">
                         <img class="mr-1" src="/view/css/icon/box.png" height="17">                  
@@ -259,8 +214,7 @@
                      </div>
                      <div class="lstBtn">
                         <a href="{{ route('get.shopping.add' ,$product->id) }}"class="buttn muangay" >Mua ngay</a>
-                        <a href="javascript://"  class="buttn">Mua trả góp 0%</a>                                   
-                     </div>
+                       </div>
                   </div>
                </div>
             </div>
@@ -510,7 +464,7 @@
          <div class="item">
             <p class="head">Gọi đặt hàng</p>
             <a href="tel:0985681189" class="tel">
-            <span class="icon"><i class="fas fa-phone"></i></span>
+            <span class="icon"><i class="fa fa-phone"></i></span>
             <span class="text">098.568.1189</span>
             </a>
          </div>
@@ -526,9 +480,9 @@
          <div class="social">
             <p class="fs17 ttu mb10">Kết nối mạng xã hội</p>
             <ul>
-               <li><a rel="nofollow" href="https://www.facebook.com/donghodangquang"   target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-               <li><a rel="nofollow" href="https://www.instagram.com/dangquang_official/"  target="_blank"><i class="fab fa-instagram"></i></a></li>
-               <li><a rel="nofollow" href="https://www.youtube.com/dangquangtv"  target="_blank"><i class="fab fa-youtube"></i></a></li>
+               <li><a rel="nofollow" href="javascript:;"   target="_blank"><i class="fa fa-facebook-f"></i></a></li>
+               <li><a rel="nofollow" href="javascript:;"  target="_blank"><i class="fa fa-instagram"></i></a></li>
+               <li><a rel="nofollow" href="javascript:;"  target="_blank"><i class="fa fa-youtube"></i></a></li>
             </ul>
          </div>
       </div>

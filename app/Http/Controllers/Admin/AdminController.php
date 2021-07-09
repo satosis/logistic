@@ -5,15 +5,16 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Admin; 
+use App\Models\User; 
 use App\HelpersClass\Date; 
 use App\Models\Transaction;
 class AdminController extends Controller
 {
     public function index(){
-      $totalTransaction =\DB::table('transactions')->select('id')->count();
-      $totalUser =\DB::table('users')->select('id')->count();
-      $totalRating =\DB::table('ratings')->select('id')->count();
-      $hotProduct =\DB::table('product')->orderByDesc('pro_pay')->limit(5)->get();
+      $totalTransaction = \DB::table('transactions')->select('id')->count();
+      $totalUser        = User::select('id')->count();
+      $totalRating      = \DB::table('ratings')->select('id')->count();
+      $hotProduct       = \DB::table('product')->orderByDesc('pro_pay')->limit(5)->get();
       //thống kê trạng thái đơn hàng
       $transactionDefault =\DB::table('transactions')->where('tst_status',1)->select('id')->count();
       $transactionProcess =\DB::table('transactions')->where('tst_status',2)->select('id')->count();

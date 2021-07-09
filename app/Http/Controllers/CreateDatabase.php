@@ -10,7 +10,7 @@ class CreateDatabase extends Controller
 {
     public function index(){
         $password=Hash::make(123456789);
-        //admin 
+        //admin  
         DB::statement("INSERT INTO admins (id, name, email, password, created_at, updated_at) VALUES
         (1, 'Nguyễn Thị Phượng', 'admin@gmail.com', '".$password."' , '2020-08-05 06:42:53',  '2020-08-05 06:42:53'),
         (2, 'Quỳnh Nhi', 'quynhnhi@gmail.com', '".$password."',  '2020-08-05 06:42:53',  '2020-08-05 06:42:53');

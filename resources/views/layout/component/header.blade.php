@@ -8,7 +8,6 @@
     <link href="{{ asset('view/css/display.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('view/css/chat.css') }}" rel="stylesheet" />
     <link href="{{ asset('view/css/animate.min.css') }}" rel="stylesheet" />
-    <link href="{{ asset('view/css/font/font.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('view/js/owl.carousel.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('view/js/Lightbox/lightbox.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('view/js/slick/slick.css') }}" rel="stylesheet" />
@@ -36,43 +35,49 @@
         </script>
     @endif
     <script>
-        $(window).bind("load", function() {
-            jQuery("#status").fadeOut();
-            jQuery("#loader").fadeOut();
-        });
+         $(function(){
+            $(".js-login").on('click',function(event){
+                event.preventDefault();
+                toastr.warning('Bạn cần đăng nhập');
+            })
+            $(window).bind("load", function() {
+                jQuery("#status").fadeOut();
+                jQuery("#loader").fadeOut();
+            });
+         })
     </script>
 </head>
 <style>
 .d-none{
     display: none;
 }
-  #status {
-        width: 200px;
-        height: 200px;
-        position: fixed;
-        left: 50%;
-        top: 50%;
-        background-image: url("{{ asset('view/img/loader.gif') }}");
-        background-repeat: no-repeat;
-        background-position: center;
-        margin: -100px 0 0 -100px;
-        z-index: 100001
-    }
-    *{
-        outline:none;
-        font-family: Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji' !important;
-    }
-    #loader {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        width: 100%;
-        height: 100%;
-        background-color: #FFF;
-        z-index: 100000
-    }
-        </style>
+#status {
+    width: 200px;
+    height: 200px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    background-image: url("{{ asset('view/img/loader.gif') }}");
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: -100px 0 0 -100px;
+    z-index: 100001
+}
+*{
+    outline:none;
+    font-family: Roboto
+}
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #FFF;
+    z-index: 100000
+}
+</style>
  
 <body>
 <!-- Messenger Chat plugin Code -->
@@ -210,14 +215,13 @@
                 </span>
             </a>
             <a href="{{ route('get.shopping.index')}}" class="btnCart">
-    <i class="fas fa-shopping-cart"></i>
-    <span class="number">{{ get_data_user('web','id') ? \Cart::count() : '0'}}</span>
+    <i class="fa fa-shopping-cart"></i>
+    <span class="number">{{  \Cart::count() }}</span>
 </a>
             
         </div>
     </div>
 </div>
-<script src="https://use.fontawesome.com/452826394c.js"></script>
 <!-- Load Facebook SDK for JavaScript -->
 <div id="fb-root"></div>
       <script>

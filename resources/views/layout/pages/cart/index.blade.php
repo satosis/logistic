@@ -139,6 +139,7 @@
                            <p class="label">Nội dung</p>
                            <textarea  name="tst_note" cols="" rows="2">Không có</textarea>
                         </div>
+                        
                          <input type="hidden" name="amount" value="{{$total}}">
                                            						               
                         <div class="totalPrice">Thanh toán: <span style="font-size: 30px;color: red;margin-left: 30px;">{{ number_price($total,0)  }}</span> VNĐ ({{number_format($total/23000,2,',','.')}} USD)</div>
@@ -154,6 +155,11 @@
                               <p class="ttu fHelveticaNeueB fs15">Thanh toán online</p>
                               <p>(PAYPAL)</p>
                            </button>
+
+                           <button class="tac" type="submit" value="3" name="submit">
+                              <p class="ttu fHelveticaNeueB fs15">Thanh toán online</p>
+                              <p>(STRIPE)</p>
+                           </button>
                          </form>  
                         </div>
                   </div>
@@ -164,6 +170,7 @@
    </div>
 </div>
 @include('layout.component.footer')
+<script src="https://js.stripe.com/v3/"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
    $(function(){   

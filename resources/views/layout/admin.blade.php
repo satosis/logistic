@@ -328,7 +328,7 @@
          
         <li class="">
           <a href="{{ route('admin.transaction.index') }}">
-            <i class="fa fa-money"></i> <span>Giao dịch</span>
+            <i class="fa fa-money"></i> <span>Đơn hàng</span>
           </a>
           
         </li>

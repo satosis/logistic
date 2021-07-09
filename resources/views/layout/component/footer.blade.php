@@ -58,10 +58,10 @@
 
                 <div class="dangky">
                     <a rel="nofollow" href="http://online.gov.vn/Home/WebDetails/2912" title="BTC" target="_blank">
-                        <img data-src="https://www.dangquangwatch.vn/view/css/icon/bct2.png" alt="BCT" class="lazy" src="/view/lazy.jpg"/>
+                        <img src="https://www.dangquangwatch.vn/view/css/icon/bct2.png" alt="BCT" />
                     </a>
                     <a rel="nofollow" href="http://online.gov.vn/Home/WebDetails/2912" title="BTC" target="_blank">
-                        <img data-src="https://www.dangquangwatch.vn/view/css/icon/bct.png" alt="BCT" class="lazy" src="/view/lazy.jpg"/>
+                        <img src="https://www.dangquangwatch.vn/view/css/icon/bct.png" alt="BCT" class="lazy"/>
                     </a>
                 </div>
             </div>
@@ -82,12 +82,12 @@
         <ul class="right">
             <li>
                 <a href="https://daugia.tv" title="Dau gia">
-                    <img data-src="/view/img/LogoDauGia1.png" alt="Dau gia" class="lazy" src="/view/lazy.jpg"/>
+                    <img src="/view/img/LogoDauGia1.png" alt="Dau gia" class="lazy"/>
                 </a>
             </li>
             <li>
                 <a href="https://www.kinhmatdangquang.vn" title="Kinh mat">
-                    <img data-src="/view/img/LogoKinhMat1.png" alt="KInh mat" class="lazy" src="/view/lazy.jpg"/>
+                    <img src="/view/img/LogoKinhMat1.png" alt="KInh mat" class="lazy"/>
                 </a>
             </li>
         </ul>
@@ -107,6 +107,7 @@
 </div>
 
 <div id="overlay"></div>
+<script src="https://use.fontawesome.com/452826394c.js"></script>
     <script src="{{ asset('view/lazyload.min.js') }}"></script>
     <script src="{{ asset('view/js/owl.carousel.min.js') }}"></script>
     <script src="{{ asset('view/js/Lightbox/lightbox.min.js') }}"></script>

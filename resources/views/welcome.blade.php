@@ -624,9 +624,9 @@
             <div class="social">
                 <p class="fs17 ttu mb10">Kết nối mạng xã hội</p>
                 <ul>
-                    <li><a rel="nofollow" href="https://www.facebook.com/donghodangquang" title="facebook" target="_blank"><i class="fab fa-facebook"></i></a></li>
-                    <li><a rel="nofollow" href="https://www.instagram.com/dangquang_official/" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                    <li><a rel="nofollow" href="https://www.youtube.com/dangquangtv" title="youtube" target="_blank"><i class="fab fa-youtube"></i></a></li>                   
+                    <li><a rel="nofollow" href="javascript:;" title="facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                    <li><a rel="nofollow" href="javascript:;" title="Instagram" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                    <li><a rel="nofollow" href="javascript:;" title="youtube" target="_blank"><i class="fa fa-youtube"></i></a></li>                   
                 </ul>
             </div>
         </div>

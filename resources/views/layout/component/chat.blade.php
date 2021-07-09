@@ -26,7 +26,6 @@
     </div>
 </div>
 <script>
-    var socket = io('http://localhost:6000/');
     $(function(){
         $("#chat").on('keyup',function(){
             var chat = $(this).val();

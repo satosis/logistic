@@ -14,7 +14,7 @@
                 <div style="border-bottom: 1px solid #dedede;padding-bottom: 10px;padding-top: 10px;">
                     <div class="" style="width: 15%;float: left;">
                         <a href="">
-                            <img style="max-width: 100%;width: 80px;height: 100px" src="http://localhost:8000/{{ pare_url_file($item->options->image) }}">
+                            <img style="max-width: 100%;width: 80px;height: 100px" src="https://watchex.herokuapp.com/{{ pare_url_file($item->options->image) }}">
                         </a>
                     </div>
                     <div style="width: 80%;float: right;">
