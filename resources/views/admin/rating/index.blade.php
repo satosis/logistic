@@ -20,7 +20,7 @@
       <thead> 
       <th>#</th>
         <th>Người đăng</th>
-        <th>Sản phẩm </th>
+        <th>Sản phẩm </th> 
         <th style="float:left">Đánh giá</th>
         <th>Nội dung</th>
         <th>Phản hồi lúc</th> 

@@ -22,7 +22,7 @@
         <div class="col-lg-3 col-xs-6">
           <!-- small box -->
           <div class="small-box bg-aqua">
-            <div class="inner">
+            <div class="inner"> 
               <h3>{{ $totalTransaction}}</h3>
 
               <p>Orders</p>

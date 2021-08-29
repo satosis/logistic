@@ -72,7 +72,8 @@
       </span></td> 
       <td>{{ $list->created_at}}</td>
       <td> 
-      <a data-id="{{ $list->id }}" href="{{ route('ajax.admin.transaction.detail',$list->id)}}" id="transaction" class="label label-primary js-preview-transaction"><i class="fa fa-eye"></i> View</a>
+      <a data-id="{{ $list->id }}" href="{{ route('ajax.admin.transaction.detail',$list->id)}}" id="transaction" class="label label-primary 
+      "><i class="fa fa-eye"></i> View</a>
 
       <div class="btn-group">
          <button class="btn btn-success btn-xs">Action</button>

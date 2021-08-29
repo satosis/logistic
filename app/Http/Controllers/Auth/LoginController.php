@@ -42,11 +42,11 @@ class LoginController extends Controller
         // $this->middleware('guest')->except('logout');
     }
     public function getFormLogin(){
-        $login = User::all();
-        $category=Category::all();
+        $login      = User::all();
+        $category   = Category::all();
         $viewData=[
-            'login' =>$login,
-            'category' =>$category,
+            'login'     => $login,
+            'category'  => $category,
         ];
         return view('auth.login',$viewData);
     }
@@ -55,8 +55,8 @@ class LoginController extends Controller
         $credentials = $request->only("email","password");
         if(Auth::attempt($credentials)){
             \Session::flash('toastr',[
-                'type' =>'success',
-                'message' =>'Chào mừng bạn đã quay trở lại'
+                'type'      => 'success',
+                'message'   => 'Chào mừng bạn đã quay trở lại'
             ]);
             return redirect()->intended('/');
         }
@@ -71,8 +71,8 @@ class LoginController extends Controller
     public function redirectToProvider()
     {
         \Session::flash('toastr',[
-            'type' =>'success',
-            'message' =>'Chào mừng bạn đã quay trở lại'
+            'type'      => 'success',
+            'message'   => 'Chào mừng bạn đã quay trở lại'
         ]);
         return Socialite::driver('google')->redirect();
     }
