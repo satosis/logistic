@@ -233,7 +233,6 @@ class ShoppingCartController extends Controller
 
     public function getPaymentStatus()
     {
-        
         $request=request();//try get from method
 
         /** Get the payment ID before session clear **/

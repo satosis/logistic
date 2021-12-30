@@ -7,6 +7,5 @@ use Illuminate\Support\Facades\Route;
             Route::get('delete/{id}','ShoppingCartController@delete')->name('get.shopping.delete');
             Route::get('update/{id}','ShoppingCartController@update')->name('ajax_get.shopping.update');
             Route::post('pay','ShoppingCartController@postPay')->name('post.shopping.pay');
-            Route::get('/status', 'ShoppingCartController@getPaymentStatus')->name('status');
-    });
+        });
 });

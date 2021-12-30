@@ -8,6 +8,8 @@ Route::post('send-message','RedisController@postSendMessage');
 
 Route::get('/data', 'CreateDatabase@index');
 Route::post('/message/send', ['uses' => 'FrontController@addFeedback', 'as' => 'front.fb']);
+Route::get('/status', 'Frontend\ShoppingCartController@getPaymentStatus')->name('status');
+
 Route::group(['namespace'=>'Auth','prefix'=>'account'],function(){
     Route::get('register','RegisterController@getFormRegister')->name('get.register');
     Route::post('register','RegisterController@postRegister');

@@ -18,6 +18,7 @@
         "maatwebsite/excel": "^3.1",
         "paypal/rest-api-sdk-php": "^1.14",
         "stripe/stripe-php": "^7.85",
+        "tymon/jwt-auth": "dev-develop",
         "unisharp/laravel-filemanager": "^2.2"
     },
     "require-dev": {

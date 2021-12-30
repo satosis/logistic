@@ -179,6 +179,7 @@ return [
         Maatwebsite\Excel\ExcelServiceProvider::class,
         UniSharp\LaravelFilemanager\LaravelFilemanagerServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
+        Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
     ],
 
     /*
@@ -233,9 +234,10 @@ return [
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
         'Agent' => Jenssegers\Agent\Facades\Agent::class,
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
-         'Image' => Intervention\Image\Facades\Image::class,
-         
-    'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+        'Image' => Intervention\Image\Facades\Image::class,
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+        'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
+        'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
     ],
 
 ];

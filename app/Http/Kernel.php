@@ -21,6 +21,7 @@ class Kernel extends HttpKernel
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
+        
     ];
 
     /**
@@ -66,6 +67,7 @@ class Kernel extends HttpKernel
         // khai báo middleware custom
         'check_admin_login' => \App\Http\Middleware\CheckAdminLogin::class,
         'check_user_login' => \App\Http\Middleware\CheckUserLogin::class,
+        'auth.jwt' => \Tymon\JWTAuth\Http\Middleware\Authenticate::class, // JWT middleware
     ];
 }
     
