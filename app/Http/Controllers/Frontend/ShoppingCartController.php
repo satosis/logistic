@@ -110,12 +110,15 @@ class ShoppingCartController extends Controller
         //Thanh toán khi nhận hàng
         if($request->submit == 1){
             $data['tst_total_money'] = $request->amount;
+            $this->storeTransaction($data);
         } 
         
         //Thanh toán bằng paypal
         if($request->submit == 2){
             $data['tst_type'] = 2;
             $data['tst_total_money'] = $request->amount/23000;
+            $this->storeTransaction($data);
+
             $payer = new Payer();
             $payer->setPaymentMethod('paypal');
      
@@ -200,7 +203,6 @@ class ShoppingCartController extends Controller
     
         }
 
-            $this->storeTransaction($data);
             return redirect()->intended('/');
     }
     public function storeTransaction($data){
@@ -261,7 +263,7 @@ class ShoppingCartController extends Controller
                 'message'   =>'Thanh toán thành công'
             ]);
             //add update record for cart
-            return Redirect::to('products');  //back to product page
+            return Redirect::to('get.home');  //back to product page
 
         }
 
