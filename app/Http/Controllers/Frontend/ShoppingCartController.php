@@ -116,7 +116,7 @@ class ShoppingCartController extends Controller
         //Thanh toán bằng paypal
         if($request->submit == 2){
             $data['tst_type'] = 2;
-            $data['tst_total_money'] = $request->amount/23000;
+            $data['tst_total_money'] = $request->amount;
             $this->storeTransaction($data);
 
             $payer = new Payer();
@@ -263,7 +263,7 @@ class ShoppingCartController extends Controller
                 'message'   =>'Thanh toán thành công'
             ]);
             //add update record for cart
-            return Redirect::to('get.home');  //back to product page
+            return Redirect::to('/');  //back to product page
 
         }
 
