@@ -27,7 +27,7 @@ class AdminController extends Controller
         ['Đã hủy',$transactionCanCel,false]
         ];
       
-      $listDay =Date::getListDay(); 
+      $listDay =Date::getListDayAndMonth(); 
         //doanh thu theo tháng đã xử lý
         $revenueTransactionMonthDefault = Transaction::where('tst_status',3)
         ->whereMonth('created_at',date('m'))
