@@ -116,7 +116,7 @@ class ShoppingCartController extends Controller
         //Thanh toán bằng paypal
         if($request->submit == 2){
             $data['tst_type'] = 2;
-            $data['tst_total_money'] = $request->amount;
+            $data['tst_total_money'] = $request->amount/23000;
             $this->storeTransaction($data);
 
             $payer = new Payer();
