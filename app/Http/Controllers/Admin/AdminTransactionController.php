@@ -11,7 +11,7 @@ use App\Exports\TransactionExport;
 class AdminTransactionController extends Controller
 {
     public function index(Request $request){
-        $transactions = Transaction::where('id','>',1);
+        $transactions = Transaction::orderBy('created_at','desc');
         if($request->id) $transactions->where('id',$request->id);
         if($email =$request->email){
             $transactions->where('tst_email','like','%'.$email.'%');
@@ -41,7 +41,6 @@ class AdminTransactionController extends Controller
     public function getTransactionDetail(Request $request ,$id){
         if($request->ajax()){
             $order =Order::with('product:id,pro_name,pro_slug,pro_avatar')->where('od_transaction_id',$id)->get();
-
             $html =view("component.transaction",compact('order'))->render();
         return response([
             'html' =>$html

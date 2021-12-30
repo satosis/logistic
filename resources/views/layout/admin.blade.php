@@ -645,7 +645,7 @@ CKEDITOR.replace( 'content', {
   $('.js-preview-transaction').click(function(event){
     event.preventDefault();
     let $this =$(this);
-    let URL =$this.attr('href');
+    let URL =$this.attr('data-href');
     let ID=$this.attr('data-id');
     $("#idTransaction").html("#"+ID);
     $.ajax({

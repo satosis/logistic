@@ -156,7 +156,7 @@ class ShoppingCartController extends Controller
                 if (\Config::get('app.debug')) {
                     \Session::flash('toastr',[
                         'type'      =>'error',
-                        'message'   =>'Quá thời gian kết lối'
+                        'message'   =>'Quá thời gian kết nối'
                     ]);
                     return redirect()->back();
     
@@ -258,8 +258,6 @@ class ShoppingCartController extends Controller
 
             Session::put('success', 'Thanh toán thành công');
             //add update record for cart
-            $email='yangcheebeng@hotmail.com';
-	        Notification::route('mail', $email)->notify(new \App\Notifications\orderPaid($email));
             return Redirect::to('products');  //back to product page
 
         }

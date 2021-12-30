@@ -43,7 +43,7 @@
     </thead>
     @foreach($transaction as $key =>$list)
     <tbody>
-      <td>{{ $list->id}}</td>
+      <td>{{ ++$key }}</td>
       <td>
         <ul>
         <li>Tên :{{ $list->tst_name}}</li>
@@ -63,7 +63,7 @@
       <td>@if($list->tst_type ==1 )
         Trực tiếp
         @elseif($list->tst_type ==2 )
-        Paypals 
+        Paypal
         @endif
       </td>
       <td>
@@ -72,7 +72,7 @@
       </span></td> 
       <td>{{ $list->created_at}}</td>
       <td> 
-      <a data-id="{{ $list->id }}" href="{{ route('ajax.admin.transaction.detail',$list->id)}}" id="transaction" class="label label-primary 
+      <a data-id="{{ $list->id }}" href="javascript:;" data-href="{{ route('ajax.admin.transaction.detail',$list->id)}}" class="label label-primary js-preview-transaction
       "><i class="fa fa-eye"></i> View</a>
 
       <div class="btn-group">
