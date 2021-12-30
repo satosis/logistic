@@ -256,7 +256,10 @@ class ShoppingCartController extends Controller
 
         if ($result->getState() == 'approved') {
 
-            Session::put('success', 'Thanh toán thành công');
+            \Session::flash('toastr',[
+                'type'      =>'success',
+                'message'   =>'Thanh toán thành công'
+            ]);
             //add update record for cart
             return Redirect::to('products');  //back to product page
 
