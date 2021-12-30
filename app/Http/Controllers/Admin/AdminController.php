@@ -21,13 +21,13 @@ class AdminController extends Controller
       $transactionSuccess =\DB::table('transactions')->where('tst_status',3)->select('id')->count();
       $transactionCanCel =\DB::table('transactions')->where('tst_status',-1)->select('id')->count();
       $statusTransaction =[
-        ['Đã thanh toán',$transactionSuccess,false],
+        ['Đã thanh toán',$transactionSuccess,false], 
         ['Đang chờ thanh toán',$transactionProcess,false], 
         ['Đang vận chuyển',$transactionDefault,false],
         ['Đã hủy',$transactionCanCel,false]
         ];
       
-      $listDay =Date::getListDayAndMonth(); 
+      $listDay =Date::getListDay(); 
         //doanh thu theo tháng đã xử lý
         $revenueTransactionMonthDefault = Transaction::where('tst_status',3)
         ->whereMonth('created_at',date('m'))
