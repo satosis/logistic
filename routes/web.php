@@ -35,7 +35,6 @@ Route::group(['namespace'=>'Frontend'], function () {
     Route::get('bai-viet/{slug}','ArticleDetailController@index')->name('get.blog.detail');
     //giỏ hàng
     //https://github.com/bumbummen99/LaravelShoppingcart
-    Route::get('don-hang','ShoppingCartController@index')->name('get.shopping.index')->middleware('auth');
    
    
 });  

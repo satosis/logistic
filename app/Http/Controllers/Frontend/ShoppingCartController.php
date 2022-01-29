@@ -33,17 +33,22 @@ use Redirect;
 use Session;
 use URL;
 use Notification;
+use Stripe\Stripe;
 class ShoppingCartController extends Controller
 {
     private $_api_context;
     public function __construct()
     { 
+        //paypal
         $paypal_conf = \Config::get('paypal');
         $this->_api_context = new ApiContext(new OAuthTokenCredential(
             $paypal_conf['client_id'],
             $paypal_conf['secret'])
         );
         $this->_api_context->setConfig($paypal_conf['settings']);
+
+        //stripe
+        Stripe::setApiKey(env('STRIPE_SECRET_KEY'));
     }  
     public function index(){
         $category =Category::all();
@@ -80,6 +85,7 @@ class ShoppingCartController extends Controller
         Cart::remove($rowId);
         return redirect()->back();
     }
+    //update cart
     public function update(Request $request ,$id){
         if($request->ajax()){
             $qty =$request->qty ?? 1;
@@ -205,6 +211,7 @@ class ShoppingCartController extends Controller
 
             return redirect()->intended('/');
     }
+    //store transaction to database
     public function storeTransaction($data){
         $transactionId =Trans::insertGetId($data);
         if($transactionId){
@@ -233,6 +240,7 @@ class ShoppingCartController extends Controller
         return 1;
     } 
 
+    //check status payment of paypal
     public function getPaymentStatus()
     {
         $request=request();//try get from method
