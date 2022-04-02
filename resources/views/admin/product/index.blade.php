@@ -50,7 +50,7 @@
       @endif
       </td>
       <td>
-      @if($list->pro_active == 1)
+      @if($list->pro_active == 0)
       <a href="{{route('admin.product.active',$list->id) }}" class="btn btn-success">Hide</a>
       @else
       <a href="{{route('admin.product.active',$list->id) }}" class="btn btn-primary">Show</a>

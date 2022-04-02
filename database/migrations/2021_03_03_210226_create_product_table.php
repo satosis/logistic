@@ -26,13 +26,13 @@ class CreateProductTable extends Migration
             $table->integer('pro_favourite')->default(0);
             $table->integer('pro_hot')->default(0);
             $table->integer('pro_active')->default(0);
-            $table->integer('pro_admin_id')->default(1);
+            $table->integer('pro_admin_id')->default(0);
             $table->integer('pro_pay')->default(0);
             $table->text('pro_description')->nullable();
             $table->text('pro_content')->nullable();
             $table->integer('pro_review_total')->default(0);
             $table->string('keywordseo')->nullable();
-            $table->integer('pro_review_star')->default(0);
+            $table->integer('pro_review_star')->default(5);
             $table->string('_wysihtml5_mode')->nullable();
             $table->timestamps();
         });

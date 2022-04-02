@@ -93,7 +93,7 @@ class RegisterController extends Controller
         if($id){
             \Session::flash('toastr',[
                 'type'      =>'success',
-                'message'   =>'Chào mừng bạn đến với đăng quang watch '
+                'message'   =>'Chào mừng bạn đến với shop chúng tôi'
             ]); 
             
            Mail::to($request->email)->send(new RegisterSuccess($request->name));

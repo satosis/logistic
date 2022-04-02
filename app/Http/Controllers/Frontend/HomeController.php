@@ -15,68 +15,58 @@ class HomeController extends Controller
         $category    =Category::all();
         $product     =Product::all();
         // chọn sản phẩm sắp xếp theo id ( sản phẩm mới)
-        $productsAccessoriess =Product::where( 'pro_active',0)
+        $productsAccessoriess =Product::where( 'pro_active',1)
         ->where('pro_category','>',20) 
         ->orderBydesc('pro_pay')
         ->limit(10)
-        ->select('id','pro_name','pro_slug','pro_sale','pro_amount','pro_avatar','pro_price')
         ->get();
          // chọn sản phẩm sắp xếp theo hot (sản phẩm hot)
-         $productsGlass=Product::where( 'pro_active',0)
+         $productsGlass=Product::where( 'pro_active',1)
             ->where('pro_category','>',10) 
             ->where('pro_category','<',21) 
             ->orderBydesc('pro_pay')
             ->limit(10)
-            ->select('id','pro_name','pro_slug','pro_sale','pro_amount','pro_avatar','pro_price')
             ->get();
         // chọn sản phẩm sắp xếp theo hot (sản phẩm hot)
-        $productsWatch =Product::where( 'pro_active',0)
+        $productsWatch =Product::where( 'pro_active',1)
             ->where('pro_category','<',11) 
             ->orderBydesc('pro_pay')
             ->limit(10)
-            ->select('id','pro_name','pro_slug','pro_sale','pro_amount','pro_avatar','pro_price')
             ->get();
-        $listProduct1 =Product::where( 'pro_active',0)
+        $listProduct1 =Product::where( 'pro_active',1)
         ->where('pro_category',1) 
         ->orderBydesc('pro_pay')
         ->limit(10)
-        ->select('id','pro_name','pro_slug','pro_sale','pro_amount','pro_avatar','pro_price')
         ->get();
-        $listProduct2 =Product::where( 'pro_active',0)
+        $listProduct2 =Product::where( 'pro_active',1)
         ->where('pro_category',2) 
         ->orderBydesc('pro_pay')
         ->limit(10)
-        ->select('id','pro_name','pro_slug','pro_sale','pro_amount','pro_avatar','pro_price')
         ->get();
-        $listProduct3 =Product::where( 'pro_active',0)
+        $listProduct3 =Product::where( 'pro_active',1)
         ->where('pro_category',3) 
         ->orderBydesc('pro_pay')
         ->limit(10)
-        ->select('id','pro_name','pro_slug','pro_sale','pro_amount','pro_avatar','pro_price')
         ->get();
-        $listProduct4 =Product::where( 'pro_active',0)
+        $listProduct4 =Product::where( 'pro_active',1)
         ->where('pro_category',4) 
         ->orderBydesc('pro_pay')
         ->limit(10)
-        ->select('id','pro_name','pro_slug','pro_sale','pro_amount','pro_avatar','pro_price')
         ->get();
-        $listProduct5 =Product::where( 'pro_active',0)
+        $listProduct5 =Product::where( 'pro_active',1)
         ->where('pro_category',5) 
         ->orderBydesc('pro_pay')
         ->limit(10)
-        ->select('id','pro_name','pro_slug','pro_sale','pro_amount','pro_avatar','pro_price')
         ->get();
-        $listProduct6 =Product::where( 'pro_active',0)
+        $listProduct6 =Product::where( 'pro_active',1)
         ->where('pro_category',6) 
         ->orderBydesc('pro_pay')
         ->limit(10)
-        ->select('id','pro_name','pro_slug','pro_sale','pro_amount','pro_avatar','pro_price')
         ->get();
-        $listProduct7 =Product::where( 'pro_active',0)
+        $listProduct7 =Product::where( 'pro_active',1)
         ->where('pro_category',7) 
         ->orderBydesc('pro_pay')
         ->limit(10)
-        ->select('id','pro_name','pro_slug','pro_sale','pro_amount','pro_avatar','pro_price')
         ->get();
         $viewData=[
             'category'            =>$category,

@@ -98,7 +98,7 @@ class ProductDetailController extends Controller
     private function getProductsSuggest($categoriID)
 	{
 		$products = Product::where([
-				'pro_active'      => 0,
+				'pro_active'      => 1,
 				'pro_category'    => $categoriID
 			])
             ->orderByDesc('id')

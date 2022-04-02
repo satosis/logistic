@@ -9,8 +9,6 @@ use App\Models\Product;
 class CategoryDetailController extends Controller
 {
     public function getCategoryDetail(Request $request,$slug){
-       
-        
         $category =Category::all();
         $arraySlug =explode('-',$slug);
         $id =array_pop($arraySlug);
@@ -18,8 +16,8 @@ class CategoryDetailController extends Controller
         if($id){ 
             $cate =Category::with('product')->findOrFail($id);
             $products =Product::where([
-                'pro_category' =>$id,
-                'pro_active'   =>0
+                'pro_category' => $id,
+                'pro_active'   => 1
             ]);
             if($request->price) {
                 $price = $request->price;
@@ -48,7 +46,6 @@ class CategoryDetailController extends Controller
             }
             $products=$products->orderByDesc('pro_pay')
             ->select('id','pro_name','pro_slug','pro_avatar','pro_price','pro_amount')
-            
             ->paginate(15)
             ;
             

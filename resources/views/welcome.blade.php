@@ -88,10 +88,10 @@
                     </div>
                     <div class="btnXemthem dn">
                         <a href="javascript://" title="xem them" class="xemthem" rel="nofollow">
-                            <span>Xem thêm <i class="fas fa-chevron-down"></i></span>
+                            <span>Xem thêm <i class="fa fa-chevron-down"></i></span>
                         </a>
                         <a href="/kinh-mat-thoi-trang.html" title="Kính mắt" class="thugon"> 
-                            <span>Xem tất cả <i class="fas fa-angle-right"></i></span>
+                            <span>Xem tất cả <i class="fa fa-angle-right"></i></span>
                         </a>
                     </div> 
                 </div>
@@ -201,10 +201,10 @@
                     </div>
                     <div class="btnXemthem dn">
                         <a href="javascript://" title="" class="xemthem" rel="nofollow">
-                            <span>Xem thêm <i class="fas fa-chevron-down"></i></span>
+                            <span>Xem thêm <i class="fa fa-chevron-down"></i></span>
                         </a>
                         <a href="/phu-kien-dong-ho.html" title="Phu kien dong ho" class="thugon"> 
-                            <span>Xem tất cả <i class="fas fa-angle-right"></i></span>
+                            <span>Xem tất cả <i class="fa fa-angle-right"></i></span>
                         </a>
                     </div> 
                 </div>
@@ -268,139 +268,8 @@
             </a>
         </div>
     </div>
-</div> <div class="product product2">
-    <div class="wrp">
-        <div class="left">
-            <a href="/flash-sale.html" title="Khuyến mại" class="titleCate">Flash Sale</a>
-            <div class="contCate">
-                Những mẫu đồng hồ đang hot năm 2020 với giá tốt. Chương trình diễn ra hàng ngày với các sản phẩm khác nhau. Nhanh tay sở hữu ngay!!!
-            </div>
-        </div>
-        <div class="right">
-            <div class="group slide2">
-                                <div class="item">
-                    <div class="wImage"> 
-                        <a href="https://www.dangquangwatch.vn/sp/14475/dong-ho-jacques-lemans-jl-lp-133h.html" title="" class="image cover">
-                            <img data-src="https://www.dangquangwatch.vn//upload/product_hot/1284420307_dong-ho-nu-nhap-khau60.jpg" alt="Dong ho Sale" class="lazy" src="/view/lazy.jpg"/>
-                        </a>
-                                          
-                        <span class="bot"> Giảm 30%</span>
-                                            </div>
-                    <div class="info">
-                        <p>34mm | 10ATM</p>                        <a href="https://www.dangquangwatch.vn/sp/14475/dong-ho-jacques-lemans-jl-lp-133h.html" title="ĐỒNG HỒ JACQUES LEMANS JL-LP-133H" class="name">
-                            ĐỒNG HỒ JACQUES LEMANS JL-LP-133H - Nữ                        </a>
-                        <div class="price">
-                                                        <p class="new">6.069.000đ</p>
-                            <p class="old">8.670.000đ</p>
-                                                    </div>
-                                                <div class="count">
-                            <div class="bg" style="width: 14%"></div>
-                            <span class="text">Còn lại 58</span>
-                        </div>
-                                            </div>
-                </div>
-                                <div class="item">
-                    <div class="wImage"> 
-                        <a href="/sp/13177/dong-ho-jacques-lemans-jl-1-18421d.html" title="" class="image cover">
-                            <img data-src="https://www.dangquangwatch.vn//upload/product_hot/1209701672_JL-1-1842.1D.jpg" alt="Dong ho Sale" class="lazy" src="/view/lazy.jpg"/>
-                        </a>
-                                          
-                        <span class="bot"> Giảm 30%</span>
-                                            </div>
-                    <div class="info">
-                        <p>32mm | 5ATM </p>                        <a href="/sp/13177/dong-ho-jacques-lemans-jl-1-18421d.html" title="Đồng hồ Jacques Lemans JL-1-1842.1D" class="name">
-                            Đồng hồ Jacques Lemans JL-1-1842.1D - Nữ                        </a>
-                        <div class="price">
-                                                        <p class="new">3.633.000đ</p>
-                            <p class="old">5.190.000đ</p>
-                                                    </div>
-                                            </div>
-                </div>
-                                <div class="item">
-                    <div class="wImage"> 
-                        <a href="/sp/14652/dong-ho-jacques-lemans-jl-1-1997f.html" title="" class="image cover">
-                            <img data-src="https://www.dangquangwatch.vn//upload/product_hot/2136203173_JL-1-1997F.jpg" alt="Dong ho Sale" class="lazy" src="/view/lazy.jpg"/>
-                        </a>
-                                          
-                        <span class="bot"> Giảm 30%</span>
-                                            </div>
-                    <div class="info">
-                        <p>36mm | 5ATM</p>                        <a href="/sp/14652/dong-ho-jacques-lemans-jl-1-1997f.html" title="Đồng hồ Jacques Lemans JL-1-1997F" class="name">
-                            Đồng hồ Jacques Lemans JL-1-1997F - Nam, Nữ                        </a>
-                        <div class="price">
-                                                        <p class="new">1.806.000đ</p>
-                            <p class="old">2.580.000đ</p>
-                                                    </div>
-                                            </div>
-                </div>
-                                <div class="item">
-                    <div class="wImage"> 
-                        <a href="https://www.dangquangwatch.vn/sp/13334/dong-ho-aries-gold-ag-u7010-z-bk.html" title="" class="image cover">
-                            <img data-src="https://www.dangquangwatch.vn//upload/product_hot/79836432_donghothongminh.jpg" alt="Dong ho Sale" class="lazy" src="/view/lazy.jpg"/>
-                        </a>
-                                          
-                        <span class="bot"> Giảm 30%</span>
-                                            </div>
-                    <div class="info">
-                        <p>17X43mm</p>                        <a href="https://www.dangquangwatch.vn/sp/13334/dong-ho-aries-gold-ag-u7010-z-bk.html" title="ĐỒNG HỒ ARIES GOLD AG-U7010 Z-BK" class="name">
-                            ĐỒNG HỒ ARIES GOLD AG-U7010 Z-BK - Nam                        </a>
-                        <div class="price">
-                                                        <p class="new">1.295.000đ</p>
-                            <p class="old">1.850.000đ</p>
-                                                    </div>
-                                                <div class="count">
-                            <div class="bg" style="width: 25%"></div>
-                            <span class="text">Còn lại 101</span>
-                        </div>
-                                            </div>
-                </div>
-                                <div class="item">
-                    <div class="wImage"> 
-                        <a href="/sp/14584/dong-ho-bruno-sohnle-bs-17-23189-292.html" title="" class="image cover">
-                            <img data-src="https://www.dangquangwatch.vn//upload/product_hot/847918990_BS-17-23189-292.jpg" alt="Dong ho Sale" class="lazy" src="/view/lazy.jpg"/>
-                        </a>
-                                          
-                        <span class="bot"> Giảm 30%</span>
-                                            </div>
-                    <div class="info">
-                        <p>33.5mm | 3ATM | Sapphire</p>                        <a href="/sp/14584/dong-ho-bruno-sohnle-bs-17-23189-292.html" title="ĐỒNG HỒ BRUNO SOHNLE BS-17-23189-292" class="name">
-                            ĐỒNG HỒ BRUNO SOHNLE BS-17-23189-292 - Nữ                        </a>
-                        <div class="price">
-                                                        <p class="new">9.191.000đ</p>
-                            <p class="old">13.130.000đ</p>
-                                                    </div>
-                                                <div class="count">
-                            <div class="bg" style="width: 12%"></div>
-                            <span class="text">Còn lại 49</span>
-                        </div>
-                                            </div>
-                </div>
-                                <div class="item">
-                    <div class="wImage"> 
-                        <a href="https://www.dangquangwatch.vn/sp/10860/dong-ho-diamond-d-dm5308b5rg.html" title="" class="image cover">
-                            <img data-src="https://www.dangquangwatch.vn//upload/product_hot/2110893292_dong-ho-nu-thoi-trang.jpg" alt="Dong ho Sale" class="lazy" src="/view/lazy.jpg"/>
-                        </a>
-                                          
-                        <span class="bot"> Giảm 30%</span>
-                                            </div>
-                    <div class="info">
-                        <p> 28mm | 3ATM | Sapphire</p>                        <a href="https://www.dangquangwatch.vn/sp/10860/dong-ho-diamond-d-dm5308b5rg.html" title="ĐỒNG HỒ DIAMOND D DM5308B5RG" class="name">
-                            ĐỒNG HỒ DIAMOND D DM5308B5RG - Nữ                        </a>
-                        <div class="price">
-                                                        <p class="new">3.500.000đ</p>
-                            <p class="old">5.000.000đ</p>
-                                                    </div>
-                                                <div class="count">
-                            <div class="bg" style="width: 4%"></div>
-                            <span class="text">Còn lại 19</span>
-                        </div>
-                                            </div>
-                </div>
-                               
-            </div>
-        </div>
-    </div>
-</div> <div class="product">
+</div> 
+ <div class="product">
     <div class="wrp">
         <h2 class="titleCate">
             <a href="/sp/dong-ho-philippe-auguste.html" title="Philippe August">
@@ -452,7 +321,7 @@
                     <span>Đồng hồ Thụy Sỹ</span>                    <span class="dn dbtablet-l"> </span>
                     <span>Epos Swiss</span>
                 </a>
-                <a href="/sp/dong-ho-epos-swiss.html" title="Epos Swiss" class="viewAll">Xem tất cả <i class="fas fa-chevron-right"></i></a>
+                <a href="/sp/dong-ho-epos-swiss.html" title="Epos Swiss" class="viewAll">Xem tất cả <i class="fa fa-chevron-right"></i></a>
             </h2>
         </div>
         <div class="group slide3">
@@ -514,7 +383,7 @@
                     <span>Đồng hồ Thụy Sỹ</span>                    <span class="dn dbtablet-l"> </span>
                     <span>Atlantic Swiss</span>
                 </a>
-                <a href="/sp/dong-ho-atlantic-swiss.html" title="Atlantic Swiss" class="viewAll">Xem tất cả <i class="fas fa-chevron-right"></i></a>
+                <a href="/sp/dong-ho-atlantic-swiss.html" title="Atlantic Swiss" class="viewAll">Xem tất cả <i class="fa fa-chevron-right"></i></a>
             </h3>
         </div>
         <div class="group slide3">
@@ -601,14 +470,14 @@
             <div class="item">
                 <p class="head">Hotline</p>
                 <a href="tel:18006005" title="Hotline" class="tel">
-                    <span class="icon"><i class="fas fa-phone"></i></span>
+                    <span class="icon"><i class="fa fa-phone"></i></span>
                     <span class="text">1800.6005</span>
                 </a>
             </div>
             <div class="item">
                 <p class="head">Gọi đặt hàng</p>
                 <a href="tel:0985681189" title="Hotline" class="tel">
-                    <span class="icon"><i class="fas fa-phone"></i></span>
+                    <span class="icon"><i class="fa fa-phone"></i></span>
                     <span class="text">098.568.1189</span>
                 </a>
             </div>

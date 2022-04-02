@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRatingsTable extends Migration
+class CreateRatingTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,8 +15,8 @@ class CreateRatingsTable extends Migration
     {
         Schema::create('ratings', function (Blueprint $table) {
             $table->id();
-            $table->integer('r_user_id')->default(0);
-            $table->integer('r_product_id')->default(0);
+            $table->foreignId('r_user_id')->constrained('users');
+            $table->foreignId('r_product_id')->constrained('product');
             $table->integer('r_number')->default(0);
             $table->integer('r_status')->default(0);
             $table->string('r_content')->nullable();

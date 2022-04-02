@@ -42,7 +42,7 @@ Route::post('ckeditor/image_upload', 'CKEditorController@upload')->name('upload'
 
 Route::post('api/Search.php','Api/ProductController@index')->name('get.search.index');
 Route::get('/auth/redirect/{provider}', 'SocialController@redirect');
-Route::get('/callback/{provider}', 'SocialController@callback');
+Route::get('/login/{provider}/callback', 'SocialController@callback');
 // Route::get('','HomeController@index')->name('get.home');
 include('route-admin.php'); 
 include('route-user.php');

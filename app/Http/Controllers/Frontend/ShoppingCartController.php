@@ -11,7 +11,7 @@ use App\Models\Transaction as Trans;
 use App\Models\Order; 
 use Carbon\Carbon;
 use Cart;
-
+use Auth;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\TransactionSuccess;
 
@@ -33,22 +33,17 @@ use Redirect;
 use Session;
 use URL;
 use Notification;
-use Stripe\Stripe;
 class ShoppingCartController extends Controller
 {
-    private $_api_context;
     public function __construct()
     { 
         //paypal
         $paypal_conf = \Config::get('paypal');
-        $this->_api_context = new ApiContext(new OAuthTokenCredential(
+        $this->apiContext = new ApiContext(new OAuthTokenCredential(
             $paypal_conf['client_id'],
             $paypal_conf['secret'])
         );
-        $this->_api_context->setConfig($paypal_conf['settings']);
-
-        //stripe
-        Stripe::setApiKey(env('STRIPE_SECRET_KEY'));
+        $this->apiContext->setConfig($paypal_conf['settings']);
     }  
     public function index(){
         $category =Category::all();
@@ -110,37 +105,33 @@ class ShoppingCartController extends Controller
         }
     }
     public function postPay(Request $request){ 
-        $data =$request->except('_token','amount','submit','product');   
-        $data['tst_user_id'] = \Auth::user()->id;
-        $data['created_at']=Carbon::now();
+        $data =$request->except('_token','submit');   
         //Thanh toán khi nhận hàng
         if($request->submit == 1){
-            $data['tst_total_money'] = $request->amount;
-            $this->storeTransaction($data);
+            $this->storeTransaction($data, 1, 1);
         } 
         
         //Thanh toán bằng paypal
         if($request->submit == 2){
             $data['tst_type'] = 2;
-            $data['tst_total_money'] = $request->amount/23000;
-            $this->storeTransaction($data);
-
             $payer = new Payer();
             $payer->setPaymentMethod('paypal');
-     
-
-            $item_1 = new Item(); 
-            $item_1->setName('Tổng tiền') /** item name **/
-                ->setCurrency('USD')
-                ->setQuantity(1)
-                ->setPrice($data['tst_total_money'] ); /** unit price **/
+            $shopping =Cart::content();
+            $listItem = [];
+            foreach($shopping as $key =>$list){
+                $item = new Item(); 
+                $item->setName($list->name) 
+                    ->setCurrency('USD')
+                    ->setQuantity(1)
+                    ->setPrice($list->price /23000 );
+                array_push($listItem, $item);
+            }
     
             $item_list = new ItemList();
-            $item_list->setItems(array($item_1));
-    
+            $item_list->setItems($listItem);
             $amount = new Amount();
             $amount->setCurrency('USD')
-                ->setTotal($data['tst_total_money'] );
+                ->setTotal( $request->amount/23000);
     
             $transaction = new Transaction();
             $transaction->setAmount($amount)
@@ -157,48 +148,37 @@ class ShoppingCartController extends Controller
                 ->setRedirectUrls($redirect_urls)
                 ->setTransactions(array($transaction));
             try {
-    
-                $payment->create($this->_api_context);
-    
+                $payment->create($this->apiContext);
+                $data['tst_code'] = $payment->id;
+                $this->storeTransaction($data, 4 ,2);
             } catch (\PayPal\Exception\PPConnectionException $ex) {
-    
                 if (\Config::get('app.debug')) {
                     \Session::flash('toastr',[
                         'type'      =>'error',
                         'message'   =>'Quá thời gian kết nối'
                     ]);
                     return redirect()->back();
-    
                 } else {
                     \Session::flash('toastr',[
                         'type'      =>'error',
                         'message'   =>'Đã xảy ra lỗi ,xin lỗi vì sự bất tiện này'
                     ]);
                     return redirect()->back();
-    
                 }
-    
             }
     
             foreach ($payment->getLinks() as $link) {
-    
                 if ($link->getRel() == 'approval_url') {
-    
                     $redirect_url = $link->getHref();
                     break;
-    
                 }
-    
             }
     
             /** add payment ID to session **/
             Session::put('paypal_payment_id', $payment->getId());
     
             if (isset($redirect_url)) {
-    
-                /** redirect to paypal **/
                 return Redirect::away($redirect_url);
-    
             }
     
             \Session::flash('toastr',[
@@ -206,24 +186,33 @@ class ShoppingCartController extends Controller
                 'message'   =>'Lỗi không xác định'
             ]);
             return redirect()->back();
-    
         }
-
-            return redirect()->intended('/');
+        return redirect()->intended('/');
     }
     //store transaction to database
-    public function storeTransaction($data){
-        $transactionId =Trans::insertGetId($data);
+    public function storeTransaction($data, $status, $type){
+        $transactionId =Trans::create([
+            'tst_user_id' => Auth::id(),
+            'tst_total_money' => $data['amount'],
+            'tst_name' => $data['tst_name'],
+            'tst_email' => $data['tst_email'],
+            'tst_phone' => $data['tst_phone'],
+            'tst_address' => $data['tst_address'],
+            'tst_note' => $data['tst_note'],
+            'tst_code' => $data['tst_code'] ?? '',
+            'tst_status' => $status,
+            'tst_type' => $type,
+        ]);
         if($transactionId){
             $shopping =Cart::content();
-        Mail::to($data['tst_email'])->send(new TransactionSuccess($shopping));
+        // Mail::to($data['tst_email'])->send(new TransactionSuccess($shopping));
             foreach($shopping as $key =>$item){
                 Order::insert([
-                    'od_transaction_id'=>$transactionId,
-                    'od_product_id'    =>$item->id, 
-                    'od_sale'          =>$item->options->sale,
-                    'od_qty'           =>$item->qty,
-                    'od_price'         =>$item->price
+                    'od_transaction_id' => $transactionId->id,
+                    'od_product_id'     => $item->id, 
+                    'od_sale'           => $item->options->sale,
+                    'od_qty'            => $item->qty,
+                    'od_price'          => $item->price
                 ]);
                 //Tăng số lượt mua của sản phẩm
                 \DB::table('product')
@@ -256,13 +245,12 @@ class ShoppingCartController extends Controller
             return Redirect::to('/');
         }
 
-        $payment = Payment::get($payment_id, $this->_api_context);
+        $payment = Payment::get($payment_id, $this->apiContext);
         $execution = new PaymentExecution();
         //$execution->setPayerId(Input::get('PayerID'));
-        $execution->setPayerId($request->PayerID);
-
+        $execution->setPayerId($request->PayerID); 
         /**Execute the payment **/
-        $result = $payment->execute($execution, $this->_api_context);
+        $result = $payment->execute($execution, $this->apiContext);
 
         if ($result->getState() == 'approved') {
 
@@ -273,8 +261,7 @@ class ShoppingCartController extends Controller
             //add update record for cart
             return Redirect::to('/');  //back to product page
 
-        }
-
+        } 
         Session::put('error', 'Thanh toán thất bại');
         return Redirect::to('/'); 
 

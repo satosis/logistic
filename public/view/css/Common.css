@@ -56,7 +56,7 @@ a span,
 span a { -webkit-transition: none; transition: none; }
 
 
-#commonHead { background: #242424; padding: 8px 0; border-bottom: 1px solid #2d2d2d}
+#commonHead { background: black; padding: 8px 0; border-bottom: 1px solid #2d2d2d}
 #commonHead .wrp { display: flex; align-items: center; justify-content: space-between}
 #commonHead .textLeft { text-transform: uppercase; color: #5a5a5a; font-family: RobotoB; font-style: italic}
 .frmSearch { display: flex; background: #fff;  width: 435px; height: 35px; overflow: hidden;position:relative}
@@ -69,8 +69,8 @@ span a { -webkit-transition: none; transition: none; }
 #commonHead .menuRight li:after { content: url(icon/afterMenu.png); position: absolute; top: 50%; transform: translateY(-50%); right: 0}
 #commonHead .menuRight li:last-child:after {display: none}
 #commonHead .menuRight li a:hover {color: #fee437}
-
-#header { background: #242424; position: relative; z-index: 10}
+.logo{width:75px}
+#header { background: black; position: relative; z-index: 10}
 #header .wrp { display: flex; align-items: center; justify-content: space-between}
 #menuMain>ul { padding: 0; margin: 0; list-style: none; display: flex; color: #dfdfdf; position: relative}
 #menuMain>ul>li>a { text-transform: uppercase; font-family: RobotoM; padding: 25px 20px; position: relative; display: block}
@@ -80,7 +80,7 @@ span a { -webkit-transition: none; transition: none; }
 #menuMain>ul>li>a:after { content: url(icon/afterSubmenu.png); position: absolute; bottom: -5px; left: 50%; transform: translateX(-50%); opacity: 0; transition: 0.3s all ease-in-out; display: none}
 #menuMain>ul>li>a:hover:after {opacity: 1}
 #menuMain>ul>li ul { position: absolute; top: 110%; width: 100%; padding: 0; margin: 0; list-style: none; transition: 0.3s all ease-in-out; opacity: 0; visibility: hidden} 
-#menuMain>ul>li .subMenu { background: #242424; display: flex; padding: 25px 20px;border: 1px solid #2d2d2d}
+#menuMain>ul>li .subMenu { background: black; display: flex; padding: 25px 20px;border: 1px solid #2d2d2d}
 #menuMain>ul>li .subMenu .group { flex: 1; padding-right: 10px}
 #menuMain>ul>li .subMenu .group .head { text-transform: uppercase; margin-bottom: 30px; display: block; font-family: RobotoM; }
 #menuMain>ul>li .subMenu .group .item a { display: block; line-height: 20px; margin-bottom: 10px}

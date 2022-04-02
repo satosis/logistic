@@ -109,12 +109,12 @@
 <div id='loader'></div>
 <div id="commonHead">   
     <div class="wrp">
-                        <h1 class="textLeft dnTablet-l">Đồng hồ nam, Đồng hồ Thụy Sỹ</h1>
-                <form action="{{ route('get.product.index') }}" class="frmSearch"  method="get"> 
+    <h1 class="textLeft dnTablet-l">Đồng hồ nam, Đẳng cấp thương hiệu</h1>
+    <form action="{{ route('get.product.index') }}" class="frmSearch"  method="get"> 
     <div class="flex">
         <input type="text" name="keyword" id="keyword" autocomplete="off" value="{{ Request('keyword') }}" placeholder="Nhập từ khóa tìm kiếm..." /> 
         <button class="btnSearch">
-            <i class="fas fa-search"></i>
+            <i class="fa fa-search"></i>
         </button>
         
     </div>     
@@ -139,7 +139,7 @@
 <div id="header">
     <div class="wrp">
         <a href="/" title="Home" class="logo">
-            <img src="{{ asset('view/img/logo.png') }}" alt="Logo"/>
+            <img src="{{ asset('view/img/logo.png') }}" alt="Logo" class="logo"/>
         </a>
         <div id="menuMain">
             <ul>

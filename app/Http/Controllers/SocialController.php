@@ -15,6 +15,7 @@
  public function callback($provider)
  { 
    $getInfo = Socialite::driver($provider)->user(); 
+   dd($getInfo);
    $user = $this->createUser($getInfo,$provider); 
    auth()->login($user); 
    return redirect()->to('/');

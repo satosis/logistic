@@ -15,8 +15,8 @@ class CreateProductKeywordsTable extends Migration
     {
         Schema::create('product_keywords', function (Blueprint $table) {
             $table->id();
-            $table->integer('pk_product_id')->nullable();
-            $table->integer('pk_keyword_id')->nullable();
+            $table->foreignId('pk_product_id')->constrained('product');
+            $table->foreignId('pk_keyword_id')->constrained('keyword');
             $table->timestamps();
         });
     }

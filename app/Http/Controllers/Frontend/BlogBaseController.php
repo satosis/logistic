@@ -10,7 +10,7 @@ class BlogBaseController extends Controller
     public function getProductTop(){
         $productsPay =Product::where(
             [
-                'pro_active'=>0
+                'pro_active'=> 1
             ])
             ->where('pro_pay',0)
             ->orderBydesc('pro_pay')

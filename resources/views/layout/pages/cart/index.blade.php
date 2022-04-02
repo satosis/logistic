@@ -130,7 +130,7 @@ input:enabled:read-write:-webkit-any(:focus, :hover)::-webkit-inner-spin-button 
                         <div class="btnCartGroup tac" style="margin-top: 30px;">
                             <a href="{{route('get.home')}}" class="btnCart"
                                 style="background: #3498db;padding: 10px 15px;color: #FFF;border-radius: 25px;text-transform: uppercase;">Mua
-                                thêm sản phẩm khác <i class="fas fa-arrow-right"></i></a>
+                                thêm sản phẩm khác <i class="fa fa-arrow-right"></i></a>
                         </div>
                     </form>
                 </div>
@@ -167,19 +167,6 @@ input:enabled:read-write:-webkit-any(:focus, :hover)::-webkit-inner-spin-button 
                                     <textarea name="tst_note" cols="" rows="2">Không có</textarea>
                                 </div>
 
-                                <h3>Thanh toán bằng STRIPE</h3>
-                                <div class="item">
-                                    <p class="label">Card number</p>
-                                    <input type="text" name="card_number" placeholder="1234 1234 1234 1234" />
-                                </div>
-                                <div class="item">
-                                    <p class="label">Expiration date</p>
-                                    <input type="text" name="card_number" placeholder="MM / YY" />
-                                </div>
-                                <div class="item">
-                                    <p class="label">Security code</p>
-                                    <input type="text" name="cvv" placeholder="CVV" />
-                                </div>
                                 <input type="hidden" name="amount" value="{{$total}}">
 
                                 <div class="totalPrice">Thanh toán: <span
@@ -198,10 +185,6 @@ input:enabled:read-write:-webkit-any(:focus, :hover)::-webkit-inner-spin-button 
                                         <p>(PAYPAL)</p>
                                     </button>
                                       
-                                    <button class="tac" type="submit" value="3" name="submit" style="margin-top:10px">
-                                        <p class="ttu fHelveticaNeueB fs15">Thanh toán online</p>
-                                        <p>(STRIPE)</p>
-                                    </button>
                             </form>
                         </div>
                     </div>

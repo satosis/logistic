@@ -33,7 +33,7 @@
                   <div class="dashboard-address-detail">{{ \Auth::user()->address}}</div>
                   <div class="dashboard-address-phone">{{ isset(\Auth::user()->address)? \Auth::user()->phone: ""}}</div>
                   @else
-                  <img src="{{ asset('view/img/location.jpg')}}" style="width:50px ">
+                  <img src="{{ asset('view/img/location.jpg')}}" style="width:60px ">
                   @endif
                </div>
                <div class="dashboard-address-item billing">

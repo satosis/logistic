@@ -5,20 +5,20 @@
             <div class="left">
                 <a href="javascript://" title="" class="titleHead active">Liên hệ</a>
                 <div class="cont fs16">
-                    <b>CÔNG TY CỔ PHẦN TRỰC TUYẾN ĐĂNG QUANG.</b>
+                    <b>CÔNG TY BÁN ĐỒNG HỒ.</b>
                 </div>
                 <ul style="display: block;">
                     <li>
-                        <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
-                        <span class="text">VPGD: Số 55 Trần Đăng Ninh, Cầu Giấy, Hà Nội.</span>
+                        <span class="icon"><i class="fa fa-map-marker-alt"></i></span>
+                        <span class="text">VPGD:  Hà Nội.</span>
                     </li>
                     <li>
-                        <span class="icon"><i class="fas fa-phone-volume"></i></span>
-                        <a href="tel:18006005" title="Hotline" class="text">Hotline: 1800.6005</a>
+                        <span class="icon"><i class="fa fa-phone-volume"></i></span>
+                        <a href="tel:18006005" title="Hotline" class="text">Hotline: 1800.1008</a>
                     </li>
                     <li>
-                        <span class="icon"><i class="fas fa-envelope"></i></span>
-                        <a href="mailto:contact@dangquangwatch.vn" title="email" class="text">contact@dangquangwatch.vn</a>
+                        <span class="icon"><i class="fa fa-envelope"></i></span>
+                        <a href="" title="email" class="text">contact@contact.vn</a>
                     </li>
                 </ul>
             </div>
@@ -56,18 +56,10 @@
                     <a href="/tin-tuc/226/Dang-Quang-Watch-nha-nhap-khau-dong-ho-chinh-hang-Thuy-Sy.html" title="About us">Giới thiệu</a>
                 </div>
 
-                <div class="dangky">
-                    <a rel="nofollow" href="http://online.gov.vn/Home/WebDetails/2912" title="BTC" target="_blank">
-                        <img src="https://www.dangquangwatch.vn/view/css/icon/bct2.png" alt="BCT" />
-                    </a>
-                    <a rel="nofollow" href="http://online.gov.vn/Home/WebDetails/2912" title="BTC" target="_blank">
-                        <img src="https://www.dangquangwatch.vn/view/css/icon/bct.png" alt="BCT" class="lazy"/>
-                    </a>
-                </div>
             </div>
         </div>
         <div class="bot">
-            <p class="fRobotoB pb5 fs16">Đăng Quang Watch</p>
+            <p class="fRobotoB pb5 fs16">Nguyen Hung</p>
             <h4 class="lh21">
                 Nhà phân phối độc quyền các thương hiệu đồng hồ, kính mắt, bút ký nổi tiếng thế giới: Epos Swiss, Atlantic Swiss, Diamond D, Philippe Auguste, Jacques Lemans, Citizen, Aries Gold, dây da đồng hồ, dây đồng hồ đeo tay....
             </h4>
@@ -77,19 +69,10 @@
 <div id="commonBot">
     <div class="wrp">
         <div class="left">
-            Copyright © 2008-2020 Đăng Quang Watch.
+            Copyright © 2008-2020 Nguyen Hung.
         </div>
         <ul class="right">
-            <li>
-                <a href="https://daugia.tv" title="Dau gia">
-                    <img src="/view/img/LogoDauGia1.png" alt="Dau gia" class="lazy"/>
-                </a>
-            </li>
-            <li>
-                <a href="https://www.kinhmatdangquang.vn" title="Kinh mat">
-                    <img src="/view/img/LogoKinhMat1.png" alt="KInh mat" class="lazy"/>
-                </a>
-            </li>
+            
         </ul>
     </div>
 </div>

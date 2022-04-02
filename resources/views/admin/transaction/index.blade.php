@@ -23,7 +23,7 @@
                   <option value="1" {{ Request::get('status') == 1 ? "selected='selected'" : "" }}>Tiếp nhận</option>
                   <option value="2" {{ Request::get('status') == 2 ? "selected='selected'" : "" }}>Đang vận chuyển</option>
                   <option value="3" {{ Request::get('status') == 3 ? "selected='selected'" : "" }}>Đã bàn giao</option>
-                  <option value="-1" {{ Request::get('status') == -1 ? "selected='selected'" : "" }}>Huỷ bỏ</option>
+                  <option value="4" {{ Request::get('status') == 4 ? "selected='selected'" : "" }}>Huỷ bỏ</option>
                </select>
                <button type="submit" class="btn btn-success"><i class="fa fa-search"></i> Search</button>
                <button type="submit" name="export" value="true" class="btn btn-info">
@@ -59,7 +59,7 @@
         <a class="btn btn-default" href="{{ route('admin.transaction.guest',$list->id) }}">Khách</a> 
         @endif
       </td>
-      <td>{{ $list->tst_total_money}}đ</td>
+      <td>{{ $list->tst_total_money}} đ</td>
       <td>@if($list->tst_type ==1 )
         Trực tiếp
         @elseif($list->tst_type ==2 )

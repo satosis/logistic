@@ -57,7 +57,7 @@
             </div>
             <div class="right">
                <h1  style="position:relative"><a href="javascript://"  class="namePro">{{ $product->pro_name}}</a> <i class="fa fa-eye"></i>&nbsp; {{ $product->pro_view }}
-                  <a href="{{ route('ajax_get.user.favourite', $product->id) }}" class="{{ !\Auth::id() ? 'js-login' :''}} js-add-favourite"><i class="{{ !$user_favourite ?'fa fa-heart-o' : 'fa fa-heart red' }}"></i></a>&nbsp;<div class="favourite" style="position: absolute;bottom: 0;margin-left: 50px;"> {{ $product->pro_favourite }}</div>
+                  <a href="{{ route('ajax_get.user.favourite', $product->id) }}" class="{{ !\Auth::id() ? 'js-login' :''}} js-add-favourite"><i class="{{ !$user_favourite ?'fa fa-heart-o' : 'fa fa-heart red' }}"></i></a>&nbsp;<div class="favourite" style="position: absolute;bottom: 0;margin-left: 60px;"> {{ $product->pro_favourite }}</div>
                </h1>
                <div class="price">
                   <div class="price1">
@@ -280,9 +280,7 @@
                <h2 class="pdp-mod-section-title outer-title">Đánh giá và nhận xét của {{ $product->pro_name}}</h2>
             </div>
             @php
-            $age=0;
-            if($product->pro_review_total)
-            $age = $product->pro_review_star /$product->pro_review_total;
+            $age = $product->pro_review_total > 0 ? (int)(($product->pro_review_star - 5 ) / $product->pro_review_total) : $product->pro_review_star;
             @endphp
             <div class="mod-rating">
                <div class="content">
@@ -299,9 +297,7 @@
             <img class="star" src="//laz-img-cdn.alicdn.com/tfs/TB18ZvEgfDH8KJjy1XcXXcpdXXa-64-64.png"  style="width: 33.25px; height: 33.25px;">
           @else
             @for($i=1;$i<=floor($age);$i++)
-
             <img class="star" src="//laz-img-cdn.alicdn.com/tfs/TB19ZvEgfDH8KJjy1XcXXcpdXXa-64-64.png" style="width: 33.25px; height: 33.25px;">
-
             @endfor 
 
             @if(floor($age) < round($age,2))
@@ -402,7 +398,7 @@
                            <div class="top">
                               <div class="container-star starCtn left" id="ratings" style="width: 223.125px; height: 16.625px;">
                                  @for ($i=1;$i<=5;$i++)
-                                 <i class="fas fa-star opacity cursor" style="zoom:2" data-i={{$i}} ></i>
+                                 <i class="fa fa-star opacity cursor" style="zoom:2" data-i={{$i}} ></i>
                                  @endfor
                                  <span id="review_text"></span>
                                  <input type="hidden" id="review_value"  name="review" value="5">
@@ -457,7 +453,7 @@
          <div class="item">
             <p class="head">Hotline</p>
             <a href="tel:18006005" class="tel">
-            <span class="icon"><i class="fas fa-phone"></i></span>
+            <span class="icon"><i class="fa fa-phone"></i></span>
             <span class="text">1800.6005</span>
             </a>
          </div>

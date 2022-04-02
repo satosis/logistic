@@ -20,7 +20,7 @@ class Transaction extends Model
             'class' =>'btn btn-success',
             'name'  =>'Đã bàn giao'
         ],
-        '-1' =>[
+        '4' =>[
             'class' =>'btn btn-danger',
             'name'  =>'Đã hủy'
         ],
