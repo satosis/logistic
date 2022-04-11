@@ -150,7 +150,7 @@ class ShoppingCartController extends Controller
             try {
                 $payment->create($this->apiContext);
                 $data['tst_code'] = $payment->id;
-                $this->storeTransaction($data, 4 ,2);
+                $this->storeTransaction($data, 5,2);
             } catch (\PayPal\Exception\PPConnectionException $ex) {
                 if (\Config::get('app.debug')) {
                     \Session::flash('toastr',[
@@ -225,7 +225,9 @@ class ShoppingCartController extends Controller
             'type'      =>'success',
             'message'   =>'Đặt hàng thành công'
         ]);
-        Cart::destroy();
+        if($status != 5) {
+            Cart::destroy();
+        }
         return 1;
     } 
 
