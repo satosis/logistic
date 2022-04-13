@@ -29,4 +29,8 @@ class Product extends Model
     public function favourite(){
         return $this->belongsToMany(User::class,'user_favourite','uf_product_id','uf_user_id');
     }
+
+    public function getStarAttribute(){
+        return $this->attributes['pro_review_total'] > 0 ? (int)(($this->attributes['pro_review_star'] - 5 ) / $this->attributes['pro_review_total']) : $this->attributes['pro_review_star'];
+    }
 }   
