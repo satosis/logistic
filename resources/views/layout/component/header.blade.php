@@ -204,18 +204,10 @@
                 </span>
                 <span class="text">
                     <span class="top">Hotline</span>
-                    <span class="bot">1800 6005</span>
+                    <span class="bot">1800 0000</span>
                 </span>
             </a>
-            <a href="/he-thong-cua-hang/"   class="item">
-                <span class="icon">
-                    <img src="{{ asset('view/img/address.png') }}" alt="Cua hang" />
-                </span>
-                <span class="text">
-                    <span class="top">Hệ thống</span>
-                    <span class="bot">Cửa hàng</span>
-                </span>
-            </a>
+          
             <a href="{{ route('get.shopping.index')}}" class="btnCart">
     <i class="fa fa-shopping-cart"></i>
     <span class="number">{{  \Cart::count() }}</span>

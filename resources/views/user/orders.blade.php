@@ -19,12 +19,12 @@
          <div class="order-list"><div class="orders"></div><div class="order-no-data"><div class="order-no-data-text">Không có đơn hàng</div><div class="order-no-data-btn"><a href="/" class="order-no-data-btn-text">TIẾP TỤC MUA SẮM</a></div></div></div>
          @endif
          @foreach($transaction as $key => $list)
-            @if($key == 0 &&  isset($transaction[$key+1]) && $transaction[$key]->trans_id  === $transaction[$key+1]->trans_id || isset($transaction[$key-1]) && $transaction[$key]->trans_id  !== $transaction[$key-1]->trans_id || !isset($transaction[$key+1])) 
+            @if($key == 0 &&  isset($transaction[$key+1]) && $transaction[$key]->trans_id  === $transaction[$key+1]->trans_id || isset($transaction[$key-1]) && $transaction[$key]->trans_id  !== $transaction[$key-1]->trans_id || !isset($transaction[$key+1]) || $key == 0) 
             <div class="order">
                   <div class="order-info">
                      <div class="pull-left">
                         <div class="info-order-left-text">Đơn hàng <a class="{{ route('get.product.detail',$list->pro_slug.'-'.$list->pro_id)}}"> #{{ $list->trans_id }} </a></div>
-                           <p class="text info desc">Đặt lúc {{ $list->time}}</p>
+                           <p class="text info desc">Đặt lúc {{ $list->time}} </p>
                      </div>
                   </div>
                   @endif   
@@ -40,7 +40,7 @@
                         <p class="capsule">{{ $list->getStatus($list->tst_status)['name'] }}</p>
                      </div>
                   </div>
-                  @if($key == 0 && isset($transaction[$key+1])  && $transaction[$key]->trans_id  != $transaction[$key+1]->trans_id || isset($transaction[$key+1]) && $transaction[$key]->trans_id  !== $transaction[$key+1]->trans_id|| !isset($transaction[$key+1]) ) 
+                  @if($key == 0 && isset($transaction[$key+1])  && $transaction[$key]->trans_id  != $transaction[$key+1]->trans_id || isset($transaction[$key+1]) && $transaction[$key]->trans_id  !== $transaction[$key+1]->trans_id|| !isset($transaction[$key+1])  || $key == 0)  
             </div>
             @endif   
          @endforeach  

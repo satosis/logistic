@@ -58,31 +58,15 @@
                                                                         >Mã giảm giá</a></li> -->
             </ul>
         </li>
-        <li class="item" id="My-Orders"><a href="{{ route('get.user.orders') }}" >
+        <li class="item" id="My-Orders"><a href="{{ route('get.user.orders', ['status' => 0]) }}" >
             <span>Đơn hàng của tôi</span></a>
             <ul class="item-container" >
-                <!-- <li id="Returns" class="sub"><a href="#">Đơn hàng đổi trả</a></li> -->
-                <li id="Cancellations" class="sub"><a href="{{ route('get.user.cancellation_orders') }}" >Đơn hàng hủy</a></li>
+                <li id="Returns" class="sub"><a href="{{ route('get.user.orders', ['status' => 3]) }}">Đơn hàng đã nhận</a></li>
+                <li id="Returns" class="sub"><a href="{{ route('get.user.orders', ['status' => 2]) }}">Đơn hàng đang chờ</a></li>
+                <li id="Cancellations" class="sub"><a href="{{ route('get.user.orders', ['status' => -1]) }}" >Đơn hàng hủy</a></li>
             </ul>
         </li>
-        <li class="item" id="My-Reviews"><a href="#" >
-            <span>Nhận xét của tôi</span></a>
-            <ul class="item-container" >
-                    
-            </ul>
-        </li>
-        <li class="item" id="My-Wishlists"><a href="{{ route('get.user.favourite')}}">
-            <span>Sản phẩm yêu thích </span></a>
-            <ul class="item-container" >
-                    
-            </ul>
-        </li> 
-        <li class="item" id="My-Wishlists"><a href="#">
-            <span> Sản phẩm đã theo dõi</span></a>
-            <ul class="item-container" >
-                    
-            </ul>
-        </li> 
+      
     </ul>
 </div>
 <html>
