@@ -218,6 +218,9 @@ class ShoppingCartController extends Controller
                 \DB::table('product')
                      ->where('id',$item->id)
                      ->increment("pro_pay");    
+                \DB::table('product')
+                 ->where('id',$item->id)
+                ->decrement("pro_amount");    
             }
         }
         

@@ -24,31 +24,29 @@ class CategoryDetailController extends Controller
                 switch($price)
                 {
                 case '1':
-                           $products->where('pro_price','<',2000000);
-                          break;
+                    $products->where('pro_price','<',2000000);
+                    break;
                 
                 case '2':
-                           $products->whereBetween('pro_price',[2000000,5000000]);
-                           break;
+                    $products->whereBetween('pro_price',[2000000,5000000]);
+                    break;
                 case '5':
-                           $products->whereBetween('pro_price',[5000000,10000000]);
-                           break;
+                    $products->whereBetween('pro_price',[5000000,10000000]);
+                    break;
                 case '10':
-                          $products->whereBetween('pro_price',[10000000,50000000]);
-                          break;
+                    $products->whereBetween('pro_price',[10000000,50000000]);
+                    break;
                 case '50':
-                          $products->where('pro_price','>',50000000);
-                          break;
+                    $products->where('pro_price','>',50000000);
+                    break;
               }
               }
             if($request->s){
                 $request->s ==1 ? $products->orderBy('pro_price','desc') :  $products->orderBy('pro_price','asc') ;
             }
             $products=$products->orderByDesc('pro_pay')
-            ->select('id','pro_name','pro_slug','pro_avatar','pro_price','pro_amount')
             ->paginate(15)
             ;
-            
              $viewData=[
                 'category'   =>$category,
                 'cate'       =>$cate,
