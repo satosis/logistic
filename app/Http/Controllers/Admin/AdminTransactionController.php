@@ -11,7 +11,7 @@ use App\Exports\TransactionExport;
 class AdminTransactionController extends Controller
 {
     public function index(Request $request){
-        $transactions = Transaction::orderBy('id','desc')->where('status','<','5');
+        $transactions = Transaction::orderBy('id','desc')->where('tst_status','<','5');
         if($request->id) $transactions->where('id',$request->id);
         if($email =$request->email){
             $transactions->where('tst_email','like','%'.$email.'%');

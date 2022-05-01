@@ -12,7 +12,7 @@ class UserController extends Controller
     public function index(){
         $category =Category::all();
         $viewData =[
-            'category'=>$category,
+            'category'=> $category,
             'title_page'=>'Quản lý tài khoản'
         ];
         return view('user.index',$viewData);
@@ -20,7 +20,7 @@ class UserController extends Controller
     public function profile(){
         $category =Category::all();
         $viewData =[
-            'category'=>$category,
+            'category'=> $category,
             'title_page'=>'Thông tin cá nhân'
         ];
         return view('user.profile',$viewData);
@@ -30,19 +30,37 @@ class UserController extends Controller
     public function address(){
         $category =Category::all();
         $viewData =[
-            'category'=>$category,
+            'category'=> $category,
             'title_page'=>'Địa chỉ'
         ];
         return view('user.address',$viewData);
     }
   
 
-    public function orders(){
+    public function orders(Request $request){
         $category =Category::all();
-        $transaction =Transaction::where('tst_user_id',\Auth::user()->id)->get();
+        $transaction =Transaction::where('tst_user_id',\Auth::user()->id)  
+        ->where('tst_status', '!=', '5')
+        ->select('transactions.*', 'product.*', 'orders.*', 'product.id as pro_id','transactions.created_at as time','transactions.id as trans_id',)
+        ->leftJoin('orders','orders.od_transaction_id', 'transactions.id')
+        ->leftjoin('product', 'product.id', 'orders.od_product_id')
+        ->orderBy('transactions.id', 'desc');
+        if($request->status != 0){
+            $transaction->where('tst_status', $request->status);
+        }
+        $transaction = $transaction->get();
+        $allTransaction = Transaction::where('tst_status', '!=', '5')->count();
+        $deletedTransaction = Transaction::where('tst_status', '-1')->count();
+        $successTransaction = Transaction::where('tst_status', '3')->count();
+        $processTransaction = Transaction::where('tst_status', '2')->count();
         $viewData =[
-            'category'=>$category,
-            'transaction'=>$transaction,
+            'status'=> $request->status,
+            'category'=> $category,
+            'transaction'=> $transaction,
+            'allTransaction'=> $allTransaction,
+            'deletedTransaction'=> $deletedTransaction,
+            'successTransaction'=> $successTransaction,
+            'processTransaction'=> $processTransaction,
             'title_page'=>'Đơn hàng của tôi'
         ];
         return view('user.orders',$viewData);

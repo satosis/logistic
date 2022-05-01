@@ -7,7 +7,6 @@
         <th>Price</th>
         <th>Qty</th>
         <th>Total</th>
-        <th>Action</th>
     </tr>
     
     @foreach($order as $list)
@@ -18,9 +17,6 @@
         <th>{{ number_price($list->od_price,0,',','.') }}đ</th>
         <th>{{$list->od_qty }}</th>
         <th>{{ number_price($list->od_price *$list->od_qty ,0,',','.')}}đ</th>
-        <th>
-        <a href="{{ route('ajax.admin.transaction.order_delete',$list->id) }}" class="btn btn-danger order-delete">Delete</a>
-        </th> 
      </tr>
     @endforeach
   

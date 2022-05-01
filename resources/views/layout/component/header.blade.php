@@ -122,7 +122,9 @@
     
 
      <ul class="menuRight dnTablet-l">
-            <li><a href="/" title="Home">Trang chủ</a></li>
+            @if (Auth::check())
+            <li><a href="{{ route('get.user.orders', ['status' => 0]) }}" title="Home">Đơn hàng</a></li>
+            @endif
             <li><a href="{{ route('get.blog.home') }}" title="Tin tức">Tin tức</a></li>
             @if (Auth::check())
             <li><a href="{{ route('get.user.index')}}">{{Auth::user()->name}}</a></li>

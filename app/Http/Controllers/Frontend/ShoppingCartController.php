@@ -66,7 +66,7 @@ class ShoppingCartController extends Controller
             'price'    => $product->pro_price, 
             'weight'   => '1',
             'options'=> [       
-                'image'  => $product->pro_avatar  ,
+                'image'  => $product->pro_avatar,
                 'sale'   => $product->pro_sale,
             ]
         ]);
@@ -122,8 +122,8 @@ class ShoppingCartController extends Controller
                 $item = new Item(); 
                 $item->setName($list->name) 
                     ->setCurrency('USD')
-                    ->setQuantity(1)
-                    ->setPrice($list->price /23000 );
+                    ->setQuantity($list->qty)
+                    ->setPrice($list->price * $list->qty /23000 );
                 array_push($listItem, $item);
             }
     
@@ -139,15 +139,15 @@ class ShoppingCartController extends Controller
                 ->setDescription('');
     
             $redirect_urls = new RedirectUrls();
-            $redirect_urls->setReturnUrl(URL::to('status')) /** Specify return URL **/
-                ->setCancelUrl(URL::to('status'));
+            $redirect_urls->setReturnUrl(URL::to('/')) /** Specify return URL **/
+                ->setCancelUrl(URL::to('/'));
     
             $payment = new Payment();
             $payment->setIntent('Sale')
                 ->setPayer($payer)
                 ->setRedirectUrls($redirect_urls)
                 ->setTransactions(array($transaction));
-            try {
+                try {
                 $payment->create($this->apiContext);
                 $data['tst_code'] = $payment->id;
                 $this->storeTransaction($data, 5,2);
@@ -224,10 +224,8 @@ class ShoppingCartController extends Controller
         \Session::flash('toastr',[
             'type'      =>'success',
             'message'   =>'Đặt hàng thành công'
-        ]);
-        if($status != 5) {
-            Cart::destroy();
-        }
+        ]); 
+        Cart::destroy(); 
         return 1;
     } 
 

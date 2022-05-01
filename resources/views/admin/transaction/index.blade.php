@@ -13,11 +13,6 @@
             <form class="form-inline">
                <input type="text" class="form-control" value="{{ Request::get('id') }}" name="id" placeholder="ID">
                <input type="text" class="form-control" value="{{ Request::get('email') }}" name="email" placeholder="Email ...">
-               <select name="type" class="form-control">
-                  <option value="0">Phân loại khách</option>
-                  <option value="1" {{ Request::get('type') == 1 ? "selected='selected'" : "" }}>Thành viên</option>
-                  <option value="2" {{ Request::get('type') == 2 ? "selected='selected'" : "" }}>Khách</option>
-               </select> 
                <select name="status" class="form-control">
                   <option value="">Trạng thái</option>
                   <option value="1" {{ Request::get('status') == 1 ? "selected='selected'" : "" }}>Tiếp nhận</option>
@@ -34,13 +29,19 @@
     <thead>
     <td>#</td>
     <td>Khách hàng</td>
-    <td>Tài khoản</td>
     <td>Số tiền</td>
     <td>Cổng thanh toán</td>
     <td>Trạng thái</td>
     <td>Thời gian</td>
     <td>Hành động</td>
     </thead>
+    @if(!count($transaction))
+    <tbody>
+    <tr>
+      <th colspan="8">Không có đơn hàng mới</th>
+   </tr>
+   </tbody>
+    @endif
     @foreach($transaction as $key =>$list)
     <tbody>
       <td>{{ ++$key }}</td>
@@ -52,12 +53,6 @@
         <li>Địa chỉ: {{ $list->tst_address }}</li>
         <li>Ghi chú: {{ $list->tst_note }}</li>
         </ul>
-      </td>
-      <td>@if($list->tst_user_id ==1 )
-         <a class="btn btn-primary" href="{{ route('admin.transaction.guest',$list->id) }}"> Thành viên</a>
-        @else 
-        <a class="btn btn-default" href="{{ route('admin.transaction.guest',$list->id) }}">Khách</a> 
-        @endif
       </td>
       <td>{{ $list->tst_total_money}} đ</td>
       <td>@if($list->tst_type ==1 )
@@ -116,8 +111,7 @@
             </div>
          </div>
          <div class="modal-footer">
-            <button type="button" class="label label-default pull-left" data-dismiss="modal">Close</button>
-            <button type="button" class="label label-primary">Save changes</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
          </div>
       </div>
       <!-- /.modal-content -->

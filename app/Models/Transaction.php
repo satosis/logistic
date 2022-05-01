@@ -20,11 +20,11 @@ class Transaction extends Model
             'class' =>'btn btn-success',
             'name'  =>'Đã bàn giao'
         ],
-        '4' =>[
+        '-1' =>[
             'class' =>'btn btn-danger',
             'name'  =>'Đã hủy'
         ],
-        ];
+    ];
      public function getStatus()
     {
         return Arr::get($this->status, $this->tst_status,"[N\A]");

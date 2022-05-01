@@ -1,8 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Api;
-
-use Cart;
+ 
 use Log;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -15,6 +14,5 @@ class PaypalController extends Controller
     $transaction = Transaction::where('tst_code', $request['resource']['id'])->first();
     $transaction->tst_status = 1;
     $transaction->update();
-    Cart::destroy();
    }
 }

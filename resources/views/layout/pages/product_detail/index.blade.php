@@ -300,7 +300,7 @@
                               @endfor
 
                               @if( $product->star < 5) 
-                                 @for($i=$product->star;$i<=5;$i++) 
+                                 @for($i=$product->star+ 1;$i<=5;$i++) 
                                     <img class="star" src="//laz-img-cdn.alicdn.com/tfs/TB18ZvEgfDH8KJjy1XcXXcpdXXa-64-64.png" style="width: 33.25px; height: 33.25px;">
                                   @endfor
                                  @endif

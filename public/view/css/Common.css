@@ -72,6 +72,7 @@ span a { -webkit-transition: none; transition: none; }
 .logo{width:75px}
 #header { background: black; position: relative; z-index: 10}
 #header .wrp { display: flex; align-items: center; justify-content: space-between}
+#menuMain { margin-left: 200px}
 #menuMain>ul { padding: 0; margin: 0; list-style: none; display: flex; color: #dfdfdf; position: relative}
 #menuMain>ul>li>a { text-transform: uppercase; font-family: RobotoM; padding: 25px 20px; position: relative; display: block}
 #menuMain>ul>li>a:before { content: ""; position: absolute; top: 0; left: 20px; width: calc(100% - 40px); height: 2px; background: #fee437; opacity: 0; transition: 0.3s all ease-in-out}
