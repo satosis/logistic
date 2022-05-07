@@ -6,7 +6,7 @@
 </div>
 <div class="info">
         <p>40mm | 5ATM | Sapphire</p>        
-        <a href="{{ route('get.product.detail',$list->pro_slug.'-'.$list->id)}}" class="name">{{ $list->name}}</a>
+        <a href="{{ route('get.product.detail',$list->pro_slug.'-'.$list->id)}}" class="name">{{ $list->pro_name}}</a>
         <div style="display:flex">
         @php
         $age = $list->pro_review_total > 0 ? (int)(($list->pro_review_star - 5 ) / $list->pro_review_total) : $list->pro_review_star;
