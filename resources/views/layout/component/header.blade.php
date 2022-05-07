@@ -124,8 +124,6 @@
      <ul class="menuRight dnTablet-l">
             @if (Auth::check())
             <li><a href="{{ route('get.user.orders', ['status' => 0]) }}" title="Home">Đơn hàng</a></li>
-            @endif
-            @if (Auth::check())
             <li><a href="{{ route('get.user.index')}}">{{Auth::user()->name}}</a></li>
             <li><a href="{{ route('get.logout') }}">Đăng xuất</a></li>
             @else
