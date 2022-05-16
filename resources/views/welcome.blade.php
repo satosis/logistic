@@ -285,7 +285,6 @@
           
     </div>
 </div>
-<div class="stv_barrie"></div>
 <div class="product pb20">
     <div class="wrp">
         <h2 class="titleCate">
@@ -302,7 +301,6 @@
     </div>
 </div>
 
-<div class="cb"></div>
 <div class="product product3">
     <div class="wrp">
         <div class="bannerMain">
@@ -347,7 +345,7 @@
         </div>
          
     </div>
-</div><div class="stv_barrie"></div>
+</div>
 <div class="product pb20">
     <div class="wrp">
         <h2 class="titleCate">
@@ -364,7 +362,7 @@
         </div>
          
     </div>
-</div><div class="cb"></div>
+</div>
 <div class="product product3">
     <div class="wrp">
         <div class="bannerMain">

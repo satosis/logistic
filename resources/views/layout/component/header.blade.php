@@ -46,38 +46,7 @@
             });
          })
     </script>
-</head>
-<style>
-.d-none{
-    display: none;
-}
-#status {
-    width: 200px;
-    height: 200px;
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    background-image: url("{{ asset('view/img/loader.gif') }}");
-    background-repeat: no-repeat;
-    background-position: center;
-    margin: -100px 0 0 -100px;
-    z-index: 100001
-}
-*{
-    outline:none;
-    font-family: Roboto
-}
-#loader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #FFF;
-    z-index: 100000
-}
-</style>
+</head> 
  
 <body>
 <!-- Messenger Chat plugin Code -->
@@ -109,30 +78,23 @@
 <div id='loader'></div>
 <div id="commonHead">   
     <div class="wrp">
-    <h1 class="textLeft dnTablet-l">Đồng hồ nam, Đẳng cấp thương hiệu</h1>
-    <form action="{{ route('get.product.index') }}" class="frmSearch"  method="get"> 
-    <div class="flex">
-        <input type="text" name="keyword" id="keyword" autocomplete="off" value="{{ Request('keyword') }}" placeholder="Nhập từ khóa tìm kiếm..." /> 
-        <button class="btnSearch">
-            <i class="fa fa-search"></i>
-        </button>
-        
-    </div>     
-</form>   
-    
-
-     <ul class="menuRight dnTablet-l">
+        <h1 class="textLeft dnTablet-l">Đồng hồ nam, Đẳng cấp thương hiệu</h1>
+        <form action="{{ route('get.product.index') }}" class="frmSearch"  method="get"> 
+            <div class="flex">
+                <input type="text" name="keyword" id="keyword" autocomplete="off" value="{{ Request('keyword') }}" placeholder="Nhập từ khóa tìm kiếm..." /> 
+                <button class="btnSearch"><i class="fa fa-search"></i></button>
+            </div>     
+        </form>   
+        <ul class="menuRight dnTablet-l">
             @if (Auth::check())
-            <li><a href="{{ route('get.user.orders', ['status' => 0]) }}" title="Home">Đơn hàng</a></li>
-            <li><a href="{{ route('get.user.index')}}">{{Auth::user()->name}}</a></li>
-            <li><a href="{{ route('get.logout') }}">Đăng xuất</a></li>
+                <li><a href="{{ route('get.user.orders', ['status' => 0]) }}" title="Home">Đơn hàng</a></li>
+                <li><a href="{{ route('get.user.index')}}">{{Auth::user()->name}}</a></li>
+                <li><a href="{{ route('get.logout') }}">Đăng xuất</a></li>
             @else
-            <li><a href="{{ route('get.login') }}">Đăng nhập</a></li>
-            <li><a href="{{ route('get.register') }}">Đăng ký</a></li>
+                <li><a href="{{ route('get.login') }}">Đăng nhập</a></li>
+                <li><a href="{{ route('get.register') }}">Đăng ký</a></li>
             @endif
         </ul>
-        
-        
     </div>
 </div>
 <div id="header">
@@ -149,11 +111,13 @@
                             <div class="subMenu" style="width: 250px;">                                             
                                 <div class="group">                                       
                                     <div class="item">
-                                    @foreach($category as $listcate)
+                                        @foreach($category as $listcate)
                                             @if($listcate->c_cate == 'watch')
                                                 <a href="{{ route('get.category.detail',$listcate->c_slug.'-'.$listcate->id) }}">{{ $listcate->c_name}}</a>
                                             @endif
                                         @endforeach
+                                    </div>
+                                </div>
                             </div>
                         </li>
                     </ul>
@@ -165,11 +129,13 @@
                             <div class="subMenu" style="width: 250px;">
                                 <div class="group">                                        
                                     <div class="item">
-                                    @foreach($category as $listcate)
+                                        @foreach($category as $listcate)
                                             @if($listcate->c_cate == 'glass')
                                                 <a href="{{ route('get.category.detail',$listcate->c_slug.'-'.$listcate->id) }}">{{ $listcate->c_name}}</a>
                                             @endif
                                         @endforeach
+                                    </div>
+                                </div>
                             </div>
                         </li>
                     </ul> 
@@ -195,7 +161,7 @@
             </ul>
         </div>
         <div class="right">
-            <a href="tel:18006005"   class="item">
+            <a href="tel:18006005" class="item">
                 <span class="icon">
                     <img src="{{ asset('view/img/hotline.png') }}" alt="Hotline" />
                 </span>
@@ -204,12 +170,10 @@
                     <span class="bot">1800 0000</span>
                 </span>
             </a>
-          
             <a href="{{ route('get.shopping.index')}}" class="btnCart">
-    <i class="fa fa-shopping-cart"></i>
-    <span class="number">{{  \Cart::count() }}</span>
-</a>
-            
+                <i class="fa fa-shopping-cart"></i>
+                <span class="number">{{  \Cart::count() }}</span>
+            </a>
         </div>
     </div>
 </div>

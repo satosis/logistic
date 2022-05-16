@@ -1,14 +1,14 @@
 @include('layout.component.header')
 <title>{{isset($login) ? 'Đăng nhập' : '' }} {{isset($register) ? 'Đăng ký  ' : '' }}</title>
-<style> .form-control{display: block;width: 100%;height: 34px;padding: 6px 12px;font-size: 14px;line-height: 1.42857143;color: #555;background-color: #fff;background-image: none;border: 1px solid #ccc;border-radius: 4px; }.container{width:50%;margin:0 auto;}.btn-danger{background-color: #d9534f;}.btn-primary{background-color: #3c8dbc;}.btn{display: inline-block;padding: 6px 12px;margin-bottom: 0;font-size: 14px;font-weight: 400;line-height: 1.42857143;text-align: center;white-space: nowrap;vertical-align: middle;-ms-touch-action: manipulation;touch-action: manipulation;cursor: pointer;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;background-image: none;border: 1px solid transparent;border-radius: 4px;}label{font-size: 18px;font-weight: 500;line-height:32px;color: inherit;}.red{color:red }.has-error{;color:red } .has-error input{border:1px solid red}.d-none{display:none}
+<style> .form-control{display: block;width: 100%;height: 34px;padding: 6px 12px;font-size: 14px;line-height: 1.42857143;color: #555;background-color: #fff;background-image: none;border: 1px solid #ccc;border-radius: 4px; }.container{width:50%;margin:0 auto;}.btn-danger{background-color: #d9534f;}.btn-primary{background-color: #3c8dbc;}.btn{display: inline-block;padding: 6px 12px;margin-bottom: 0;font-size: 14px;font-weight: 400;line-height: 1.42857143;text-align: center;white-space: nowrap;vertical-align: middle;-ms-touch-action: manipulation;touch-action: manipulation;cursor: pointer;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;background-image: none;border: 1px solid transparent;border-radius: 4px;}label{font-size: 18px;font-weight: 500;line-height:32px;color: inherit;}.red{color:red }.has-error{color:red } .has-error input{border:1px solid red}.d-none{display:none}
 .login{width: 70%;text-align: center;margin: 0 auto;color:white !important}.login h1{ font-size:25px;border-bottom:2px solid black;color:black !important}
 .btn-blue{border-radius:10px;background-color:#3578E5}.btn-red{border-radius:10px;background-color:red}
 </style>
 <div class="container"><br>
 <div class="login">
 <h1 class="{{ isset($reset) ? 'd-none' :'' }} text-center">ĐĂNG NHẬP BẰNG</h1><br><br>
-<a href="{{ url('/auth/redirect/facebook') }}" class="{{ isset($reset) ? 'd-none' :'' }}  btn btn-blue"><i class="fab fa-facebook-f mr-1"></i> FACEBOOK</a>
-<a href="{{url('/auth/redirect/google')}}" class="{{ isset($reset) ? 'd-none' :'' }} btn btn-red"><i class="fab fa-google"></i>  GOOGLE</a><br>
+<a href="{{ url('/auth/redirect/facebook') }}" class="{{ isset($reset) ? 'd-none' :'' }}  btn btn-blue"><i class="fa fa-facebook-f mr-1"></i> FACEBOOK</a>
+<a href="{{url('/auth/redirect/google')}}" class="{{ isset($reset) ? 'd-none' :'' }} btn btn-red"><i class="fa fa-google"></i>  GOOGLE</a><br>
 <br>
 @php 
   $title ="HOẶC ĐĂNG KÝ TÀI KHOẢN TẠI ĐÂY";

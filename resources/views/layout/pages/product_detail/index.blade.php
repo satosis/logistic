@@ -8,29 +8,6 @@
       <div class="detailPro">
          <div class="top">
             <div class="left">
-               <div class="imgSmall">
-                  <div class="img">
-                     <div class="wImage">
-                        <a href="javascript://" class="image">
-                           <img src="{{ pare_url_file($product->pro_avatar) }}" />
-                        </a>
-                     </div>
-                  </div>
-                  <div class="img">
-                     <div class="wImage">
-                        <a href="javascript://" class="image">
-                           <img src="https://www.dangquangwatch.vn/upload/img_small/331971811_Untitled-7.jpg" />
-                        </a>
-                     </div>
-                  </div>
-                  <div class="img">
-                     <div class="wImage">
-                        <a href="javascript://" class="image">
-                           <img src="https://www.dangquangwatch.vn/upload/img_small/281480432_Untitled-63.jpg" />
-                        </a>
-                     </div>
-                  </div>
-               </div>
                <div class="imgLarge">
                   <div class="img">
                      <div class="wImage">
@@ -70,8 +47,8 @@
                </div>
                <h3 class="descript">
                   <div class="item">
-                     <span class="text">Đường kính mặt</span>
-                     <span class="num">27mm</span>
+                     <span class="text">Số lượng</span>
+                     <span class="num">{{ $product->pro_amount }}</span>
                   </div>
                   <div class="item">
                      <span class="text">Độ chịu nước</span>

@@ -1,4 +1,3 @@
-<!-- var giao_dien={{ device_agent()}} -->
 <div id="footer">
     <div class="wrp">
         <div class="top">
@@ -26,36 +25,34 @@
                 <div class="group">
                     <a href="javascript://" title="" class="titleHead">Hỗ trợ</a>
                     <ul class="menuFoot">
-                                                <li><a href="/chinh-sach-chung/2/1.-Chinh-sach-bao-hanh.html" title="1. Chính sách bảo hành">1. Chính sách bảo hành</a></li>
-                                                <li><a href="/chinh-sach-chung/4/2.-Chinh-sach-doi-hang.html" title="2. Chính sách đổi hàng">2. Chính sách đổi hàng</a></li>
-                                                <li><a href="/chinh-sach-chung/5/3.-Chinh-sach-bao-mat.html" title="3. Chính sách bảo mật">3. Chính sách bảo mật</a></li>
-                                                <li><a href="/chinh-sach-chung/6/4.-Chinh-sach-van-chuyen.html" title="4. Chính sách vận chuyển">4. Chính sách vận chuyển</a></li>
-                                                <li><a href="/chinh-sach-chung/7/5.-Huong-dan-thanh-toan.html" title="5. Hướng dẫn thanh toán">5. Hướng dẫn thanh toán</a></li>
-                                                <li><a href="/chinh-sach-chung/8/6.-Huong-dan-mua-hang.html" title="6. Hướng dẫn mua hàng">6. Hướng dẫn mua hàng</a></li>
-                                               
+                        <li><a href="javascript:;" title="1. Chính sách bảo hành">1. Chính sách bảo hành</a></li>
+                        <li><a href="javascript:;" title="2. Chính sách đổi hàng">2. Chính sách đổi hàng</a></li>
+                        <li><a href="javascript:;" title="3. Chính sách bảo mật">3. Chính sách bảo mật</a></li>
+                        <li><a href="javascript:;" title="4. Chính sách vận chuyển">4. Chính sách vận chuyển</a></li>
+                        <li><a href="javascript:;" title="5. Hướng dẫn thanh toán">5. Hướng dẫn thanh toán</a></li>
+                        <li><a href="javascript:;" title="6. Hướng dẫn mua hàng">6. Hướng dẫn mua hàng</a></li>
                     </ul>
                 </div>
                 <div class="group">
                     <a href="javascript://" title="" class="titleHead">Sản phẩm</a>
                     <ul class="menuFoot">
-                        <li><a href="/sp/dong-ho-chinh-hang.html" title="Dong ho">Đồng hồ chính hãng</a></li>
-                        <li><a href="/kinh-mat-thoi-trang.html" title="Kính mát">Kính mắt thời trang</a></li>
-                        <li><a href="/phu-kien-dong-ho.html" title="Day dong ho">Dây đồng hồ</a></li>
-                        <li><a href="/sp/hop-dung-dong-ho.html" title="Hop dong ho">Hộp đựng đồng hồ</a></li>
-                        <li><a href="/sp/but-ky-cao-cap.html" title="Bút ký cao cấp">Bút ký cao cấp</a></li>
+                        <li><a href="javascript:;" title="Dong ho">Đồng hồ chính hãng</a></li>
+                        <li><a href="javascript:;" title="Kính mát">Kính mắt thời trang</a></li>
+                        <li><a href="javascript:;" title="Day dong ho">Dây đồng hồ</a></li>
+                        <li><a href="javascript:;" title="Hop dong ho">Hộp đựng đồng hồ</a></li>
+                        <li><a href="javascript:;" title="Bút ký cao cấp">Bút ký cao cấp</a></li>
                     </ul>
                 </div>
             </div>
             <div class="right">
                 <a href="javascript://" title="" class="titleHead active">Danh mục</a>
                 <div class="tag" style="display: block;">
-                    <a href="/he-thong-cua-hang/" title="Cửa hàng">Hệ thống cửa hàng</a>
-                    <a href="/tin-tuc/c-461/Goc-Hoi-dap.html" title="">Góc hỏi đáp</a>
-                    <a href="/tin-tuc-dong-ho.html" title="Tin tức">Tin tức - Sự kiện</a>
+                    <a href="javascript:;" title="Cửa hàng">Hệ thống cửa hàng</a>
+                    <a href="javascript:;" title="">Góc hỏi đáp</a>
+                    <a href="javascript:;" title="Tin tức">Tin tức - Sự kiện</a>
                     <a href="javascript://" title="">Chứng nhận thương hiệu</a>
-                    <a href="/tin-tuc/226/Dang-Quang-Watch-nha-nhap-khau-dong-ho-chinh-hang-Thuy-Sy.html" title="About us">Giới thiệu</a>
+                    <a href="javascript:;" title="About us">Giới thiệu</a>
                 </div>
-
             </div>
         </div>
         <div class="bot">
@@ -71,32 +68,15 @@
         <div class="left">
             Copyright © 2008-2020 Nguyen Hung.
         </div>
-        <ul class="right">
-            
-        </ul>
     </div>
 </div>
-<div id="bttop">
-    <span>Về đầu trang</span>
-    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 32.635 32.635" style="enable-background:new 0 0 32.635 32.635;" xml:space="preserve">
-        <g>
-            <path d="M32.135,16.817H0.5c-0.276,0-0.5-0.224-0.5-0.5s0.224-0.5,0.5-0.5h31.635c0.276,0,0.5,0.224,0.5,0.5
-                             S32.411,16.817,32.135,16.817z"></path>
-            <path d="M19.598,29.353c-0.128,0-0.256-0.049-0.354-0.146c-0.195-0.195-0.195-0.512,0-0.707l12.184-12.184L19.244,4.136
-                             c-0.195-0.195-0.195-0.512,0-0.707s0.512-0.195,0.707,0l12.537,12.533c0.094,0.094,0.146,0.221,0.146,0.354
-                             s-0.053,0.26-0.146,0.354L19.951,29.206C19.854,29.304,19.726,29.353,19.598,29.353z"></path>
-        </g>
-    </svg>
-</div>
-
-<div id="overlay"></div>
 <script src="https://use.fontawesome.com/452826394c.js"></script>
-    <script src="{{ asset('view/lazyload.min.js') }}"></script>
-    <script src="{{ asset('view/js/owl.carousel.min.js') }}"></script>
-    <script src="{{ asset('view/js/Lightbox/lightbox.min.js') }}"></script>
-    <script src="{{ asset('view/js/slick/slick.js') }}"></script>
-    <script src="{{ asset('view/js/Common.js') }}"></script>
-    <script src="{{ asset('toastr/toastr.min.js') }}"></script> 
+<script src="{{ asset('view/lazyload.min.js') }}"></script>
+<script src="{{ asset('view/js/owl.carousel.min.js') }}"></script>
+<script src="{{ asset('view/js/Lightbox/lightbox.min.js') }}"></script>
+<script src="{{ asset('view/js/slick/slick.js') }}"></script>
+<script src="{{ asset('view/js/Common.js') }}"></script>
+<script src="{{ asset('toastr/toastr.min.js') }}"></script> 
 <script> 
     if(typeof TYPE_MESSAGE != "undefined"){
         switch (TYPE_MESSAGE){

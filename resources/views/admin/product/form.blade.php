@@ -99,12 +99,6 @@
 
         <div class="box box-warning">
           <div class="box-header with-border">
-            <h3 class="box-title">Thông số khác</h3>
-          </div>
-        </div>
-
-        <div class="box box-warning">
-          <div class="box-header with-border">
             <h3 class="box-title">Nội dung</h3>
           </div>
           <div class="box-body">
