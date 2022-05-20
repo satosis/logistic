@@ -12,7 +12,7 @@
                   <div class="img">
                      <div class="wImage">
                         <a href="javascript://" class="image">
-                           <img src="{{ pare_url_file($product->pro_avatar) }}" />
+                           <img src="{{ $product->pro_avatar }}" />
                         </a>
                      </div>
                   </div>
@@ -181,7 +181,7 @@
                      <div class="left">
                         <div class="wImage">
                            <a href="javascript://" class="image">
-                              <img src="{{ pare_url_file($product->pro_avatar) }}" class="lazy" src="/view/lazy.jpg" />
+                              <img src="{{ $product->pro_avatar }}" class="lazy" src="/view/lazy.jpg" />
                            </a>
                         </div>
                         <div class="info">

@@ -20,7 +20,7 @@
                         <div class="mod-main">
                            <div class="wishlist-item"> 
                               <div class="info">
-                              <div class="pic"><a href=" {{ route('get.category.detail',$list->id)}}" target="_blank" rel="noopener noreferrer" ><img src="{{ pare_url_file($list->pro_avatar)}}" width="80" height="80" style="object-fit:cover"></a></div>
+                              <div class="pic"><a href=" {{ route('get.category.detail',$list->id)}}" target="_blank" rel="noopener noreferrer" ><img src="{{ $list->pro_avatar }}" width="80" height="80" style="object-fit:cover"></a></div>
                                  <div><a class="title" href="{{ route('get.category.detail',$list->id)}}">{{ $list->pro_name }}</a></div>
                                  <div class="sku"></div>
                                  <div class="oper"><span><span class="lazada lazada-ic-Delete lazada-icon icon-delete"></span></span></div>

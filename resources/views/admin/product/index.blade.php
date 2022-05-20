@@ -41,7 +41,7 @@
       <td>{{ $list->pro_price_entry}}</td>
       <td><span class="label label-info">{{ $list->category->c_cate ??"[N\A]" }}</span></td>
       <td>{{ $list->pro_admin_id}}</td>
-      <td><img src="{{ pare_url_file($list->pro_avatar) }}" style="width:80px;height:100px"></td>
+      <td><img src="{{ $list->pro_avatar }}" style="width:80px;height:100px"></td>
       <td>
       @if($list->pro_hot == 1)
       <a href="{{route('admin.product.hot',$list->id) }}" class="btn btn-primary">Hot</a>

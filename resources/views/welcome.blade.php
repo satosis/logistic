@@ -34,7 +34,7 @@
                                                                 
                                                             </div>
                             <div class="info">
-                                <p>59mm | 13mm | 143mm</p>]<a href="/sp/16416/kinh-mat-philippe-auguste-pa-19107-59c1.html" title="" class="name">
+                                <p>59mm | 13mm | 143mm</p><a href="/sp/16416/kinh-mat-philippe-auguste-pa-19107-59c1.html" title="" class="name">
                                     Kính mát PHILIPPE AUGUSTE PA-19107-59/C1 - Nam                                </a>
                                 <div class="price">
                                                                         <p class="new">3.450.000đ</p>
@@ -282,7 +282,7 @@
           @include('layout.component.list_product',['list'=>$list])     
         @endforeach  
         </div>
-          
+           
     </div>
 </div>
 <div class="product pb20">

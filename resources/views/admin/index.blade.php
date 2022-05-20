@@ -422,7 +422,7 @@
                                         <td>{{ $value }}</td>
                                         <td>{{$list->id}}</a></td>
                                         <td>{{ $list->pro_name }}</td>
-                                        <td><img src="{{ pare_url_file($list->pro_avatar) }}"
+                                        <td><img src="{{ $list->pro_avatar }}"
                                                 style="width:40px;height:40px;object-fit:contain"></td>
                                         <td style="text-align:center">{{ $list->pro_pay }} lượt mua</td>
                                     </tr>

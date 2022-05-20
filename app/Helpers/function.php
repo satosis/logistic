@@ -89,7 +89,7 @@ if (!function_exists('pare_url_file')) {
 
         if (isset($explode[0])) {
             $time = str_replace('_', '/', $explode[0]);
-            return '/uploads' . $folder . '/' . date('Y/m/d', strtotime($time)) . '/' . $image;
+            return config('env.app_url') . '/uploads' . $folder . '/' . date('Y/m/d', strtotime($time)) . '/' . $image;
         }
     }
 }

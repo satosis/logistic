@@ -2,7 +2,7 @@
 <div class="item">
     <div class="wImage">
         <a href="{{ route('get.product.detail',$product->pro_slug.'-'.$product->id )}}"  class="image">
-        <img src="{{ pare_url_file($product->pro_avatar) }}" alt="Jacques Lemans" class="lazy" />
+        <img src="{{ $product->pro_avatar }}" alt="Jacques Lemans" class="lazy" />
         </a> 
     </div>
     <div class="info">
