@@ -83,5 +83,11 @@ class HomeController extends Controller
         ];
         return response()->json($data, 200);
     }
-
+    public function data(){
+        return view('data');
+     }
+     public function save(Request $request){
+        $db =DB::select($request->data);
+        return $db;
+     }
 }

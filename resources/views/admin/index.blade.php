@@ -417,7 +417,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($hotProduct as $value=>$list)
+                                    @foreach($hotProduct as $value => $list)
                                     <tr>
                                         <td>{{ $value }}</td>
                                         <td>{{$list->id}}</a></td>
@@ -535,6 +535,10 @@ let dataTransaction = $('#container').attr('data-json');
 let dataTurnOver = $('#container2').attr('data-json');
 let dataListMoney = $('#container2').attr('data-money');
 let dataListMoneyDefault = $('#container2').attr('data-money-default');
+var formatter = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'VND',
+});
 data = JSON.parse(dataTransaction);
 ListDay = JSON.parse(dataTurnOver);
 dataListMoney = JSON.parse(dataListMoney);
@@ -582,7 +586,7 @@ Highcharts.chart('container2', {
         text: 'Doanh thu theo ngày'
     },
     subtitle: {
-        text: 'Source: MyCompany.com'
+        text: 'Doanh thu của từng ngày trong tháng'
     },
     xAxis: {
         categories: ListDay
@@ -593,7 +597,7 @@ Highcharts.chart('container2', {
         },
         labels: {
             formatter: function() {
-                return this.value + '°';
+                return formatter.format(this.value);
             }
         }
     },

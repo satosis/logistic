@@ -73,7 +73,7 @@ input:enabled:read-write:-webkit-any(:focus, :hover)::-webkit-inner-spin-button 
                                         <div class="wImage">
                                             <a href="{{ route('get.product.detail',Str::slug($cart->name).'-'.$cart->id )}}"
                                                 class="image">
-                                                <img src="{{ pare_url_file($cart->options->image)}}" />
+                                                <img src="{{ $cart->options->image }}" />
                                             </a>
                                         </div>
                                     </div>

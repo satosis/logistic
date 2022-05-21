@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Admin; 
 use App\Models\User; 
+use App\Models\Product; 
 use App\HelpersClass\Date; 
 use App\Models\Transaction;
 class AdminController extends Controller
@@ -14,17 +15,17 @@ class AdminController extends Controller
       $totalTransaction = \DB::table('transactions')->select('id')->count();
       $totalUser        = User::select('id')->count();
       $totalRating      = \DB::table('ratings')->select('id')->count();
-      $hotProduct       = \DB::table('product')->orderByDesc('pro_pay')->limit(5)->get();
+      $hotProduct       = Product::orderByDesc('pro_pay')->limit(5)->get();
       //thống kê trạng thái đơn hàng
       $transactionDefault =\DB::table('transactions')->where('tst_status',1)->select('id')->count();
       $transactionProcess =\DB::table('transactions')->where('tst_status',2)->select('id')->count();
       $transactionSuccess =\DB::table('transactions')->where('tst_status',3)->select('id')->count();
       $transactionCanCel =\DB::table('transactions')->where('tst_status',-1)->select('id')->count();
       $statusTransaction =[
-        ['Đã thanh toán',$transactionSuccess,false], 
-        ['Đang chờ thanh toán',$transactionProcess,false], 
-        ['Đang vận chuyển',$transactionDefault,false],
-        ['Đã hủy',$transactionCanCel,false]
+        ['Đã thanh toán', $transactionSuccess, false], 
+        ['Đang chờ thanh toán', $transactionProcess, false], 
+        ['Đang vận chuyển', $transactionDefault, false],
+        ['Đã hủy', $transactionCanCel, false]
         ];
       
       $listDay =Date::getListDayAndMonth(); 
@@ -46,9 +47,9 @@ class AdminController extends Controller
     foreach($listDay as $day) {
         $total = 0;
         foreach ($revenueTransactionMonthDefault as $key => $revenue) {
-            if ($revenue['day'] ==  $day) {
-                // $total = $revenue['totalMoney'];
-                $total = $revenue;
+          if ($revenue['day'] ==  $day) {
+                $total = $revenue['totalMoney'];
+                // $total = $revenue;
 
                 break;
             }
@@ -57,15 +58,14 @@ class AdminController extends Controller
         $total=0;
         foreach ($revenueTransactionMonth as $key => $revenue) {
           if ($revenue['day'] ==  $day) {
-              // $total = $revenue['totalMoney'];
-                $total = $revenue;
-
+              $total = $revenue['totalMoney'];
+                // $total = $revenue;
               break;
           }
       }
         $arrRevenueTransactionMonthDefault[] = (int)$total;
   
-    }  
+    }
       $viewDate =[
           'totalTransaction' =>$totalTransaction, 
           'totalUser'        =>$totalUser,
@@ -76,7 +76,6 @@ class AdminController extends Controller
           'arrRevenueTransactionMonth'=> json_encode($arrRevenueTransactionMonth),
           'arrRevenueTransactionMonthDefault'=> json_encode($arrRevenueTransactionMonthDefault),
       ]; 
-      
         return view('admin.index',$viewDate);
     }
 

@@ -54,7 +54,7 @@
         <li>Ghi chú: {{ $list->tst_note }}</li>
         </ul>
       </td>
-      <td>{{ $list->tst_total_money}} đ</td>
+      <td>{{ number_format( $list->tst_total_money , 0, '.', ',') }} đ</td>
       <td>@if($list->tst_type ==1 )
         Trực tiếp
         @elseif($list->tst_type ==2 )
@@ -67,7 +67,7 @@
       </span></td> 
       <td>{{ $list->created_at}}</td>
       <td> 
-      <a data-id="{{ $list->id }}" href="javascript:;" data-href="{{ route('ajax.admin.transaction.detail',$list->id)}}" class="label label-primary js-preview-transaction
+      <a data-id="{{ $key }}" href="javascript:;" data-href="{{ route('ajax.admin.transaction.detail',$list->id)}}" class="label label-primary js-preview-transaction
       "><i class="fa fa-eye"></i> View</a>
 
       <div class="btn-group">

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 14, 2022 at 11:59 AM
+-- Generation Time: May 21, 2022 at 02:42 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.28
 
@@ -18,82 +18,82 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: "watchex"
+-- Database: watchex
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table "admins"
+-- Table structure for table admins
 --
 
-CREATE TABLE "admins" (
-  "id" bigint(20) UNSIGNED NOT NULL,
-  "name" varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  "email" varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  "password" varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  "created_at" timestamp NULL DEFAULT NULL,
-  "updated_at" timestamp NULL DEFAULT NULL
+CREATE TABLE admins (
+  id bigint(20) UNSIGNED NOT NULL,
+  name varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  email varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  password varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  created_at timestamp NULL DEFAULT NULL,
+  updated_at timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table "admins"
+-- Dumping data for table admins
 --
 
-INSERT INTO "admins" ("id", "name", "email", "password", "created_at", "updated_at") VALUES
+INSERT INTO admins (id, name, email, password, created_at, updated_at) VALUES
 (1, 'Adminstrator', 'admin@gmail.com', '$2y$10$IAoLmNwXT1YpAkdgXc/ggu8xKLai8EqsstejC2dSYz2PFhJm6MFKm', '2020-08-04 23:42:53', '2020-08-04 23:42:53'),
 (2, 'CTV', 'ctv@gmail.com', '$2y$10$IAoLmNwXT1YpAkdgXc/ggu8xKLai8EqsstejC2dSYz2PFhJm6MFKm', '2020-08-04 23:42:53', '2020-08-04 23:42:53');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table "articles"
+-- Table structure for table articles
 --
 
-CREATE TABLE "articles" (
-  "id" bigint(20) UNSIGNED NOT NULL,
-  "a_name" varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  "a_slug" varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  "a_hot" int(11) NOT NULL DEFAULT 0,
-  "a_active" int(11) NOT NULL DEFAULT 1,
-  "a_menu_id" varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  "a_view" int(11) NOT NULL DEFAULT 0,
-  "a_description" text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  "a_avatar" text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  "a_content" text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  "_wysihtml5_mode" int(11) DEFAULT NULL,
-  "created_at" timestamp NULL DEFAULT NULL,
-  "updated_at" timestamp NULL DEFAULT NULL
+CREATE TABLE articles (
+  id bigint(20) UNSIGNED NOT NULL,
+  a_name varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  a_slug varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  a_hot int(11) NOT NULL DEFAULT 0,
+  a_active int(11) NOT NULL DEFAULT 1,
+  a_menu_id varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  a_view int(11) NOT NULL DEFAULT 0,
+  a_description text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  a_avatar text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  a_content text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  _wysihtml5_mode int(11) DEFAULT NULL,
+  created_at timestamp NULL DEFAULT NULL,
+  updated_at timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table "articles"
+-- Dumping data for table articles
 --
 
-INSERT INTO "articles" ("id", "a_name", "a_slug", "a_hot", "a_active", "a_menu_id", "a_view", "a_description", "a_avatar", "a_content", "_wysihtml5_mode", "created_at", "updated_at") VALUES
+INSERT INTO articles (id, a_name, a_slug, a_hot, a_active, a_menu_id, a_view, a_description, a_avatar, a_content, _wysihtml5_mode, created_at, updated_at) VALUES
 (5, 'Hoài Thương', 'hoai-thuong', 0, 1, 'EVENT', 0, 'Hoài Thương xinh gái', '2020-08-05__be-giang-1.png', 'Tuyệt vời', 1, '2020-08-04 21:44:36', '2020-08-04 21:47:21'),
 (6, 'Tại sao đồng hồ Thụy Sỹ lại có sức hút lớn đến vậy', 'tai-sao-dong-ho-thuy-sy-lai-co-suc-hut-lon-den-vay', 0, 1, 'EVENT', 0, 'Khi nhắc đến đồng hồ người ta sẽ nghĩ ngay đến đồng hồ Thụy Sỹ nổi tiếng thế giới. Các quý ông thường rỉ tai nhau rằng “đến Đức mua ô tô, tới Thụy Sỹ mua đồng hồ”. Bởi vậy, đối với các đấng mày râu được sở hữu một chiếc đồng hồ Thụy Sỹ dường như là một niềm ao ước và thước đo kinh tế, đẳng cấp của một người. Vì dù là đồng hồ có giá bạc tỷ hay bình dân thì chúng vẫn có giá cao hơn rất nhiều so với các thương hiệu đồng hồ đến từ các nước khác trên thế giới.', NULL, '<p><em>Khi nhắc đến đồng hồ người ta sẽ nghĩ ngay đến đồng hồ Thụy Sỹ nổi tiếng thế giới. C&aacute;c qu&yacute; &ocirc;ng thường rỉ tai nhau rằng &ldquo;đến Đức mua &ocirc; t&ocirc;, tới Thụy Sỹ mua đồng hồ&rdquo;. Bởi vậy, đối với c&aacute;c đấng m&agrave;y r&acirc;u được sở hữu một chiếc đồng hồ Thụy Sỹ dường như l&agrave; một niềm ao ước v&agrave; thước đo kinh tế, đẳng cấp của một người. V&igrave; d&ugrave; l&agrave; đồng hồ c&oacute; gi&aacute; bạc tỷ hay b&igrave;nh d&acirc;n th&igrave; ch&uacute;ng vẫn c&oacute; gi&aacute; cao hơn rất nhiều so với c&aacute;c thương hiệu đồng hồ đến từ c&aacute;c nước kh&aacute;c tr&ecirc;n thế giới.</em></p>\r\n\r\n<p><strong>Thụy Sỹ - Nơi đưa nền sản xuất đồng hồ thế giới l&ecirc;n tầm cao mới</strong></p>\r\n\r\n<p><strong><img alt=\"\" src=\"https://www.dangquangwatch.vn/lib/ckfinder/images/11.jpg\" style=\"height:600px; width:898px\" /></strong></p>\r\n\r\n<p>V&agrave;o khoảng thế kỷ 16, nh&agrave; cải c&aacute;ch t&ocirc;n gi&aacute;o Jean Calvin từng k&ecirc;u gọi d&acirc;n ch&uacute;ng từ bỏ th&oacute;i quen đeo trang sức v&agrave; &ocirc;ng đ&atilde; nghĩ ra c&aacute;ch vận động giới kim ho&agrave;n chế tạo trang sức chuyển sang sản xuất đồng hồ. Sau sự kiện n&agrave;y, số lượng nghệ nh&acirc;n chế t&aacute;c đồng hồ tăng vọt v&agrave; biến th&agrave;nh phố Geneva trở th&agrave;nh nơi sản xuất đồng hồ nổi tiếng. Tuy nhi&ecirc;n, sự thay đổi n&agrave;y đ&atilde; đem lại hệ quả l&agrave; chỉ sau v&agrave;i thế kỷ số lượng người l&agrave;m đồng hồ tăng vọt, nhiều tới mức họ phải di cư đến những v&ugrave;ng đất kh&aacute;c để mưu sinh. Để trở th&agrave;nh thợ đồng hồ l&agrave;nh nghề đ&uacute;ng nghĩa, một người sau khi học việc 5 năm phải l&agrave;m được một chiếc đồng hồ nhỏ c&oacute; chu&ocirc;ng b&aacute;o thức đeo tr&ecirc;n cổ v&agrave; một chiếc đồng hồ đặt b&agrave;n với k&iacute;ch thước kh&aacute;c biệt.</p>\r\n\r\n<p>Tuy nhi&ecirc;n phải cho đến khi c&aacute;c nghệ nh&acirc;n chế t&aacute;c như Fr&eacute;d&eacute;ric Ingold&nbsp; v&agrave; Georges Leschot c&oacute; những ph&aacute;t minh vĩ đại n&acirc;ng tầm độ ch&iacute;nh x&aacute;c v&agrave; chất lượng c&aacute;c mẫu đồng hồ Thụy Sỹ l&ecirc;n th&igrave; ch&uacute;ng mới thực sự được thế giới biết đến nhiều hơn. Tiếp sau đ&oacute; l&agrave; t&ecirc;n tuổi c&aacute;c h&atilde;ng đồng hồ Thụy Sỹ nổi tiếng lần lượt xuất hiện tr&ecirc;n thị trường đồng hồ.</p>\r\n\r\n<p><img alt=\"\" src=\"https://www.dangquangwatch.vn/lib/ckfinder/images/dong%20ho%20thuy%20sy%20atlantic%20(5)(4).jpg\" style=\"height:263px; width:397px\" /></p>\r\n\r\n<p>Theo thống kế v&agrave;o những năm 1845, nhờ sự tiến bộ của kỹ thuật, nền sản xuất đồng hồ gặp nhiều thuận lợi đ&atilde; đưa sản lượng&nbsp;đồng hồ Thụy Sỹ chiếm 40% tổng sản lượng đồng hồ đeo tay tr&ecirc;n to&agrave;n thế giới. Theo đ&oacute;, cứ 10 đồng hồ xuất khẩu tr&ecirc;n thế giới th&igrave; c&oacute; tới 7 chiếc c&oacute; nguồn gốc Thụy Sỹ. Đến nửa đầu thế kỷ 20,&nbsp;đồng hồ Thụy Sỹ hầu như chiếm hết thị trường thế giới. Tuy từng c&oacute; thời gian rơi v&agrave;o khủng hoảng khiến số lượng ti&ecirc;u thụ tụt giảm, thế nhưng đồng hồ vẫn l&agrave; mặt h&agrave;ng xuất khẩu đứng thứ 3 sau T&acirc;n dược v&agrave; Điện tử ở đất nước n&agrave;y. Về sản lượng, đồng hồ đeo tay Thụy Sỹ đạt 33.000.000 chiếc/ năm, chiếm1/10 sản lượng đồng hồ của thế giới.</p>\r\n\r\n<p><img alt=\"\" src=\"https://www.dangquangwatch.vn/lib/ckfinder/images/64550_1.jpg\" style=\"height:205px; width:307px\" /></p>\r\n\r\n<p>Từ những tinh hoa được khơi dậy trong h&agrave;ng trăm năm ph&aacute;t triển những chiếc đồng hồ đến từ c&aacute;c thương hiệu Thụy Sỹ như Omega, Rolex, Breitling, IWC, Audemars Piguet, Baume &amp; Mercier, Zenith, TAG Heuer... được tung ra thị trường với gi&aacute; th&agrave;nh cao ngất ngưỡng đ&atilde; khẳng định được chất lượng, gi&aacute; trị đẳng cấp của ch&uacute;ng. Ngay cả với những t&ecirc;n tuổi lớn như Lacoste hay Armani Exchange cũng đ&atilde; bị đồng hồ Thụy Sĩ vượt xa cả gi&aacute; cả lẫn chất lượng.</p>\r\n\r\n<p>Từ năm 1919, Thụy Sỹ đ&atilde; l&agrave;m nhiều loại đồng hồ mỏng, đẹp, thời thượng. V&agrave; kh&ocirc;ng chỉ dừng lại ở những mẫu đồng hồ đeo tay xem thời gian th&ocirc;ng thường, Thụy Sỹ c&ograve;n nơi nơi ph&aacute;t minh ra nhiều loại đồng hồ phục vụ cho lĩnh vực khoa học kỹ thuật như: Đồng hồ theo d&otilde;i bệnh nh&acirc;n; đồng hồ đo nhịp tim; hay đồng hồ chống nắng&hellip;</p>', NULL, '2020-08-04 23:42:53', NULL);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table "category"
+-- Table structure for table category
 --
 
-CREATE TABLE "category" (
-  "id" bigint(20) UNSIGNED NOT NULL,
-  "c_name" varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  "c_slug" varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  "c_cate" varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  "created_at" timestamp NULL DEFAULT NULL,
-  "updated_at" timestamp NULL DEFAULT NULL
+CREATE TABLE category (
+  id bigint(20) UNSIGNED NOT NULL,
+  c_name varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  c_slug varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  c_cate varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  created_at timestamp NULL DEFAULT NULL,
+  updated_at timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table "category"
+-- Dumping data for table category
 --
 
-INSERT INTO "category" ("id", "c_name", "c_slug", "c_cate", "created_at", "updated_at") VALUES
+INSERT INTO category (id, c_name, c_slug, c_cate, created_at, updated_at) VALUES
 (1, 'Đồng hồ Philippe Auguste', 'dong-ho-philippe-auguste', 'watch', '2020-07-04 09:07:39', NULL),
 (2, 'Đồng hồ Epos Swiss', 'dong-ho-epos-swiss', 'watch', '2020-07-04 09:09:19', NULL),
 (3, 'Đồng hồ Atlantic Swiss', 'dong-ho-atlantic-swiss', 'watch', '2020-07-04 09:09:34', NULL),
@@ -130,25 +130,25 @@ INSERT INTO "category" ("id", "c_name", "c_slug", "c_cate", "created_at", "updat
 -- --------------------------------------------------------
 
 --
--- Table structure for table "keyword"
+-- Table structure for table keyword
 --
 
-CREATE TABLE "keyword" (
-  "id" bigint(20) UNSIGNED NOT NULL,
-  "k_name" varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  "k_slug" varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  "k_description" varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  "k_hot" int(11) NOT NULL DEFAULT 0,
-  "k_active" int(11) NOT NULL DEFAULT 0,
-  "created_at" timestamp NULL DEFAULT NULL,
-  "updated_at" timestamp NULL DEFAULT NULL
+CREATE TABLE keyword (
+  id bigint(20) UNSIGNED NOT NULL,
+  k_name varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  k_slug varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  k_description varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  k_hot int(11) NOT NULL DEFAULT 0,
+  k_active int(11) NOT NULL DEFAULT 0,
+  created_at timestamp NULL DEFAULT NULL,
+  updated_at timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table "keyword"
+-- Dumping data for table keyword
 --
 
-INSERT INTO "keyword" ("id", "k_name", "k_slug", "k_description", "k_hot", "k_active", "created_at", "updated_at") VALUES
+INSERT INTO keyword (id, k_name, k_slug, k_description, k_hot, k_active, created_at, updated_at) VALUES
 (1, 'Hot', 'hot', 'Hàng bán chạy', 0, 0, '2020-07-21 23:24:28', NULL),
 (2, 'Siêu giảm giá', 'sieu-giam-gia', 'Giảm giá lên tới 20%', 0, 0, '2020-07-21 23:24:53', NULL),
 (3, 'Limited', 'limited', 'Hàng hiếm', 0, 0, '2020-09-23 19:23:37', NULL),
@@ -157,20 +157,20 @@ INSERT INTO "keyword" ("id", "k_name", "k_slug", "k_description", "k_hot", "k_ac
 -- --------------------------------------------------------
 
 --
--- Table structure for table "migrations"
+-- Table structure for table migrations
 --
 
-CREATE TABLE "migrations" (
-  "id" int(10) UNSIGNED NOT NULL,
-  "migration" varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  "batch" int(11) NOT NULL
+CREATE TABLE migrations (
+  id int(10) UNSIGNED NOT NULL,
+  migration varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  batch int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table "migrations"
+-- Dumping data for table migrations
 --
 
-INSERT INTO "migrations" ("id", "migration", "batch") VALUES
+INSERT INTO migrations (id, migration, batch) VALUES
 (1, '2021_03_03_205336_create_admins_table', 1),
 (2, '2021_03_03_205356_create_articles_table', 1),
 (3, '2021_03_03_205807_create_category_table', 1),
@@ -182,30 +182,32 @@ INSERT INTO "migrations" ("id", "migration", "batch") VALUES
 (9, '2021_03_03_211515_create_user_favourite_table', 1),
 (10, '2022_04_02_094736_create_transaction_table', 1),
 (11, '2022_04_02_094835_create_orders_table', 1),
-(12, '2022_04_02_100515_create_rating_table', 1);
+(12, '2022_04_02_100515_create_rating_table', 1),
+(13, '2022_05_15_090805_add_users_table', 2),
+(14, '2022_05_15_092042_add_user_table', 3);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table "orders"
+-- Table structure for table orders
 --
 
-CREATE TABLE "orders" (
-  "id" bigint(20) UNSIGNED NOT NULL,
-  "od_transaction_id" bigint(20) UNSIGNED NOT NULL,
-  "od_product_id" bigint(20) UNSIGNED NOT NULL,
-  "od_sale" int(11) NOT NULL DEFAULT 0,
-  "od_qty" int(11) NOT NULL DEFAULT 0,
-  "od_price" int(11) NOT NULL DEFAULT 0,
-  "created_at" timestamp NULL DEFAULT NULL,
-  "updated_at" timestamp NULL DEFAULT NULL
+CREATE TABLE orders (
+  id bigint(20) UNSIGNED NOT NULL,
+  od_transaction_id bigint(20) UNSIGNED NOT NULL,
+  od_product_id bigint(20) UNSIGNED NOT NULL,
+  od_sale int(11) NOT NULL DEFAULT 0,
+  od_qty int(11) NOT NULL DEFAULT 0,
+  od_price int(11) NOT NULL DEFAULT 0,
+  created_at timestamp NULL DEFAULT NULL,
+  updated_at timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table "orders"
+-- Dumping data for table orders
 --
 
-INSERT INTO "orders" ("id", "od_transaction_id", "od_product_id", "od_sale", "od_qty", "od_price", "created_at", "updated_at") VALUES
+INSERT INTO orders (id, od_transaction_id, od_product_id, od_sale, od_qty, od_price, created_at, updated_at) VALUES
 (1, 1, 15, 0, 1, 24000000, NULL, NULL),
 (2, 2, 15, 0, 1, 24000000, NULL, NULL),
 (3, 3, 15, 0, 1, 24000000, NULL, NULL),
@@ -227,53 +229,55 @@ INSERT INTO "orders" ("id", "od_transaction_id", "od_product_id", "od_sale", "od
 (19, 15, 7, 0, 1, 150000000, NULL, NULL),
 (20, 16, 11, 0, 1, 4500000, NULL, NULL),
 (21, 17, 11, 0, 1, 4500000, NULL, NULL),
-(22, 18, 15, 0, 1, 24000000, NULL, NULL);
+(22, 18, 15, 0, 1, 24000000, NULL, NULL),
+(23, 35, 14, 0, 1, 11359000, NULL, NULL),
+(24, 36, 7, 0, 1, 150000000, NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table "product"
+-- Table structure for table product
 --
 
-CREATE TABLE "product" (
-  "id" bigint(20) UNSIGNED NOT NULL,
-  "pro_name" varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  "pro_amount" int(11) NOT NULL DEFAULT 100,
-  "pro_view" int(11) NOT NULL DEFAULT 0,
-  "pro_slug" varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  "pro_price" int(11) NOT NULL DEFAULT 0,
-  "pro_sale" int(11) NOT NULL DEFAULT 0,
-  "pro_category" varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  "pro_avatar" varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  "pro_favourite" int(11) NOT NULL DEFAULT 0,
-  "pro_hot" int(11) NOT NULL DEFAULT 0,
-  "pro_active" int(11) NOT NULL DEFAULT 0,
-  "pro_admin_id" int(11) NOT NULL DEFAULT 0,
-  "pro_pay" int(11) NOT NULL DEFAULT 0,
-  "pro_description" text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  "pro_content" text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  "pro_review_total" int(11) NOT NULL DEFAULT 0,
-  "keywordseo" varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  "pro_review_star" int(11) NOT NULL DEFAULT 5,
-  "_wysihtml5_mode" varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  "created_at" timestamp NULL DEFAULT NULL,
-  "updated_at" timestamp NULL DEFAULT NULL
+CREATE TABLE product (
+  id bigint(20) UNSIGNED NOT NULL,
+  pro_name varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  pro_amount int(11) NOT NULL DEFAULT 100,
+  pro_view int(11) NOT NULL DEFAULT 0,
+  pro_slug varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  pro_price int(11) NOT NULL DEFAULT 0,
+  pro_sale int(11) NOT NULL DEFAULT 0,
+  pro_category varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  pro_avatar varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  pro_favourite int(11) NOT NULL DEFAULT 0,
+  pro_hot int(11) NOT NULL DEFAULT 0,
+  pro_active int(11) NOT NULL DEFAULT 0,
+  pro_admin_id int(11) NOT NULL DEFAULT 0,
+  pro_pay int(11) NOT NULL DEFAULT 0,
+  pro_description text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  pro_content text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  pro_review_total int(11) NOT NULL DEFAULT 0,
+  keywordseo varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  pro_review_star int(11) NOT NULL DEFAULT 5,
+  _wysihtml5_mode varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  created_at timestamp NULL DEFAULT NULL,
+  updated_at timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table "product"
+-- Dumping data for table product
 --
 
-INSERT INTO "product" ("id", "pro_name", "pro_amount", "pro_view", "pro_slug", "pro_price", "pro_sale", "pro_category", "pro_avatar", "pro_favourite", "pro_hot", "pro_active", "pro_admin_id", "pro_pay", "pro_description", "pro_content", "pro_review_total", "keywordseo", "pro_review_star", "_wysihtml5_mode", "created_at", "updated_at") VALUES
+INSERT INTO product (id, pro_name, pro_amount, pro_view, pro_slug, pro_price, pro_sale, pro_category, pro_avatar, pro_favourite, pro_hot, pro_active, pro_admin_id, pro_pay, pro_description, pro_content, pro_review_total, keywordseo, pro_review_star, _wysihtml5_mode, created_at, updated_at) VALUES
 (6, 'Đồng hồ Philippe Auguste PA5001A', 100, 13, 'dong-ho-philippe-auguste-pa5001a', 1500000, 0, '1', '2020-07-06__784610833-dong-ho-nhap-khau.jpg', 0, 1, 1, 1, 0, 'THÔNG SỐ KỸ THUẬT<br> Đường kính mặt:40 mm<br> Chống nước:5 ATM<br> Chất liệu mặt:Sapphire<br> Năng lượng sử dụng:Automatic <br> Size dây<br> Chất liệu dây:Dây da chính hãng<br> Chất liệu vỏ:Stainless Steel<br> Kiểu dáng:Nam<br> Xuất xứ:Áo<br> Chế độ bảo hành:Bảo hành quốc tế 02 năm<br>', '<p> </p><div>Content</div><p></p>', 0, '', 5, '1', '2020-07-04 23:15:35', '2020-07-11 21:47:02'),
-(7, 'Đồng hồ Philippe Auguste PA5001B', 99, 54, 'dong-ho-philippe-auguste-pa5001b', 150000000, 0, '1', '2020-07-06__202451360-dong-ho-nhap-khau2.jpg', 1, 1, 1, 1, 15, 'Đang cập nhật', 'Content', 2, '', 11, '1', '2020-07-04 23:17:21', '2022-05-07 02:27:03'),
+(7, 'Đồng hồ Philippe Auguste PA5001B', 98, 57, 'dong-ho-philippe-auguste-pa5001b', 150000000, 0, '1', '2020-07-06__202451360-dong-ho-nhap-khau2.jpg', 1, 1, 1, 1, 16, 'Đang cập nhật', 'Content', 2, '', 11, '1', '2020-07-04 23:17:21', '2022-05-07 02:27:03'),
 (8, 'Đồng hồ Philippe Auguste PA5001C', 98, 10, 'dong-ho-philippe-auguste-pa5001c', 120000000, 0, '1', '2020-07-06__1494321812-dong-ho-nhap-khau3.jpg', 0, 0, 1, 1, 2, 'Đang cập nhật', 'Content', 0, '', 5, '1', '2020-07-04 23:17:56', NULL),
 (9, 'Đồng hồ Philippe Auguste PA5001D', 99, 5, 'dong-ho-philippe-auguste-pa5001d', 50000, 0, '1', '2020-07-06__67724650-dong-ho-nhap-khau4.jpg', 0, 0, 1, 1, 1, 'Đang cập nhật', 'Content', 0, '', 5, '1', '2020-07-04 23:18:24', NULL),
 (10, 'Đồng hồ Philippe Auguste PA5001E', 99, 39, 'dong-ho-philippe-auguste-pa5001e', 7500000, 10, '1', '2020-07-06__2132524758-dong-ho-nhap-khau5.jpg', 0, 1, 1, 1, 36, 'Đang cập nhật', 'Content', 0, '', 5, '1', '2020-07-04 23:19:03', '2020-09-23 01:44:33'),
 (11, 'Đồng hồ Philippe Auguste PA5001F', 97, 108, 'dong-ho-philippe-auguste-pa5001f', 4500000, 0, '1', '2020-07-06__2078177429-dong-ho-nhap-khau6.jpg', 1, 0, 1, 1, 5, 'Đang cập nhật', 'Content', 2, '', 9, '1', '2020-07-04 23:19:35', '2022-05-07 00:08:16'),
 (12, 'Đồng hồ Philippe Auguste PA5002A', 100, 5, 'dong-ho-philippe-auguste-pa5002a', 500000000, 0, '1', '2020-07-06__828322507-dong-ho-nhap-khau7.jpg', 0, 0, 1, 1, 0, 'Đang cập nhật', 'Content', 0, '', 5, '1', '2020-07-04 23:20:12', NULL),
 (13, 'Đồng hồ Philippe Auguste PA5002B', 100, 9, 'dong-ho-philippe-auguste-pa5002b', 90000, 0, '1', '2020-07-06__777381163-dong-ho-nhap-khau8.jpg', 0, 0, 1, 1, 0, 'Đang cập nhật', 'Content', 0, '', 5, '1', '2020-07-04 23:20:44', NULL),
-(14, 'Đồng hồ Philippe Auguste PA5002C', 98, 42, 'dong-ho-philippe-auguste-pa5002c', 11359000, 0, '1', '2020-07-06__1432153761-dong-ho-nhap-khau9.jpg', 1, 1, 1, 1, 11, 'Đang cập nhật', 'Content', 0, '', 5, '1', '2020-07-04 23:21:09', '2020-09-19 19:39:23'),
+(14, 'Đồng hồ Philippe Auguste PA5002C', 97, 56, 'dong-ho-philippe-auguste-pa5002c', 11359000, 0, '1', '2020-07-06__1432153761-dong-ho-nhap-khau9.jpg', 1, 1, 1, 1, 12, 'Đang cập nhật', 'Content', 0, '', 5, '1', '2020-07-04 23:21:09', '2020-09-19 19:39:23'),
 (15, 'Đồng hồ Philippe Auguste PA5002D', 98, 43, 'dong-ho-philippe-auguste-pa5002d', 24000000, 0, '1', '2020-07-06__1334477955-dong-ho-nhap-khau10.jpg', 0, 1, 1, 1, 16, 'Đang cập nhật', 'Content', 0, '', 5, '1', '2020-07-04 23:21:36', '2020-07-11 21:47:38'),
 (16, 'Đồng hồ Philippe Auguste PA5002E', 100, 0, 'dong-ho-philippe-auguste-pa5002e', 3400000, 0, '1', '2020-07-06__282562145-dong-ho-nhap-khau11.jpg', 0, 0, 1, 1, 0, 'Đang cập nhật', 'Content', 0, '', 5, '1', '2020-07-04 23:22:08', NULL),
 (17, 'Đồng hồ Philippe Auguste PA5002F', 100, 0, 'dong-ho-philippe-auguste-pa5002f', 9000000, 0, '1', '2020-07-06__1284625766-dong-ho-nhap-khau12.jpg', 0, 0, 1, 1, 0, 'Đang cập nhật', 'Content', 0, '', 5, '1', '2020-07-04 23:22:32', NULL),
@@ -333,7 +337,7 @@ INSERT INTO "product" ("id", "pro_name", "pro_amount", "pro_view", "pro_slug", "
 (71, 'Đồng hồ Aries Gold AG-G9005G RG-S', 100, 0, 'dong-ho-aries-gold-ag-g9005g-rg-s', 11522500, 0, '5', '2020-07-06__1776967786-donghocochinhhang.jpg', 0, 0, 1, 1, 0, 'Đang cập nhật', 'Content', 0, '', 5, '1', '2020-07-05 01:04:37', NULL),
 (72, 'Đồng hồ Aries Gold AG-G101 G-BU', 100, 0, 'dong-ho-aries-gold-ag-g101-g-bu', 5472500, 0, '5', '2020-07-06__1105091133-ng-h-chnh-hng-9-1.jpg', 0, 0, 1, 1, 0, 'Đang cập nhật', 'Content', 0, '', 5, '1', '2020-07-05 03:26:34', NULL),
 (73, 'Đồng hồ Aries Gold AG-L9023 S-BK', 100, 0, 'dong-ho-aries-gold-ag-l9023-s-bk', 6225000, 0, '5', '2020-07-06__664894802-ag-l9023-s-bk.jpg', 0, 0, 1, 1, 0, 'Đang cập nhật', 'Content', 0, '', 5, '1', '2020-07-05 03:27:05', NULL),
-(74, 'Đồng hồ Jacques Lemans JL-1-1654.2ZD', 100, 0, 'dong-ho-jacques-lemans-jl-1-16542zd', 5190000, 0, '6', '2020-07-06__1237549702-dong-ho-chinh-hang-15.jpg', 0, 0, 1, 1, 0, 'Đang cập nhật', 'Content', 0, '', 5, '1', '2020-07-05 03:27:48', NULL),
+(74, 'Đồng hồ Jacques Lemans JL-1-1654.2ZD', 100, 5, 'dong-ho-jacques-lemans-jl-1-16542zd', 5190000, 0, '6', '2020-07-06__1237549702-dong-ho-chinh-hang-15.jpg', 0, 0, 1, 1, 0, 'Đang cập nhật', 'Content', 0, '', 5, '1', '2020-07-05 03:27:48', NULL),
 (75, 'Đồng hồ Jacques Lemans JL-1-1654.2ZH', 100, 0, 'dong-ho-jacques-lemans-jl-1-16542zh', 6640000, 0, '6', '2020-07-06__1227200434-dong-ho-chinh-hang-3.jpg', 0, 0, 1, 1, 0, 'Đang cập nhật', 'Content', 0, '', 5, '1', '2020-07-05 03:28:18', NULL),
 (76, 'Đồng hồ Jacques Lemans JL-40-1D', 100, 2, 'dong-ho-jacques-lemans-jl-40-1d', 2470000, 0, '6', '2020-07-06__764709761-ng-h-chnh-hng-7.jpg', 0, 0, 1, 1, 0, 'Đang cập nhật', 'Content', 0, '', 5, '1', '2020-07-05 03:28:45', NULL),
 (77, 'ĐỒNG HỒ JACQUES LEMANS JL-1-1654.2ZG', 100, 0, 'dong-ho-jacques-lemans-jl-1-16542zg', 5770000, 0, '6', '2020-07-06__1211669676-dong-ho-chinh-hang-2.jpg', 0, 0, 1, 1, 0, 'Đang cập nhật', 'Content', 0, '', 5, '1', '2020-07-05 03:29:06', NULL),
@@ -474,7 +478,7 @@ INSERT INTO "product" ("id", "pro_name", "pro_amount", "pro_view", "pro_slug", "
 (212, 'Kính Rayban RB-3025-002/4O', 100, 0, 'kinh-rayban-rb-3025-0024o58it', 5250000, 0, '14', '2020-07-06__516250429-knh-mt-ng-quang205.jpg', 0, 0, 1, 1, 0, 'Đang cập nhật', 'Content', 0, '', 5, '1', '2020-07-05 04:43:22', '2020-09-18 09:41:59'),
 (213, 'Kính RAYBAN RB-8317CH-003/5J', 100, 0, 'kinh-rayban-rb-8317ch-0035j58it', 7950000, 0, '15', '2020-07-06__1680694607-knh-rayban309.jpg', 0, 0, 1, 1, 0, 'Đang cập nhật', 'Content', 0, '', 5, '1', '2020-07-05 04:43:37', NULL),
 (214, 'Kính RAYBAN RB-4195F-601/71', 100, 0, 'kinh-rayban-rb-4195f-6017152it', 7950000, 0, '15', '2020-07-06__1968672020-knh-rayban314.jpg', 0, 0, 1, 1, 0, 'Đang cập nhật', 'Content', 0, '', 5, '1', '2020-07-05 04:43:59', NULL);
-INSERT INTO "product" ("id", "pro_name", "pro_amount", "pro_view", "pro_slug", "pro_price", "pro_sale", "pro_category", "pro_avatar", "pro_favourite", "pro_hot", "pro_active", "pro_admin_id", "pro_pay", "pro_description", "pro_content", "pro_review_total", "keywordseo", "pro_review_star", "_wysihtml5_mode", "created_at", "updated_at") VALUES
+INSERT INTO product (id, pro_name, pro_amount, pro_view, pro_slug, pro_price, pro_sale, pro_category, pro_avatar, pro_favourite, pro_hot, pro_active, pro_admin_id, pro_pay, pro_description, pro_content, pro_review_total, keywordseo, pro_review_star, _wysihtml5_mode, created_at, updated_at) VALUES
 (215, 'Kính RAYBAN RB-3025-003/32', 100, 0, 'kinh-rayban-rb-3025-0033258it', 5250000, 0, '14', '2020-07-06__594592928-knh-rayban320.jpg', 0, 0, 1, 1, 0, 'Đang cập nhật', 'Content', 0, '', 5, '1', '2020-07-05 04:44:22', '2020-09-18 09:06:54'),
 (216, 'Kính mát Rayban RB-3025-181', 100, 0, 'kinh-mat-rayban-rb-3025-18158it', 4950000, 0, '14', '2020-07-06__1435031173-knh-rayban170.jpg', 0, 0, 1, 1, 0, 'Đang cập nhật', 'Content', 0, '', 5, '1', '2020-07-05 04:44:39', NULL),
 (217, 'Kính mát Prada PR-0PR 08USF-C7O9K1', 100, 3, 'kinh-mat-prada-pr-0pr-08usf-c7o9k154it', 9250000, 0, '15', '2020-07-06__139525441-1372902178-knh-prada33.jpg', 0, 0, 1, 1, 0, 'Đang cập nhật', 'Content', 0, '', 5, '1', '2020-07-05 04:45:21', NULL),
@@ -546,23 +550,23 @@ INSERT INTO "product" ("id", "pro_name", "pro_amount", "pro_view", "pro_slug", "
 -- --------------------------------------------------------
 
 --
--- Table structure for table "product_images"
+-- Table structure for table product_images
 --
 
-CREATE TABLE "product_images" (
-  "id" bigint(20) UNSIGNED NOT NULL,
-  "al_name" varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  "al_slug" varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  "product_id" bigint(20) UNSIGNED NOT NULL,
-  "created_at" timestamp NULL DEFAULT NULL,
-  "updated_at" timestamp NULL DEFAULT NULL
+CREATE TABLE product_images (
+  id bigint(20) UNSIGNED NOT NULL,
+  al_name varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  al_slug varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  product_id bigint(20) UNSIGNED NOT NULL,
+  created_at timestamp NULL DEFAULT NULL,
+  updated_at timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table "product_images"
+-- Dumping data for table product_images
 --
 
-INSERT INTO "product_images" ("id", "al_name", "al_slug", "product_id", "created_at", "updated_at") VALUES
+INSERT INTO product_images (id, al_name, al_slug, product_id, created_at, updated_at) VALUES
 (1, 'address.png', '2020-09-24__addresspng.png', 281, '2020-09-23 19:45:49', NULL),
 (2, 'AriesGold.jpg', '2020-09-24__ariesgoldjpg.jpg', 281, '2020-09-23 19:45:49', NULL),
 (3, 'b_dayda1.jpg', '2020-09-24__b-dayda1jpg.jpg', 281, '2020-09-23 19:45:49', NULL),
@@ -575,39 +579,39 @@ INSERT INTO "product_images" ("id", "al_name", "al_slug", "product_id", "created
 -- --------------------------------------------------------
 
 --
--- Table structure for table "product_keywords"
+-- Table structure for table product_keywords
 --
 
-CREATE TABLE "product_keywords" (
-  "id" bigint(20) UNSIGNED NOT NULL,
-  "pk_product_id" bigint(20) UNSIGNED NOT NULL,
-  "pk_keyword_id" bigint(20) UNSIGNED NOT NULL,
-  "created_at" timestamp NULL DEFAULT NULL,
-  "updated_at" timestamp NULL DEFAULT NULL
+CREATE TABLE product_keywords (
+  id bigint(20) UNSIGNED NOT NULL,
+  pk_product_id bigint(20) UNSIGNED NOT NULL,
+  pk_keyword_id bigint(20) UNSIGNED NOT NULL,
+  created_at timestamp NULL DEFAULT NULL,
+  updated_at timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table "ratings"
+-- Table structure for table ratings
 --
 
-CREATE TABLE "ratings" (
-  "id" bigint(20) UNSIGNED NOT NULL,
-  "r_user_id" bigint(20) UNSIGNED NOT NULL,
-  "r_product_id" bigint(20) UNSIGNED NOT NULL,
-  "r_number" int(11) NOT NULL DEFAULT 0,
-  "r_status" int(11) NOT NULL DEFAULT 0,
-  "r_content" varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  "created_at" timestamp NULL DEFAULT NULL,
-  "updated_at" timestamp NULL DEFAULT NULL
+CREATE TABLE ratings (
+  id bigint(20) UNSIGNED NOT NULL,
+  r_user_id bigint(20) UNSIGNED NOT NULL,
+  r_product_id bigint(20) UNSIGNED NOT NULL,
+  r_number int(11) NOT NULL DEFAULT 0,
+  r_status int(11) NOT NULL DEFAULT 0,
+  r_content varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  created_at timestamp NULL DEFAULT NULL,
+  updated_at timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table "ratings"
+-- Dumping data for table ratings
 --
 
-INSERT INTO "ratings" ("id", "r_user_id", "r_product_id", "r_number", "r_status", "r_content", "created_at", "updated_at") VALUES
+INSERT INTO ratings (id, r_user_id, r_product_id, r_number, r_status, r_content, created_at, updated_at) VALUES
 (1, 13, 11, 3, 0, 'Greate', '2022-04-13 14:07:43', '2022-04-13 14:07:43'),
 (2, 13, 7, 2, 0, 'Tồi tệ', '2022-04-13 23:18:35', '2022-04-13 23:18:35'),
 (3, 13, 11, 3, 0, 'Nice', '2022-05-07 00:07:46', '2022-05-07 00:07:46'),
@@ -617,30 +621,30 @@ INSERT INTO "ratings" ("id", "r_user_id", "r_product_id", "r_number", "r_status"
 -- --------------------------------------------------------
 
 --
--- Table structure for table "transactions"
+-- Table structure for table transactions
 --
 
-CREATE TABLE "transactions" (
-  "id" bigint(20) UNSIGNED NOT NULL,
-  "tst_user_id" bigint(20) UNSIGNED NOT NULL,
-  "tst_total_money" varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
-  "tst_name" varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  "tst_email" varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  "tst_phone" varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  "tst_address" varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  "tst_note" varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  "tst_status" int(11) NOT NULL DEFAULT 1,
-  "tst_type" int(11) NOT NULL DEFAULT 1,
-  "tst_code" varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  "created_at" timestamp NULL DEFAULT NULL,
-  "updated_at" timestamp NULL DEFAULT NULL
+CREATE TABLE transactions (
+  id bigint(20) UNSIGNED NOT NULL,
+  tst_user_id bigint(20) UNSIGNED NOT NULL,
+  tst_total_money varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  tst_name varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  tst_email varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  tst_phone varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  tst_address varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  tst_note varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  tst_status int(11) NOT NULL DEFAULT 1,
+  tst_type int(11) NOT NULL DEFAULT 1,
+  tst_code varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  created_at timestamp NULL DEFAULT NULL,
+  updated_at timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table "transactions"
+-- Dumping data for table transactions
 --
 
-INSERT INTO "transactions" ("id", "tst_user_id", "tst_total_money", "tst_name", "tst_email", "tst_phone", "tst_address", "tst_note", "tst_status", "tst_type", "tst_code", "created_at", "updated_at") VALUES
+INSERT INTO transactions (id, tst_user_id, tst_total_money, tst_name, tst_email, tst_phone, tst_address, tst_note, tst_status, tst_type, tst_code, created_at, updated_at) VALUES
 (1, 13, '24000000', 'Satosis', 'user@gmail.com', '0948561668', 'Hà Nội', 'Không có', 5, 2, 'PAYID-MJLV6YA90278034GB619790T', '2022-04-13 23:40:17', '2022-04-13 23:40:17'),
 (2, 13, '24000000', 'Satosis', 'user@gmail.com', '0948561668', 'Hà Nội', 'Không có', -1, 2, 'PAYID-MJLWNMA3JB45680AY3245345', '2022-04-14 00:11:28', '2022-05-01 03:00:48'),
 (3, 13, '24000000', 'Satosis', 'user@gmail.com', '0948561668', 'Hà Nội', 'Không có', -1, 2, 'PAYID-MJLWOVA78C08370XX847474A', '2022-04-14 00:14:13', '2022-05-01 02:59:57'),
@@ -658,58 +662,82 @@ INSERT INTO "transactions" ("id", "tst_user_id", "tst_total_money", "tst_name", 
 (15, 13, '150000000', 'Satosis', 'user@gmail.com', '0948561668', 'Hà Nội', 'Không có', 2, 2, 'PAYID-MJ7WEGI2XS49438JY5896227', '2022-05-14 08:02:34', '2022-05-14 08:09:26'),
 (16, 13, '4500000', 'Satosis', 'user@gmail.com', '0948561668', 'Hà Nội', 'Không có', 1, 2, 'PAYID-MJ7WGZQ0PB89436864450153', '2022-05-14 08:08:07', '2022-05-14 08:08:46'),
 (17, 13, '4500000', 'Satosis', 'user@gmail.com', '0948561668', 'Hà Nội', 'Không có', -1, 1, '', '2022-05-14 08:15:36', '2022-05-14 08:16:42'),
-(18, 13, '24000000', 'Satosis', 'user@gmail.com', '0948561668', 'Hà Nội', 'Không có', 1, 1, '', '2022-05-14 08:59:08', '2022-05-14 08:59:08');
+(18, 13, '24000000', 'Satosis', 'user@gmail.com', '0948561668', 'Hà Nội', 'Không có', 1, 1, '', '2022-05-14 08:59:08', '2022-05-14 08:59:08'),
+(19, 13, '11359000', 'Satosis', 'hung0913003358@gmail.com', '0948561668', 'Hà Nội', 'Không có', 1, 1, '', '2022-05-14 11:38:21', '2022-05-14 11:38:21'),
+(20, 13, '11359000', 'Satosis', 'hung0913003358@gmail.com', '0948561668', 'Hà Nội', 'Không có', 1, 1, '', '2022-05-14 11:40:52', '2022-05-14 11:40:52'),
+(21, 13, '11359000', 'Satosis', 'hung0913003358@gmail.com', '0948561668', 'Hà Nội', 'Không có', 1, 1, '', '2022-05-14 11:42:11', '2022-05-14 11:42:11'),
+(22, 13, '11359000', 'Satosis', 'hung0913003358@gmail.com', '0948561668', 'Hà Nội', 'Không có', 1, 1, '', '2022-05-14 11:42:20', '2022-05-14 11:42:20'),
+(23, 13, '11359000', 'Satosis', 'hung0913003358@gmail.com', '0948561668', 'Hà Nội', 'Không có', 1, 1, '', '2022-05-14 11:43:35', '2022-05-14 11:43:35'),
+(24, 13, '11359000', 'Satosis', 'hung0913003358@gmail.com', '0948561668', 'Hà Nội', 'Không có', 1, 1, '', '2022-05-14 11:43:42', '2022-05-14 11:43:42'),
+(25, 13, '11359000', 'Satosis', 'hung0913003358@gmail.com', '0948561668', 'Hà Nội', 'Không có', 1, 1, '', '2022-05-14 11:46:33', '2022-05-14 11:46:33'),
+(26, 13, '11359000', 'Satosis', 'hung0913003358@gmail.com', '0948561668', 'Hà Nội', 'Không có', 1, 1, '', '2022-05-14 11:47:27', '2022-05-14 11:47:27'),
+(27, 13, '11359000', 'Satosis', 'hung0913003358@gmail.com', '0948561668', 'Hà Nội', 'Không có', 1, 1, '', '2022-05-14 11:48:48', '2022-05-14 11:48:48'),
+(28, 13, '11359000', 'Satosis', 'hung0913003358@gmail.com', '0948561668', 'Hà Nội', 'Không có', 1, 1, '', '2022-05-14 11:49:19', '2022-05-14 11:49:19'),
+(29, 13, '11359000', 'Satosis', 'user@gmail.com', '0948561668', 'Hà Nội', 'Không có', -1, 1, '', '2022-05-14 11:51:22', '2022-05-21 11:01:37'),
+(30, 13, '11359000', 'Satosis', 'user@gmail.com', '0948561668', 'Hà Nội', 'Không có', 1, 1, '', '2022-05-14 11:58:42', '2022-05-14 11:58:42'),
+(31, 13, '11359000', 'Satosis', 'user@gmail.com', '0948561668', 'Hà Nội', 'Không có', 3, 1, '', '2022-05-14 11:59:56', '2022-05-21 11:01:30'),
+(32, 13, '11359000', 'Satosis', 'user@gmail.com', '0948561668', 'Hà Nội', 'Không có', 1, 1, '', '2022-05-14 12:00:49', '2022-05-14 12:00:49'),
+(33, 13, '11359000', 'Satosis', 'user@gmail.com', '0948561668', 'Hà Nội', 'Không có', 3, 1, '', '2022-05-14 12:04:40', '2022-05-21 10:37:53'),
+(34, 13, '11359000', 'Satosis', 'user@gmail.com', '0948561668', 'Hà Nội', 'Không có', 1, 1, '', '2022-05-14 12:07:23', '2022-05-14 12:07:23'),
+(35, 13, '11359000', 'Satosis', 'user@gmail.com', '0948561668', 'Hà Nội', 'Không có', 1, 1, '', '2022-05-21 10:38:48', '2022-05-21 10:38:48'),
+(36, 13, '150000000', 'Satosis', 'user@gmail.com', '0948561668', 'Hà Nội', 'Không có', 1, 1, '', '2022-05-21 10:40:10', '2022-05-21 10:40:10');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table "users"
+-- Table structure for table users
 --
 
-CREATE TABLE "users" (
-  "id" bigint(20) UNSIGNED NOT NULL,
-  "name" varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  "provider" varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  "provider_id" varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  "email" varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  "phone" varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  "address" varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  "password" varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  "avatar" varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  "remember_token" varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  "created_at" timestamp NULL DEFAULT NULL,
-  "updated_at" timestamp NULL DEFAULT NULL
+CREATE TABLE users (
+  id bigint(20) UNSIGNED NOT NULL,
+  name varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  provider varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  provider_id varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  email varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  phone varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  address varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  password varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  avatar varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  remember_token varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  created_at timestamp NULL DEFAULT NULL,
+  updated_at timestamp NULL DEFAULT NULL,
+  birthday varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  gender int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table "users"
+-- Dumping data for table users
 --
 
-INSERT INTO "users" ("id", "name", "provider", "provider_id", "email", "phone", "address", "password", "avatar", "remember_token", "created_at", "updated_at") VALUES
-(13, 'Satosis', NULL, NULL, 'user@gmail.com', '0948561668', NULL, '$2y$10$IAoLmNwXT1YpAkdgXc/ggu8xKLai8EqsstejC2dSYz2PFhJm6MFKm', NULL, NULL, '2020-09-12 13:11:30', NULL),
-(14, 'Hùng Nguyễn', 'google', '100195086957714365762', 'hung0913003358@gmail.com', NULL, NULL, NULL, NULL, NULL, '2020-09-14 18:58:37', '2020-09-14 18:58:37'),
-(17, 'John Doe', NULL, NULL, 'johndoe@gmail.com', '0948561669', NULL, '$2y$10$IAoLmNwXT1YpAkdgXc/ggu8xKLai8EqsstejC2dSYz2PFhJm6MFKm', NULL, NULL, '2020-09-17 19:24:42', NULL),
-(18, 'Peter', NULL, NULL, 'peter@gmail.com', '12345678', NULL, '$2y$10$IAoLmNwXT1YpAkdgXc/ggu8xKLai8EqsstejC2dSYz2PFhJm6MFKm', NULL, NULL, '2020-09-25 10:15:18', NULL);
+INSERT INTO users (id, name, provider, provider_id, email, phone, address, password, avatar, remember_token, created_at, updated_at, birthday, gender) VALUES
+(13, 'Satosis', NULL, NULL, 'user@gmail.com', '0948561668', NULL, '$2y$10$IAoLmNwXT1YpAkdgXc/ggu8xKLai8EqsstejC2dSYz2PFhJm6MFKm', NULL, NULL, '2020-09-12 13:11:30', NULL, NULL, 0),
+(14, 'Hùng Nguyễn', 'google', '100195086957714365762', 'hung0913003358@gmail.com', NULL, NULL, NULL, NULL, NULL, '2020-09-14 18:58:37', '2020-09-14 18:58:37', NULL, 0),
+(17, 'John Doe', NULL, NULL, 'johndoe@gmail.com', '0948561669', NULL, '$2y$10$IAoLmNwXT1YpAkdgXc/ggu8xKLai8EqsstejC2dSYz2PFhJm6MFKm', NULL, NULL, '2020-09-17 19:24:42', NULL, NULL, 0),
+(18, 'Peter', NULL, NULL, 'peter@gmail.com', '12345678', NULL, '$2y$10$IAoLmNwXT1YpAkdgXc/ggu8xKLai8EqsstejC2dSYz2PFhJm6MFKm', NULL, NULL, '2020-09-25 10:15:18', NULL, NULL, 0),
+(21, 'Nguyễn Hùng', NULL, NULL, 'hung@gmail.com', '0879428091', '4', '$2y$10$hfGjgzp5vvQYBcrmgZg96.BSa46SD5aLklxuv/oqGdvWexEGSMXoW', NULL, NULL, '2022-05-15 02:22:17', '2022-05-15 02:22:17', '2022-06-01T02:22:00.000Z', 1),
+(22, 'Nguyễn Hùng', NULL, NULL, 'hung09132003358@gmail.com', '0879428091', '1', '$2y$10$OfMxlFmdDDn1LwFEH/5pJuEzx.Pu.sHf8m.jRbZiPMsS3.y9/AX0i', NULL, NULL, '2022-05-15 16:36:02', '2022-05-15 16:36:02', 'Wed May 25 2022 23:35:00 GMT+0700 (Indochina Time)', 1),
+(23, 'Nguyễn Hùng', NULL, NULL, '1@gmail.com', '0879428091', '2', '$2y$10$OxB2omT4krJ.hpAG4nXGyeioi3msquDSEIxa62CLoZMv/WeHzeKpm', NULL, NULL, '2022-05-15 16:37:04', '2022-05-15 16:37:04', 'Wed May 04 2022 23:37:00 GMT+0700 (Indochina Time)', 1),
+(24, 'Nguyễn Hùng', NULL, NULL, 'hung0913003fef358@gmail.com', '0879428091', '2', '$2y$10$SjK75D5oO1bqKoVhmsT/DOMqGB9je.pO22fz5BmT0YjI0aD7mJ19W', NULL, NULL, '2022-05-15 16:46:18', '2022-05-15 16:46:18', 'Thu May 19 2022 23:46:00 GMT+0700 (Indochina Time)', 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table "user_favourite"
+-- Table structure for table user_favourite
 --
 
-CREATE TABLE "user_favourite" (
-  "id" bigint(20) UNSIGNED NOT NULL,
-  "uf_product_id" bigint(20) UNSIGNED NOT NULL,
-  "uf_user_id" bigint(20) UNSIGNED NOT NULL,
-  "created_at" timestamp NULL DEFAULT NULL,
-  "updated_at" timestamp NULL DEFAULT NULL
+CREATE TABLE user_favourite (
+  id bigint(20) UNSIGNED NOT NULL,
+  uf_product_id bigint(20) UNSIGNED NOT NULL,
+  uf_user_id bigint(20) UNSIGNED NOT NULL,
+  created_at timestamp NULL DEFAULT NULL,
+  updated_at timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table "user_favourite"
+-- Dumping data for table user_favourite
 --
 
-INSERT INTO "user_favourite" ("id", "uf_product_id", "uf_user_id", "created_at", "updated_at") VALUES
+INSERT INTO user_favourite (id, uf_product_id, uf_user_id, created_at, updated_at) VALUES
 (126, 7, 13, NULL, NULL),
 (127, 14, 13, NULL, NULL),
 (128, 11, 13, NULL, NULL);
@@ -719,219 +747,219 @@ INSERT INTO "user_favourite" ("id", "uf_product_id", "uf_user_id", "created_at",
 --
 
 --
--- Indexes for table "admins"
+-- Indexes for table admins
 --
-ALTER TABLE "admins"
-  ADD PRIMARY KEY ("id"),
-  ADD UNIQUE KEY "admins_email_unique" ("email");
+ALTER TABLE admins
+  ADD PRIMARY KEY (id),
+  ADD UNIQUE KEY admins_email_unique (email);
 
 --
--- Indexes for table "articles"
+-- Indexes for table articles
 --
-ALTER TABLE "articles"
-  ADD PRIMARY KEY ("id");
+ALTER TABLE articles
+  ADD PRIMARY KEY (id);
 
 --
--- Indexes for table "category"
+-- Indexes for table category
 --
-ALTER TABLE "category"
-  ADD PRIMARY KEY ("id");
+ALTER TABLE category
+  ADD PRIMARY KEY (id);
 
 --
--- Indexes for table "keyword"
+-- Indexes for table keyword
 --
-ALTER TABLE "keyword"
-  ADD PRIMARY KEY ("id");
+ALTER TABLE keyword
+  ADD PRIMARY KEY (id);
 
 --
--- Indexes for table "migrations"
+-- Indexes for table migrations
 --
-ALTER TABLE "migrations"
-  ADD PRIMARY KEY ("id");
+ALTER TABLE migrations
+  ADD PRIMARY KEY (id);
 
 --
--- Indexes for table "orders"
+-- Indexes for table orders
 --
-ALTER TABLE "orders"
-  ADD PRIMARY KEY ("id"),
-  ADD KEY "orders_od_transaction_id_foreign" ("od_transaction_id"),
-  ADD KEY "orders_od_product_id_foreign" ("od_product_id");
+ALTER TABLE orders
+  ADD PRIMARY KEY (id),
+  ADD KEY orders_od_transaction_id_foreign (od_transaction_id),
+  ADD KEY orders_od_product_id_foreign (od_product_id);
 
 --
--- Indexes for table "product"
+-- Indexes for table product
 --
-ALTER TABLE "product"
-  ADD PRIMARY KEY ("id");
+ALTER TABLE product
+  ADD PRIMARY KEY (id);
 
 --
--- Indexes for table "product_images"
+-- Indexes for table product_images
 --
-ALTER TABLE "product_images"
-  ADD PRIMARY KEY ("id"),
-  ADD KEY "product_images_product_id_foreign" ("product_id");
+ALTER TABLE product_images
+  ADD PRIMARY KEY (id),
+  ADD KEY product_images_product_id_foreign (product_id);
 
 --
--- Indexes for table "product_keywords"
+-- Indexes for table product_keywords
 --
-ALTER TABLE "product_keywords"
-  ADD PRIMARY KEY ("id"),
-  ADD KEY "product_keywords_pk_product_id_foreign" ("pk_product_id"),
-  ADD KEY "product_keywords_pk_keyword_id_foreign" ("pk_keyword_id");
+ALTER TABLE product_keywords
+  ADD PRIMARY KEY (id),
+  ADD KEY product_keywords_pk_product_id_foreign (pk_product_id),
+  ADD KEY product_keywords_pk_keyword_id_foreign (pk_keyword_id);
 
 --
--- Indexes for table "ratings"
+-- Indexes for table ratings
 --
-ALTER TABLE "ratings"
-  ADD PRIMARY KEY ("id"),
-  ADD KEY "ratings_r_user_id_foreign" ("r_user_id"),
-  ADD KEY "ratings_r_product_id_foreign" ("r_product_id");
+ALTER TABLE ratings
+  ADD PRIMARY KEY (id),
+  ADD KEY ratings_r_user_id_foreign (r_user_id),
+  ADD KEY ratings_r_product_id_foreign (r_product_id);
 
 --
--- Indexes for table "transactions"
+-- Indexes for table transactions
 --
-ALTER TABLE "transactions"
-  ADD PRIMARY KEY ("id"),
-  ADD KEY "transactions_tst_user_id_foreign" ("tst_user_id");
+ALTER TABLE transactions
+  ADD PRIMARY KEY (id),
+  ADD KEY transactions_tst_user_id_foreign (tst_user_id);
 
 --
--- Indexes for table "users"
+-- Indexes for table users
 --
-ALTER TABLE "users"
-  ADD PRIMARY KEY ("id");
+ALTER TABLE users
+  ADD PRIMARY KEY (id);
 
 --
--- Indexes for table "user_favourite"
+-- Indexes for table user_favourite
 --
-ALTER TABLE "user_favourite"
-  ADD PRIMARY KEY ("id"),
-  ADD KEY "user_favourite_uf_product_id_foreign" ("uf_product_id"),
-  ADD KEY "user_favourite_uf_user_id_foreign" ("uf_user_id");
+ALTER TABLE user_favourite
+  ADD PRIMARY KEY (id),
+  ADD KEY user_favourite_uf_product_id_foreign (uf_product_id),
+  ADD KEY user_favourite_uf_user_id_foreign (uf_user_id);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table "admins"
+-- AUTO_INCREMENT for table admins
 --
-ALTER TABLE "admins"
-  MODIFY "id" bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE admins
+  MODIFY id bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table "articles"
+-- AUTO_INCREMENT for table articles
 --
-ALTER TABLE "articles"
-  MODIFY "id" bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+ALTER TABLE articles
+  MODIFY id bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table "category"
+-- AUTO_INCREMENT for table category
 --
-ALTER TABLE "category"
-  MODIFY "id" bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+ALTER TABLE category
+  MODIFY id bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
--- AUTO_INCREMENT for table "keyword"
+-- AUTO_INCREMENT for table keyword
 --
-ALTER TABLE "keyword"
-  MODIFY "id" bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+ALTER TABLE keyword
+  MODIFY id bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table "migrations"
+-- AUTO_INCREMENT for table migrations
 --
-ALTER TABLE "migrations"
-  MODIFY "id" int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+ALTER TABLE migrations
+  MODIFY id int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- AUTO_INCREMENT for table "orders"
+-- AUTO_INCREMENT for table orders
 --
-ALTER TABLE "orders"
-  MODIFY "id" bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+ALTER TABLE orders
+  MODIFY id bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
--- AUTO_INCREMENT for table "product"
+-- AUTO_INCREMENT for table product
 --
-ALTER TABLE "product"
-  MODIFY "id" bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=283;
+ALTER TABLE product
+  MODIFY id bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=283;
 
 --
--- AUTO_INCREMENT for table "product_images"
+-- AUTO_INCREMENT for table product_images
 --
-ALTER TABLE "product_images"
-  MODIFY "id" bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+ALTER TABLE product_images
+  MODIFY id bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT for table "product_keywords"
+-- AUTO_INCREMENT for table product_keywords
 --
-ALTER TABLE "product_keywords"
-  MODIFY "id" bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+ALTER TABLE product_keywords
+  MODIFY id bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table "ratings"
+-- AUTO_INCREMENT for table ratings
 --
-ALTER TABLE "ratings"
-  MODIFY "id" bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+ALTER TABLE ratings
+  MODIFY id bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table "transactions"
+-- AUTO_INCREMENT for table transactions
 --
-ALTER TABLE "transactions"
-  MODIFY "id" bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+ALTER TABLE transactions
+  MODIFY id bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
--- AUTO_INCREMENT for table "users"
+-- AUTO_INCREMENT for table users
 --
-ALTER TABLE "users"
-  MODIFY "id" bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+ALTER TABLE users
+  MODIFY id bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
--- AUTO_INCREMENT for table "user_favourite"
+-- AUTO_INCREMENT for table user_favourite
 --
-ALTER TABLE "user_favourite"
-  MODIFY "id" bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=129;
+ALTER TABLE user_favourite
+  MODIFY id bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=129;
 
 --
 -- Constraints for dumped tables
 --
 
 --
--- Constraints for table "orders"
+-- Constraints for table orders
 --
-ALTER TABLE "orders"
-  ADD CONSTRAINT "orders_od_product_id_foreign" FOREIGN KEY ("od_product_id") REFERENCES "product" ("id"),
-  ADD CONSTRAINT "orders_od_transaction_id_foreign" FOREIGN KEY ("od_transaction_id") REFERENCES "transactions" ("id");
+ALTER TABLE orders
+  ADD CONSTRAINT orders_od_product_id_foreign FOREIGN KEY (od_product_id) REFERENCES product (id),
+  ADD CONSTRAINT orders_od_transaction_id_foreign FOREIGN KEY (od_transaction_id) REFERENCES transactions (id);
 
 --
--- Constraints for table "product_images"
+-- Constraints for table product_images
 --
-ALTER TABLE "product_images"
-  ADD CONSTRAINT "product_images_product_id_foreign" FOREIGN KEY ("product_id") REFERENCES "product" ("id");
+ALTER TABLE product_images
+  ADD CONSTRAINT product_images_product_id_foreign FOREIGN KEY (product_id) REFERENCES product (id);
 
 --
--- Constraints for table "product_keywords"
+-- Constraints for table product_keywords
 --
-ALTER TABLE "product_keywords"
-  ADD CONSTRAINT "product_keywords_pk_keyword_id_foreign" FOREIGN KEY ("pk_keyword_id") REFERENCES "keyword" ("id"),
-  ADD CONSTRAINT "product_keywords_pk_product_id_foreign" FOREIGN KEY ("pk_product_id") REFERENCES "product" ("id");
+ALTER TABLE product_keywords
+  ADD CONSTRAINT product_keywords_pk_keyword_id_foreign FOREIGN KEY (pk_keyword_id) REFERENCES keyword (id),
+  ADD CONSTRAINT product_keywords_pk_product_id_foreign FOREIGN KEY (pk_product_id) REFERENCES product (id);
 
 --
--- Constraints for table "ratings"
+-- Constraints for table ratings
 --
-ALTER TABLE "ratings"
-  ADD CONSTRAINT "ratings_r_product_id_foreign" FOREIGN KEY ("r_product_id") REFERENCES "product" ("id"),
-  ADD CONSTRAINT "ratings_r_user_id_foreign" FOREIGN KEY ("r_user_id") REFERENCES "users" ("id");
+ALTER TABLE ratings
+  ADD CONSTRAINT ratings_r_product_id_foreign FOREIGN KEY (r_product_id) REFERENCES product (id),
+  ADD CONSTRAINT ratings_r_user_id_foreign FOREIGN KEY (r_user_id) REFERENCES users (id);
 
 --
--- Constraints for table "transactions"
+-- Constraints for table transactions
 --
-ALTER TABLE "transactions"
-  ADD CONSTRAINT "transactions_tst_user_id_foreign" FOREIGN KEY ("tst_user_id") REFERENCES "users" ("id");
+ALTER TABLE transactions
+  ADD CONSTRAINT transactions_tst_user_id_foreign FOREIGN KEY (tst_user_id) REFERENCES users (id);
 
 --
--- Constraints for table "user_favourite"
+-- Constraints for table user_favourite
 --
-ALTER TABLE "user_favourite"
-  ADD CONSTRAINT "user_favourite_uf_product_id_foreign" FOREIGN KEY ("uf_product_id") REFERENCES "product" ("id"),
-  ADD CONSTRAINT "user_favourite_uf_user_id_foreign" FOREIGN KEY ("uf_user_id") REFERENCES "users" ("id");
+ALTER TABLE user_favourite
+  ADD CONSTRAINT user_favourite_uf_product_id_foreign FOREIGN KEY (uf_product_id) REFERENCES product (id),
+  ADD CONSTRAINT user_favourite_uf_user_id_foreign FOREIGN KEY (uf_user_id) REFERENCES users (id);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
