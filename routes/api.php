@@ -27,5 +27,10 @@ function () {
     Route::post('/webhook', [PaypalController::class, 'webhook']);
 }
 );
-Route::get('/dashboard','Api\HomeController@index');
-Route::get('/category','Api\CategoryController@index');
+Route::group(['namespace'=>'Api'], function () {
+    Route::get('/dashboard','HomeController@index');
+    Route::get('/category','CategoryController@index');
+    Route::get('danh-muc/{slug}','CategoryDetailController@getCategoryDetail');
+    Route::get('product/{slug}','ProductDetailController@getProductDetail');
+    Route::get('san-pham','ProductController@index');
+});  

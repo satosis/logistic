@@ -79,7 +79,7 @@ class HomeController extends Controller
             'listProduct4'        => $listProduct4,
             'listProduct5'        => $listProduct5,
             'listProduct6'        => $listProduct6,
-            'listProduct7'        => $listProduct7
+            'listProduct7'        => $listProduct7,
         ];
         return response()->json($data, 200);
     }

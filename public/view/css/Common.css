@@ -407,7 +407,10 @@ button{outline:none}
 #product .nameCate { padding: 10px 12px; border-bottom: 1px solid #eeeeee}
 #product .nameCate .name { display: inline-block; border-left: 3px solid #4a90e2; padding: 3px 0; padding-left: 10px; font-family: RobotoB; font-size: 16px}
 
-#product .product { padding: 20px 13px; border-top: 1px solid #e5e5e5}
+#product .product { padding: 20px 13px}
+.text-center{
+   width: 100%;text-align: center;
+}
 #product .descriptPr .cont { padding: 10px 13px 20px 13px; font-size: 15px; line-height: 20px}
 
 .product .descriptIt { margin-top: 15px; line-height: 20px}

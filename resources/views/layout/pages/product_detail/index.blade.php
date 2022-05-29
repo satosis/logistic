@@ -250,169 +250,156 @@
       </div>
    </div>
 </div>
-</div>
 <div id="block-ud2glzu2WR1" class="pdp-block fixed-width-full  block-margin-top background-2">
    <div id="module_product_review" class="pdp-block module">
       <div class="pdp-mod-review">
-         <div>
-            <div class="mod-title">
-               <h2 class="pdp-mod-section-title outer-title">Đánh giá và nhận xét của {{ $product->pro_name}}</h2>
-            </div> 
-            <div class="mod-rating">
-               <div class="content">
-                  <div class="left">
-                     <div class="summary">
-                        <div class="score"><span class="score-average">{{round($product->star,2)}}</span><span class="score-max">/5</span></div>
-                        <div class="average">
-                           <div class="container-star " style="width: 166.25px; height: 33.25px;">
-                              @if($product->star==0)
-                              <img class="star" src="//laz-img-cdn.alicdn.com/tfs/TB18ZvEgfDH8KJjy1XcXXcpdXXa-64-64.png" style="width: 33.25px; height: 33.25px;">
-                              <img class="star" src="//laz-img-cdn.alicdn.com/tfs/TB18ZvEgfDH8KJjy1XcXXcpdXXa-64-64.png" style="width: 33.25px; height: 33.25px;">
-                              <img class="star" src="//laz-img-cdn.alicdn.com/tfs/TB18ZvEgfDH8KJjy1XcXXcpdXXa-64-64.png" style="width: 33.25px; height: 33.25px;">
-                              <img class="star" src="//laz-img-cdn.alicdn.com/tfs/TB18ZvEgfDH8KJjy1XcXXcpdXXa-64-64.png" style="width: 33.25px; height: 33.25px;">
-                              <img class="star" src="//laz-img-cdn.alicdn.com/tfs/TB18ZvEgfDH8KJjy1XcXXcpdXXa-64-64.png" style="width: 33.25px; height: 33.25px;">
-                              @else
-                              @for($i=1;$i<= $product->star;$i++) 
-                                 <img class="star" src="//laz-img-cdn.alicdn.com/tfs/TB19ZvEgfDH8KJjy1XcXXcpdXXa-64-64.png" style="width: 33.25px; height: 33.25px;">
-                              @endfor
+         <div class="mod-title">
+            <h2 class="pdp-mod-section-title outer-title">Đánh giá và nhận xét của {{ $product->pro_name}}</h2>
+         </div> 
+         <div class="mod-rating">
+            <div class="content">
+               <div class="left">
+                  <div class="summary">
+                     <div class="score"><span class="score-average">{{round($product->star,2)}}</span><span class="score-max">/5</span></div>
+                     <div class="average">
+                        <div class="container-star " style="width: 166.25px; height: 33.25px;">
+                           @if($product->star==0)
+                           <img class="star" src="//laz-img-cdn.alicdn.com/tfs/TB18ZvEgfDH8KJjy1XcXXcpdXXa-64-64.png" style="width: 33.25px; height: 33.25px;">
+                           <img class="star" src="//laz-img-cdn.alicdn.com/tfs/TB18ZvEgfDH8KJjy1XcXXcpdXXa-64-64.png" style="width: 33.25px; height: 33.25px;">
+                           <img class="star" src="//laz-img-cdn.alicdn.com/tfs/TB18ZvEgfDH8KJjy1XcXXcpdXXa-64-64.png" style="width: 33.25px; height: 33.25px;">
+                           <img class="star" src="//laz-img-cdn.alicdn.com/tfs/TB18ZvEgfDH8KJjy1XcXXcpdXXa-64-64.png" style="width: 33.25px; height: 33.25px;">
+                           <img class="star" src="//laz-img-cdn.alicdn.com/tfs/TB18ZvEgfDH8KJjy1XcXXcpdXXa-64-64.png" style="width: 33.25px; height: 33.25px;">
+                           @else
+                           @for($i=1;$i<= $product->star;$i++) 
+                              <img class="star" src="//laz-img-cdn.alicdn.com/tfs/TB19ZvEgfDH8KJjy1XcXXcpdXXa-64-64.png" style="width: 33.25px; height: 33.25px;">
+                           @endfor
 
-                              @if( $product->star < 5) 
-                                 @for($i=$product->star+ 1;$i<=5;$i++) 
-                                    <img class="star" src="//laz-img-cdn.alicdn.com/tfs/TB18ZvEgfDH8KJjy1XcXXcpdXXa-64-64.png" style="width: 33.25px; height: 33.25px;">
-                                  @endfor
-                                 @endif
+                           @if( $product->star < 5) 
+                              @for($i=$product->star+ 1;$i<=5;$i++) 
+                                 <img class="star" src="//laz-img-cdn.alicdn.com/tfs/TB18ZvEgfDH8KJjy1XcXXcpdXXa-64-64.png" style="width: 33.25px; height: 33.25px;">
+                                 @endfor
                               @endif
-                           </div>
+                           @endif
                         </div>
-                        <div class="count"> {{$product->star}} đánh giá</div>
                      </div>
-                     @foreach($ratingDefault as $key =>$item)
-                     @php
-                     $ageItem=0;
-                     if($product->star >0)
-                     $ageItem = round(($item['count_number'] / $product->star) *100,2);
-                     @endphp
-                     <div class="detail">
-                        <ul>
-                           <li>
-                              <div class="container-star progress-title" style="width: 79.8px; height: 15.96px;">
-                                 @for($i =1;$i<=$key;$i++) 
-                                    <img class="star" src="//laz-img-cdn.alicdn.com/tfs/TB19ZvEgfDH8KJjy1XcXXcpdXXa-64-64.png">
-                                 @endfor
-                                 @for($j=5;$j>$key;$j--)
-                                    <img class="star" src="//laz-img-cdn.alicdn.com/tfs/TB18ZvEgfDH8KJjy1XcXXcpdXXa-64-64.png">
-                                 @endfor
-                              </div>
-                              <span class="progress-wrap">
-                                 <div class="pdp-review-progress">
-                                    <div class="bar bg"></div>
-                                    <div class="bar fg" style="width: {{ $ageItem}}%"></div>
-                                 </div>
-                              </span>
-                              <span class="percent"> {{ $item['count_number'] }}</span>
-                           </li>
-                        </ul>
-                     </div>
-                     @endforeach
+                     <div class="count"> {{$product->star}} đánh giá</div>
                   </div>
-               </div>
-            </div>
-         </div>
-         <div>
-            <div class="pdp-mod-filterSort">
-               <span class="title">Nhận xét về sản phẩm</span>
-               <div class="oper">
-                  <span>Lọc:</span>
+                  @foreach($ratingDefault as $key =>$item)
                   @php
-                  $number='Tất cả';
-                  for($i=5;$i>=1;$i--)
-                  if(Request::get('s') == $i){
-                  $number =$i;
-                  break;
-                  }
+                  $ageItem=0;
+                  if($product->star >0)
+                  $ageItem = round(($item['count_number'] / $product->star) *100,2);
                   @endphp
-                  <span class="condition">{{ $number}} Sao</span>
-                  <div class="next-menu next-overlay-inner expandInDown ">
-                     <ul class="next-menu-content" style="color: black;">
-                        <li class="{{ Request::get('s') ==6 ?'active' : '' }}"><a href="{{ route('get.product.detail',$product->pro_slug.'-'.$product->id )}}">Tất cả Sao</a></li>
-                        @for($i=5;$i>=1;$i--)
-                        <li class="{{ Request::get('s') == $i ?'active' : '' }}"><a href="{{ request()->fullUrlWithQuery(['s'=>$i]) }}">{{$i}} Sao</a></li>
-                        @endfor
+                  <div class="detail">
+                     <ul>
+                        <li>
+                           <div class="container-star progress-title" style="width: 79.8px; height: 15.96px;">
+                              @for($i =1;$i<=$key;$i++) 
+                                 <img class="star" src="//laz-img-cdn.alicdn.com/tfs/TB19ZvEgfDH8KJjy1XcXXcpdXXa-64-64.png">
+                              @endfor
+                              @for($j=5;$j>$key;$j--)
+                                 <img class="star" src="//laz-img-cdn.alicdn.com/tfs/TB18ZvEgfDH8KJjy1XcXXcpdXXa-64-64.png">
+                              @endfor
+                           </div>
+                           <span class="progress-wrap">
+                              <div class="pdp-review-progress">
+                                 <div class="bar bg"></div>
+                                 <div class="bar fg" style="width: {{ $ageItem}}%"></div>
+                              </div>
+                           </span>
+                           <span class="percent"> {{ $item['count_number'] }}</span>
+                        </li>
                      </ul>
                   </div>
+                  @endforeach
                </div>
-               <div class="oper"><span class="lazada lazada-is-sort lazada-icon oper-icon"></span><span>Sắp xếp:</span><span class="condition">Liên quan</span></div>
             </div>
          </div>
-         <div>
-            <div class="review_list">
-               @foreach($ratings as $value =>$item)
-               @include('layout.pages.product_detail.ratings',['rating'=>$item])
-               @endforeach
-               <div class="pagination-link">
-                  {!! $ratings->appends($query ?? [])->links() !!}
-               </div>
+      <div>
+      <div class="pdp-mod-filterSort">
+         <span class="title">Nhận xét về sản phẩm</span>
+         <div class="oper">
+            <span>Lọc:</span>
+            @php
+            $number='Tất cả';
+            for($i=5;$i>=1;$i--)
+            if(Request::get('s') == $i){
+            $number =$i;
+            break;
+            }
+            @endphp
+            <span class="condition">{{ $number}} Sao</span>
+            <div class="next-menu next-overlay-inner expandInDown ">
+               <ul class="next-menu-content" style="color: black;">
+                  <li class="{{ Request::get('s') ==6 ?'active' : '' }}"><a href="{{ route('get.product.detail',$product->pro_slug.'-'.$product->id )}}">Tất cả Sao</a></li>
+                  @for($i=5;$i>=1;$i--)
+                  <li class="{{ Request::get('s') == $i ?'active' : '' }}"><a href="{{ request()->fullUrlWithQuery(['s'=>$i]) }}">{{$i}} Sao</a></li>
+                  @endfor
+               </ul>
             </div>
+         </div>
+         <div class="oper"><span class="lazada lazada-is-sort lazada-icon oper-icon"></span><span>Sắp xếp:</span><span class="condition">Liên quan</span></div>
+      </div>
+   </div>
+   <div class="review_list">
+      @foreach($ratings as $value =>$item)
+         @include('layout.pages.product_detail.ratings',['rating'=>$item])
+      @endforeach
+      <div class="pagination-link">
+         {!! $ratings->appends($query ?? [])->links() !!}
+      </div>
+   </div>
 
-            <div id="block-review">
-               <form action="{{ route('ajax_post.user.rating.add') }}" class="form-question" method="post">
-                  @csrf
-                  <div class="item">
-                     <br><br>
-                     @if(isset(\Auth::user()->id))
-                     <div id="module_product_qna" class="pdp-block module">
-                        <div class="mod-title">
-                           <div class="pdp-mod-section-title outer-title">Phản hồi của bạn về sản phẩm này</div>
-                           <br><br>
-                           <div class="top">
-                              <div class="container-star starCtn left" id="ratings" style="width: 223.125px; height: 16.625px;">
-                                 @for ($i=1;$i<=5;$i++) <i class="fa fa-star opacity cursor" style="zoom:2" data-i={{$i}}></i>
-                                    @endfor
-                                    <span id="review_text"></span>
-                                    <input type="hidden" id="review_value" name="review" value="5">
-                                    <input type="hidden" id="product_id" name="product_id" value="{{ $product->id }}">
+   @if(isset(\Auth::user()->id))
+      <div id="block-review">
+         <form action="{{ route('ajax_post.user.rating.add') }}" class="form-question" method="post">
+            @csrf
+            <div class="item">
+               <br><br>
+               <div id="module_product_qna" class="pdp-block module">
+                  <div class="mod-title">
+                     <div class="pdp-mod-section-title outer-title">Phản hồi của bạn về sản phẩm này</div>
+                        <br><br>
+                        <div class="top">
+                           <div class="container-star starCtn left" id="ratings" style="width: 223.125px; height: 16.625px;">
+                              @for ($i=1;$i<=5;$i++) 
+                                 <i class="fa fa-star opacity cursor" style="zoom:2" data-i={{$i}}></i>
+                              @endfor
+                              <span id="review_text"></span>
+                              <input type="hidden" id="review_value" name="review" value="5">
+                              <input type="hidden" id="product_id" name="product_id" value="{{ $product->id }}">
+                           </div>
+                        </div>
+                        <div class="pdp-mod-qna">
+                           <div class="qna-ask-box-container">
+                              <div class="qna-ask-box folded">
+                                 <span class="next-input next-input-single next-input-medium qna-ask-input"><input type="text" placeholder="Viết câu hỏi của bạn ở đây" value="" name="content" maxlength="300" height="100%"></span>
+                                 <button type="submit" class=" cursor next-btn next-btn-primary next-btn-medium qna-ask-btn js-process-view"> ĐẶT CÂU HỎI</button>
                               </div>
                            </div>
-                           <div class="pdp-mod-qna">
-                              <div class="qna-ask-box-container">
-                                 <div class="qna-ask-box folded">
-                                    <span class="next-input next-input-single next-input-medium qna-ask-input"><input type="text" placeholder="Viết câu hỏi của bạn ở đây" value="" name="content" maxlength="300" height="100%"></span>
-                                    <button type="submit" class=" cursor next-btn next-btn-primary next-btn-medium qna-ask-btn js-process-view"> ĐẶT CÂU HỎI</button>
-                                 </div>
-                              </div>
-               </form>
+                        </div>
+                     </div>
+                  </div>
+               </div>
             </div>
-            @if(!$rating)
-            <div>
-               <span class="lazada lazada-noReview lazada-icon qna-empty-icon"></span>
-               <div class="qna-empty-text">Chưa có câu hỏi cho sản phẩm này.</div>
-               <div class="qna-empty-text">Đặt câu hỏi cho nhà bán hàng và câu trả lời sẽ được hiển thị tại đây</div>
-            </div>
-         </div>
+         </form>
+         @if(!$rating)
+            <span class="lazada lazada-noReview lazada-icon qna-empty-icon"></span>
+            <div class="qna-empty-text">Chưa có câu hỏi cho sản phẩm này.</div>
+            <div class="qna-empty-text">Đặt câu hỏi cho nhà bán hàng và câu trả lời sẽ được hiển thị tại đây</div>
          @else
          <div class="qna-section-title">Câu hỏi của tôi </div>
          <ul class="qna-list">
             <div class="review_list_personal"></div>
-
             @foreach($rating as $value =>$item)
-            @include('layout.pages.product_detail.personal_rating',['rating'=>$item])
+               @include('layout.pages.product_detail.personal_rating',['rating'=>$item])
             @endforeach
-            {!! $rating->links() !!}@endif
-            <br>
-            <br>
-            <br>
+            {!! $rating->links() !!}
+            <br><br><br>
          </ul>
          @endif
       </div>
-   </div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+   @endif
 </div>
 </div>
 </div>
@@ -461,7 +448,6 @@
 
 <script>
    $(function() {
-
       $('.js-add-favourite').click(function(event) {
          event.preventDefault();
          let $this = $(this);

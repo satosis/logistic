@@ -50,7 +50,7 @@ input:enabled:read-write:-webkit-any(:focus, :hover)::-webkit-inner-spin-button 
             <div class="flex">
                 <div class="left">
                     <div class="cart_header" style="text-align: center;color: #288ad6;">THÔNG TIN GIỎ HÀNG(
-                        {{\Cart::count()}} sản phẩm)</div>
+                        <span class="number">{{\Cart::count()}}</span> sản phẩm)</div>
                     <form name="frm_cart" action="" method="post">
                         @csrf
                         <div class="tableCart">
@@ -167,11 +167,11 @@ input:enabled:read-write:-webkit-any(:focus, :hover)::-webkit-inner-spin-button 
                                     <textarea name="tst_note" cols="" rows="2">Không có</textarea>
                                 </div>
 
-                                <input type="hidden" name="amount" value="{{$total}}">
+                                <input type="hidden" name="amount" id="amount" value="{{$total}}">
 
-                                <div class="totalPrice">Thanh toán: <span
+                                <div class="totalPrice">Thanh toán: <span id="totalPrice"
                                         style="font-size: 30px;color: red;margin-left: 30px;">{{ number_price($total,0)  }}</span>
-                                    VNĐ ({{number_format($total/23000,2,',','.')}} USD)</div>
+                                    VNĐ</div>
                                 <div>
                                 </div>
                                 <div class="btnThanhToan" style="margin-top:10px">
@@ -217,7 +217,6 @@ $(function() {
                 if (results.messages) {
                     toastr.warning(results.messages);
                 } else {
-
                     window.location.reload();
                 }
             });
@@ -230,10 +229,10 @@ $(function() {
         let number = parseInt($input.val());
         let price = $this.parent().attr('data-price');
         let URL = $this.parent().attr('data-url');
-
         let IdProduct = $this.parent().attr('data-id-product');
         number = number + 1;
-
+        var total = $('#amount').val();
+        $('#amount').val(parseInt(total) + parseInt(price));
         $.ajax({
             url: URL,
             data: {
@@ -242,10 +241,9 @@ $(function() {
             }
         }).done(function(results) {
             if (typeof results.totalMoney !== "underfined") {
-
-                $(".payOrder").text(results.totalMoney + "đ");
                 $(".number").text(results.number);
                 $this.parents('nav').find(".js-total-item").text(results.totalItem + "đ");
+                $('#totalPrice').text(results.totalMoney);
             } else {
                 $input.val(number - 1);
             }
@@ -259,6 +257,8 @@ $(function() {
         let number = parseInt($input.val());
         let price = $this.parent().attr('data-price');
         let URL = $this.parent().attr('data-url');
+        var total = $('#amount').val();
+        $('#amount').val(parseInt(total) - parseInt(price));
         if (number <= 1) {
             toastr.warning("Số sản phẩm không được bằng 0");
             return false;
@@ -276,8 +276,8 @@ $(function() {
             if (typeof results.totalMoney !== "underfined") {
                 $input.val(number);
                 $this.parents('nav').find(".js-total-item").text(results.totalItem + "đ");
-                $(".payOrder").text(results.totalMoney + "đ");
                 $(".number").text(results.number);
+                $('#totalPrice').text(results.totalMoney);
             } else {
                 $input.val(number + 1);
             }

@@ -34,7 +34,8 @@ class AuthController extends Controller
         }
         $token = $this->createNewToken(auth('api')->attempt($data))->original;
         return response()->json([
-            'access_token' => $token['access_token'],
+            'token' => $token['access_token'],
+            'user'       => auth('api')->user(),
             'token_type' => 'bearer',
             'expires_in' => auth('api')->factory()->getTTL() * 60
         ], 200);

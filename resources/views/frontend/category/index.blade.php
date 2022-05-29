@@ -81,6 +81,11 @@
     </div> 
     <div class="product">
     <div class="group active">
+        @if(!count($products))
+            <div class="text-center">
+                <img src="{{ asset('view/no_result.jpg') }}"/>
+            </div>
+        @endif
         @foreach($products as $list)
             @include('layout.component.list_product',['list'=>$list])     
         @endforeach
