@@ -34,3 +34,13 @@ Route::group(['namespace'=>'Api'], function () {
     Route::get('product/{slug}','ProductDetailController@getProductDetail');
     Route::get('san-pham','ProductController@index');
 });  
+
+Route::group(['namespace' => 'Api','middleware' => 'auth:api'], function () {
+        Route::prefix('shopping')->group(function(){
+        Route::get('don-hang','ShoppingCartController@index');
+        Route::post('add/{id}','ShoppingCartController@add');
+        Route::patch('update/{id}','ShoppingCartController@update');
+        Route::delete('delete/{id}','ShoppingCartController@delete');
+        Route::post('pay','ShoppingCartController@postPay');
+    });
+});
