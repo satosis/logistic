@@ -9,8 +9,9 @@
       <div class="order-list">
          <div class="order-list-tabs">
             <a href="{{ route('get.user.orders', ['status' => 0]) }}"><span class="order-tab-item @if($status == 0 ) order-tab-item-active @endif">Tất cả({{ $allTransaction}})</span></a>
-            <a href="{{ route('get.user.orders', ['status' => 2]) }}"><span class="order-tab-item @if($status == 2 ) order-tab-item-active @endif">Chờ vận chuyển({{ $processTransaction}})</span></a>
-            <a href="{{ route('get.user.orders', ['status' => 3]) }}"><span class="order-tab-item @if($status == 3 ) order-tab-item-active @endif">Đã nhận hàng({{ $successTransaction}})</span></a>
+            <a href="{{ route('get.user.orders', ['status' => 1]) }}"><span class="order-tab-item @if($status == 1 ) order-tab-item-active @endif">Tiếp nhận({{ $defaultTransaction}})</span></a>
+            <a href="{{ route('get.user.orders', ['status' => 2]) }}"><span class="order-tab-item @if($status == 2 ) order-tab-item-active @endif">Đang vận chuyển({{ $processTransaction}})</span></a>
+            <a href="{{ route('get.user.orders', ['status' => 3]) }}"><span class="order-tab-item @if($status == 3 ) order-tab-item-active @endif">Đã bàn giao({{ $successTransaction}})</span></a>
             <a href="{{ route('get.user.orders', ['status' => -1]) }}"><span class="order-tab-item @if($status == -1 ) order-tab-item-active @endif">Đã hủy({{ $deletedTransaction}})</span></a>
          </div>
       </div>
@@ -29,7 +30,7 @@
                   </div>
                   @endif   
                   <div class="order-item">
-                     <div class="item-pic" ><a href="{{ route('get.product.detail',$list->pro_slug.'-'.$list->id)}}"><img src="{{ $list->pro_avatar }}" style="object-fit: cover;"></a></div>
+                     <div class="item-pic" ><a href="{{ route('get.product.detail',$list->pro_slug.'-'.$list->id)}}"><img src="{{  pare_url_file($list->pro_avatar)}}" style="object-fit: contain;"></a></div>
                      <div class="item-main item-main-mini">
                         <div class="text title item-title">{{ $list->pro_name }}</div>
                         <p class="text desc"></p>
@@ -37,7 +38,11 @@
                      </div>
                      <div class="item-quantity"><span class="text desc info multiply">Qty:</span><span class="text">&nbsp;{{ $list->od_qty }}</span></div>
                      <div class="label label-primary">
-                        <p class="capsule">{{ $list->getStatus($list->tst_status)['name'] }}</p>
+                        <p class="capsule 
+                        @if( $list->tst_status == 2) default @endif
+                        @if( $list->tst_status == 3) success @endif
+                        @if( $list->tst_status == -1) error @endif
+                        ">{{ $list->getStatus($list->tst_status)['name'] }}</p>
                      </div>
                   </div>
                   @if($key == 0 && isset($transaction[$key+1])  && $transaction[$key]->trans_id  != $transaction[$key+1]->trans_id || isset($transaction[$key+1]) && $transaction[$key]->trans_id  !== $transaction[$key+1]->trans_id|| !isset($transaction[$key+1])  || $key == 0)  
@@ -49,4 +54,8 @@
       </div>
    </div>
 </div>
+    <div class="box-footer">
+    {!! $transaction->appends(request()->query())->links() !!}    
+
+    </div>
 @stop

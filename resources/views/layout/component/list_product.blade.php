@@ -11,7 +11,7 @@
         
         </div>
         <div class="price">
-            <p class="new">231 đ</p>
+            <p class="new">{{ number_format($list->pro_price) }} đ</p>
         </div>
     <div class="count">
 <div class="bg" style="width: {{ rand(10,100)}}%"></div>

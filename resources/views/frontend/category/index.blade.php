@@ -59,13 +59,13 @@
                 </label>
             </li>
             <li>
-                <label class="{{ Request::get('s')==1 ? 'active' : '' }}">
+                <label class="{{ Request::get('s')==2 ? 'active' : '' }}">
                     <span class="check"><i class="fa fa-check"></i></span>
                     <span><a href="{{ request()->fullUrlWithQuery(['s' => 2]  ) }}" title="Thap den cao">Giá thấp đến cao</a></span>
                 </label>
             </li>
             <li>
-                <label class="{{ Request::get('s')==2 ? 'active' : '' }}">
+                <label class="{{ Request::get('s')==1 ? 'active' : '' }}">
                     <span class="check"><i class="fa fa-check"></i></span>
                     <span><a href="{{ request()->fullUrlWithQuery(['s' => 1]  ) }}" title="Cao xuong thap">Giá cao xuống thấp</a></span>
                 </label>
@@ -90,7 +90,7 @@
             @include('layout.component.list_product',['list'=>$list])     
         @endforeach
     <div class="box-footer">
-            {!! $products->appends($query ?? [])->links()!!}    
+    {!! $products->appends(request()->query())->links() !!}    
     </div>               
             </div>
         

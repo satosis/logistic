@@ -92,3 +92,15 @@
 .fas{
     display:none !important
 }
+.default{
+    background: #256aa7;
+    color: white;
+}
+.success{
+    background: #25a729;
+    color: white;
+}
+.error{
+    background: #b73b3b;
+    color: white;
+}

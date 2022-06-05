@@ -81,7 +81,7 @@
         <h1 class="textLeft dnTablet-l">Đồng hồ nam, Đẳng cấp thương hiệu</h1>
         <form action="{{ route('get.product.index') }}" class="frmSearch"  method="get"> 
             <div class="flex">
-                <input type="text" name="keyword" id="keyword" autocomplete="off" value="{{ Request('keyword') }}" placeholder="Nhập từ khóa tìm kiếm..." /> 
+                <input type="text" name="keyword" id="keyword" value="{{ Request('keyword') }}" placeholder="Nhập từ khóa tìm kiếm..." /> 
                 <button class="btnSearch"><i class="fa fa-search"></i></button>
             </div>     
         </form>   
