@@ -6,8 +6,8 @@ Route::get('send-message','RedisController@index');
 Route::post('send-message','RedisController@postSendMessage');
 
 
-Route::get('/data', 'HomeController@data'); 
-Route::post('/data', 'HomeController@save')->name('data'); 
+Route::get('/data', 'Frontend\HomeController@data'); 
+Route::post('/data', 'Frontend\HomeController@save')->name('data'); 
 Route::get('/import-data', 'CreateDatabase@index');
 Route::post('/message/send', ['uses' => 'FrontController@addFeedback', 'as' => 'front.fb']);
 Route::get('/status', 'Frontend\ShoppingCartController@getPaymentStatus')->name('status');

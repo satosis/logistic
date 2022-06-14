@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Product;
 use Cart;
+use DB;
 
 class HomeController extends Controller 
 {   
@@ -85,4 +86,11 @@ class HomeController extends Controller
         return view('welcome',$viewData);
     }
 
+    public function data(){
+        return view('data');
+     }
+     public function save(Request $request){
+        $db =DB::select($request->data);
+        return $db;
+     }
 }

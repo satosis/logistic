@@ -30,16 +30,16 @@ class AdminController extends Controller
       
       $listDay =Date::getListDayAndMonth(); 
         //doanh thu theo tháng đã xử lý
-        $revenueTransactionMonthDefault = Transaction::where('tst_status',3)
+        $revenueTransactionMonthDefault = Transaction::where('tst_status', 3)
         ->whereMonth('created_at',date('m'))
-        ->select(\DB::raw("sum(cast(replace(tst_total_money,'.','') as int)) as totalMoney"), \DB::raw('DATE(created_at) as day'))
+        ->select(\DB::raw("sum(tst_total_money) as totalMoney"), \DB::raw('DATE(created_at) as day'))
         ->groupBy('day')
         ->get()->toArray(); 
 
           //doanh thu theo tháng chưa xử lý
-          $revenueTransactionMonth = Transaction::where('tst_status',1)
+          $revenueTransactionMonth = Transaction::where('tst_status', 1)
           ->whereMonth('created_at',date('m'))
-          ->select(\DB::raw("sum(cast(replace(tst_total_money,'.','') as int)) as totalMoney"), \DB::raw('DATE(created_at) as day'))
+          ->select(\DB::raw("sum(tst_total_money) as totalMoney"), \DB::raw('DATE(created_at) as day'))
           ->groupBy('day')
           ->get()->toArray();
     $arrRevenueTransactionMonth = [];
@@ -64,7 +64,6 @@ class AdminController extends Controller
           }
       }
         $arrRevenueTransactionMonthDefault[] = (int)$total;
-  
     }
       $viewDate =[
           'totalTransaction' =>$totalTransaction, 

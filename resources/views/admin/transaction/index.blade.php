@@ -44,7 +44,7 @@
     @endif
     @foreach($transaction as $key =>$list)
     <tbody>
-      <td>{{ ++$key }}</td>
+      <td>{{ $list->id }}</td>
       <td>
         <ul>
         <li>Tên :{{ $list->tst_name}}</li>
@@ -77,8 +77,6 @@
             <span class="sr-only">Toggle Dropdown</span>
          </button>
          <ul class="dropdown-menu" role="menu">
-            <li><a href="{{ route('admin.transaction.delete',$list->id) }}"><i class="fa fa-pencil-square js-query-confirm" ></i>Delete</a></li>
-            <li class="divider"></li>
             <li><a href="{{ route('admin.action.transaction',['process',$list->id])}}"><i class="fa fa-ban"></i>Đang bàn giao</a></li>
             <li><a href="{{ route('admin.action.transaction',['success',$list->id])}}"><i class="fa fa-ban"></i>Đã bàn giao</a></li>
             <li><a href="{{ route('admin.action.transaction',['cancel',$list->id])}}"><i class="fa fa-ban"></i>Hủy</a></li>
