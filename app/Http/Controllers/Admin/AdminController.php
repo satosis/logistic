@@ -50,17 +50,17 @@ class AdminController extends Controller
         $total = 0;
         foreach ($revenueTransactionMonthDefault as $key => $revenue) {
           if ($revenue['day'] ==  $day) {
-                $total = $revenue['totalMoney'];
+                $total = $revenue['totalMoney'] ?? 0;
                 // $total = $revenue;
 
                 break;
             }
         }
         $arrRevenueTransactionMonth[] = (int)$total;
-        $total=0;
+        $total = 0;
         foreach ($revenueTransactionMonth as $key => $revenue) {
           if ($revenue['day'] ==  $day) {
-              $total = $revenue['totalMoney'];
+              $total = $revenue['totalMoney'] ?? 0;
                 // $total = $revenue;
               break;
           }
