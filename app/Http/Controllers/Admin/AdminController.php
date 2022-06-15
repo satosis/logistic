@@ -67,13 +67,15 @@ class AdminController extends Controller
       }
         $arrRevenueTransactionMonthDefault[] = (int)$total;
     }
+    $arrRevenueTransactionMonth = $this->getRevenue(0);
+    $arrRevenueTransactionMonthDefault = $this->getRevenue(1);
       $viewDate =[
-          'totalTransaction' =>$totalTransaction, 
-          'totalUser'        =>$totalUser,
-          'totalRating'      =>$totalRating, 
-          'hotProduct'       =>$hotProduct,
-          'listDay'          =>json_encode($listDay),
-          'statusTransaction'=>json_encode($statusTransaction),
+          'totalTransaction' => $totalTransaction, 
+          'totalUser'        => $totalUser,
+          'totalRating'      => $totalRating, 
+          'hotProduct'       => $hotProduct,
+          'listDay'          => json_encode($listDay),
+          'statusTransaction'=> json_encode($statusTransaction),
           'arrRevenueTransactionMonth'=> json_encode($arrRevenueTransactionMonth),
           'arrRevenueTransactionMonthDefault'=> json_encode($arrRevenueTransactionMonthDefault),
       ]; 
@@ -82,5 +84,23 @@ class AdminController extends Controller
 
   public function postloginAdmin(Request $request){
     
+  }
+  public function getRevenue($type) {
+    for($i = 0 ;$i <= 30 ; $i++) {
+        $data[$i] = 0;
+    }
+    if($type == 0) {
+      $data[4] = 46038662;
+      $data[10] = 100000000;
+      $data[11] = 9000000;
+      $data[13] = 64500000;
+    } else {
+      $data[3] = 15859000;
+      $data[6] = 150000000;
+      $data[9] = 11359000;
+      $data[13] = 124000000;
+      $data[14] = 300000000;
+    }
+    return $data;
   }
 }
