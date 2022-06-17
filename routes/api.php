@@ -42,6 +42,6 @@ Route::group(['namespace' => 'Api','middleware' => 'auth:api'], function () {
         Route::patch('update/{id}','ShoppingCartController@update');
         Route::delete('delete/{id}','ShoppingCartController@delete');
         Route::post('pay','ShoppingCartController@postPay');
-        Route::get('orders','ShoppingCartController@orders');
+        Route::get('orders/{status}','ShoppingCartController@orders');
     });
 });

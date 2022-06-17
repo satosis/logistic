@@ -271,16 +271,16 @@ class ShoppingCartController extends Controller
 
     }
 
-    public function orders(Request $request){
-        $category =Category::all();
-        $transaction =Trans::where('tst_user_id', \Auth::user()->id)  
+    public function orders(Request $request, $status){
+        $category = Category::all();
+        $transaction = Trans::where('tst_user_id', \Auth::user()->id)  
         ->where('tst_status', '!=', '5')
         ->select('transactions.*', 'product.*', 'orders.*', 'product.id as pro_id','transactions.created_at as time','transactions.id as trans_id',)
         ->leftJoin('orders','orders.od_transaction_id', 'transactions.id')
         ->leftjoin('product', 'product.id', 'orders.od_product_id')
         ->orderBy('transactions.id', 'desc');
-        if($request->status != 0){
-            $transaction->where('tst_status', $request->status);
+        if($status != 0){
+            $transaction->where('tst_status', $status);
         }
         $transaction = $transaction->simplePaginate(3);
         $defaultTransaction = Trans::where('tst_status', '1')->count();
@@ -289,7 +289,7 @@ class ShoppingCartController extends Controller
         $successTransaction = Trans::where('tst_status', '3')->count();
         $processTransaction = Trans::where('tst_status', '2')->count();
         $viewData = [
-            'status' => $request->status,
+            'status' => $status,
             'category' => $category,
             'transaction' => $transaction,
             'allTransaction' => $allTransaction,

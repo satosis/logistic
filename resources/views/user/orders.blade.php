@@ -30,7 +30,7 @@
                   </div>
                   @endif   
                   <div class="order-item">
-                     <div class="item-pic" ><a href="{{ route('get.product.detail',$list->pro_slug.'-'.$list->id)}}"><img src="{{  pare_url_file($list->pro_avatar)}}" style="object-fit: contain;"></a></div>
+                     <div class="item-pic" ><a href="{{ route('get.product.detail',$list->pro_slug.'-'.$list->pro_id)}}"><img src="{{  pare_url_file($list->pro_avatar)}}" style="object-fit: contain;"></a></div>
                      <div class="item-main item-main-mini">
                         <div class="text title item-title">{{ $list->pro_name }}</div>
                         <p class="text desc"></p>
