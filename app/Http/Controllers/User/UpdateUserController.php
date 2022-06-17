@@ -5,7 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Category;
-use App\Models\Users;
+use App\Models\User;
 use App\Http\Requests\UserRequestUpdate;
 use Illuminate\Support\Facades\Hash;
 class UpdateUserController extends Controller
@@ -18,7 +18,6 @@ class UpdateUserController extends Controller
         ];
         return view('user.edit',$viewData);
     }
-
 
     public function change_password(){
         $category =Category::all();
@@ -54,8 +53,8 @@ class UpdateUserController extends Controller
         $data =$request->except('_token');
         if(isset($data['password']))
         $data['password'] = Hash::make($data['password']);
-        $id = Users::find(\Auth::user()->id);
-        $id->update($data);
+        $user = User::find(\Auth::user()->id);
+        $user->update($data);
 
         return redirect()->route('get.user.index')->with('status','Cập nhật thành công');
     }
