@@ -88,15 +88,15 @@ class RegisterController extends Controller
     public function postRegister(RequestRegister $request){
         $data =$request->except('_token');
         $data['password'] = Hash::make($data['password']);
-        $data['created_at']=Carbon::now();
-        $id =User::InsertGetId($data);
+        $data['created_at'] = Carbon::now();
+        $id = User::InsertGetId($data);
         if($id){
             \Session::flash('toastr',[
                 'type'      =>'success',
                 'message'   =>'Chào mừng bạn đến với shop chúng tôi'
             ]); 
             
-           Mail::to($request->email)->send(new RegisterSuccess($request->name));
+        //    Mail::to($request->email)->send(new RegisterSuccess($request->name));
             if (\Auth::attempt(['email' => $request->email,'password' => $request->password])) {
                 return redirect()->intended('/');
             }

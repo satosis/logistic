@@ -106,6 +106,13 @@ class ShoppingCartController extends Controller
     }
     public function postPay(Request $request){ 
         $data =$request->except('_token','submit');   
+        if( $request->amount == 0){
+            \Session::flash('toastr',[
+                'type'      => 'error',
+                'message'   => 'Giỏ hàng không có sản phẩm nào'
+            ]); 
+            return redirect()->back();
+        }
         //Thanh toán khi nhận hàng
         if($request->submit == 1){
             $this->storeTransaction($data, 1, 1);
@@ -228,7 +235,7 @@ class ShoppingCartController extends Controller
             'type'      =>'success',
             'message'   =>'Đặt hàng thành công'
         ]); 
-        Cart::destroy(); 
+        // Cart::destroy(); 
         return 1;
     } 
 
