@@ -95,6 +95,10 @@ class AdminTransactionController extends Controller
                 case 'cancel':
                     $transactions->tst_status = -1;
                  break;
+
+                 case 'confirm':
+                     $transactions->tst_status = 4;
+                  break;
             }
             $transactions->save();
         }

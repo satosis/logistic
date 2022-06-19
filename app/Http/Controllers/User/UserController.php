@@ -38,8 +38,8 @@ class UserController extends Controller
   
 
     public function orders(Request $request){
-        $category =Category::all();
-        $transaction =Transaction::where('tst_user_id',\Auth::user()->id)  
+        $category = Category::all();
+        $transaction = Transaction::where('tst_user_id', \Auth::user()->id)  
         ->where('tst_status', '!=', '5')
         ->select('transactions.*', 'product.*', 'orders.*', 'product.id as pro_id','transactions.created_at as time','transactions.id as trans_id',)
         ->leftJoin('orders','orders.od_transaction_id', 'transactions.id')
@@ -49,11 +49,11 @@ class UserController extends Controller
             $transaction->where('tst_status', $request->status);
         }
         $transaction = $transaction->paginate(15);
-        $defaultTransaction = Transaction::where('tst_status', '1')->count();
-        $allTransaction = Transaction::where('tst_status', '!=', '5')->count();
-        $deletedTransaction = Transaction::where('tst_status', '-1')->count();
-        $successTransaction = Transaction::where('tst_status', '3')->count();
-        $processTransaction = Transaction::where('tst_status', '2')->count();
+        $defaultTransaction = Transaction::where('tst_status', '1')->where('tst_user_id', \Auth::user()->id)->count();
+        $allTransaction = Transaction::where('tst_status', '!=', '5')->where('tst_user_id', \Auth::user()->id)->count();
+        $deletedTransaction = Transaction::where('tst_status', '-1')->where('tst_user_id', \Auth::user()->id)->count();
+        $successTransaction = Transaction::where('tst_status', '3')->where('tst_user_id', \Auth::user()->id)->count();
+        $processTransaction = Transaction::where('tst_status', '2')->where('tst_user_id', \Auth::user()->id)->count();
         $viewData =[
             'status' => $request->status,
             'category' => $category,

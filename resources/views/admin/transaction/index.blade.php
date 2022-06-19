@@ -79,6 +79,7 @@
          <ul class="dropdown-menu" role="menu">
             <li><a href="{{ route('admin.action.transaction',['process',$list->id])}}"><i class="fa fa-ban"></i>Đang bàn giao</a></li>
             <li><a href="{{ route('admin.action.transaction',['success',$list->id])}}"><i class="fa fa-ban"></i>Đã bàn giao</a></li>
+            <li><a href="{{ route('admin.action.transaction',['confirm',$list->id])}}"><i class="fa fa-ban"></i>Người dùng đã xác nhận</a></li>
             <li><a href="{{ route('admin.action.transaction',['cancel',$list->id])}}"><i class="fa fa-ban"></i>Hủy</a></li>
          </ul>
          </div>
