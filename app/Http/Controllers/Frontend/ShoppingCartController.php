@@ -82,7 +82,7 @@ class ShoppingCartController extends Controller
     }
     //update cart
     public function update(Request $request ,$id){
-        if($request->ajax()){
+        if ($request->ajax()) {
             $qty =$request->qty ?? 1;
             $idProduct =$request->idProduct;
             $product =Product::find($idProduct);
@@ -114,12 +114,12 @@ class ShoppingCartController extends Controller
             return redirect()->back();
         }
         //Thanh toán khi nhận hàng
-        if($request->submit == 1){
+        if ($request->submit == 1) {
             $this->storeTransaction($data, 1, 1);
         } 
         
         //Thanh toán bằng paypal
-        if($request->submit == 2){
+        if ($request->submit == 2) {
             $data['tst_type'] = 2;
             $payer = new Payer();
             $payer->setPaymentMethod('paypal');
@@ -169,6 +169,20 @@ class ShoppingCartController extends Controller
                     \Session::flash('toastr',[
                         'type'      =>'error',
                         'message'   =>'Đã xảy ra lỗi ,xin lỗi vì sự bất tiện này'
+                    ]);
+                    return redirect()->back();
+                }
+            } catch (\PayPal\Exception\PayPalConnectionException  $ex) {
+                if (\Config::get('app.debug')) {
+                    \Session::flash('toastr',[
+                        'type'      => 'error',
+                        'message'   => 'Quá thời gian kết nối'
+                    ]);
+                    return redirect()->back();
+                } else {
+                    \Session::flash('toastr',[
+                        'type'      => 'error',
+                        'message'   => 'Đã xảy ra lỗi ,xin lỗi vì sự bất tiện này'
                     ]);
                     return redirect()->back();
                 }
