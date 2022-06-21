@@ -25,8 +25,6 @@
      
     <script src="{{ asset('view/js/stv_new.js') }}"></script> 
     <link rel="shortcut icon" href="https://www.dangquangwatch.vn/view/favicon.ico" type="image/x-icon"/>  
-      
-        
     @if(session('toastr'))
         <script>    
             var TYPE_MESSAGE="{{session('toastr.type') }}";

@@ -1,10 +1,10 @@
-
-  <div style="width: 100%;max-width: 600px;margin:0 auto">
+<div style="width: 100%;max-width: 600px;margin:0 auto">
     <div style="height: 55px;background: #3a2615;padding: 10px">
         <div style="width: 100%">
-            <a href="">
+            <a href="https://watchex.herokuapp.com/">
                 <img style="height: 55px" src="https://www.dangquangwatch.vn/upload/slideshow/1787736165_bannerweb148.jpg">
-                     </a>
+                <img style="height: 55px" src="https://www.dangquangwatch.vn/upload/slideshow/1787736165_bannerweb148.jpg">
+            </a>
         </div> 
     </div>
     <div style="background: white;padding: 15px;border:1px solid #dedede;">
@@ -14,7 +14,7 @@
                 <div style="border-bottom: 1px solid #dedede;padding-bottom: 10px;padding-top: 10px;">
                     <div class="" style="width: 15%;float: left;">
                         <a href="">
-                            <img style="max-width: 100%;width: 80px;height: 100px" src="https://watchex.herokuapp.com/{{ pare_url_file($item->options->image) }}">
+                            <img style="max-width: 100%;width: 80px;height: 100px" src="{{ pare_url_file($item->options->image) }}">
                         </a>
                     </div>
                     <div style="width: 80%;float: right;">
@@ -34,7 +34,7 @@
         </div>
         <div>
             <p>Đây là email tự động xin vui không không trả lời vào email này</p>
-            <p>Mời bạn <a href="{{ route('get.user.profile') }}">click vào đây</a> để cập nhật thông tin cá nhân</p>
+            <p>Tra cứu thông tin đơn hàng tại đây <a href="{{ route('get.user.orders', ['status' => 0]) }}"> tại đây</a></p>
         </div>
     </div>
     <div style="background: #f4f5f5;box-sizing: border-box;padding: 15px">

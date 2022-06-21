@@ -48,13 +48,13 @@ class ShoppingCartController extends Controller
     public function index(){
         $category =Category::all();
         $shopping = Cart::content();
-        $total =0;
-        $viewData =[
-            'total'=>$total,
-            'category'=>$category,
-            'title_page'=>'Giỏ hàng'
+        $total = 0;
+        $viewData = [
+            'total' => $total,
+            'category' => $category,
+            'title_page' => 'Giỏ hàng'
         ];
-        return view('layout.pages.cart.index',$viewData,compact('shopping'));
+        return view('layout.pages.cart.index', $viewData, compact('shopping'));
     }
     public function add($id){   
         $product = Product::find($id);
@@ -72,16 +72,16 @@ class ShoppingCartController extends Controller
         ]);
         return redirect()->back();
     }
-    public function delete($rowId){
-        \Session::flash('toastr',[
-            'type'=>'success',
-            'message' =>'Xóa thành công'
+    public function delete($rowId) {
+        \Session::flash('toastr', [
+            'type' => 'success',
+            'message' => 'Xóa thành công'
         ]);
         Cart::remove($rowId);
         return redirect()->back();
     }
     //update cart
-    public function update(Request $request ,$id){
+    public function update(Request $request ,$id) {
         if ($request->ajax()) {
             $qty =$request->qty ?? 1;
             $idProduct =$request->idProduct;
@@ -95,12 +95,12 @@ class ShoppingCartController extends Controller
                 'error'    => true
             ]);
             }
-            Cart::update($id,$qty); //update the quantity
+            Cart::update($id, $qty); //update the quantity
             return response([
-                'messages'=>'Cập nhật thành công',
-                'totalMoney'=>Cart::subtotal(0),
-                'totalItem'=>number_price($product->pro_price*$qty,$product->pro_sale, 0, ',', '.'),
-                'number'    =>Cart::count()
+                'messages' => 'Cập nhật thành công',
+                'totalMoney' => Cart::subtotal(0),
+                'totalItem' => number_price($product->pro_price*$qty,$product->pro_sale, 0, ',', '.'),
+                'number'    => Cart::count()
                 ] );
         }
     }
@@ -154,7 +154,7 @@ class ShoppingCartController extends Controller
                 ->setPayer($payer)
                 ->setRedirectUrls($redirect_urls)
                 ->setTransactions(array($transaction));
-                try {
+            try {
                 $payment->create($this->apiContext);
                 $data['tst_code'] = $payment->id;
                 $this->storeTransaction($data, 5,2);
@@ -226,7 +226,7 @@ class ShoppingCartController extends Controller
         ]);
         if($transactionId){
             $shopping =Cart::content();
-            Mail::to($data['tst_email'])->send(new TransactionSuccess($shopping));
+             Mail::to($data['tst_email'])->send(new TransactionSuccess($shopping));
             foreach($shopping as $key =>$item){
                 Order::insert([
                     'od_transaction_id' => $transactionId->id,
@@ -249,7 +249,7 @@ class ShoppingCartController extends Controller
             'type'      =>'success',
             'message'   =>'Đặt hàng thành công'
         ]); 
-        // Cart::destroy(); 
+        Cart::destroy(); 
         return 1;
     } 
 
@@ -288,7 +288,5 @@ class ShoppingCartController extends Controller
         } 
         Session::put('error', 'Thanh toán thất bại');
         return Redirect::to('/'); 
-
     }
-
 }
