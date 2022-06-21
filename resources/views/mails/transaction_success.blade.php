@@ -11,10 +11,10 @@
         <h2 style="margin:10px 0;border-bottom: 1px solid #dedede;padding-bottom: 10px;">Danh sách sản phẩm bạn đã mua</h2>
         <div>
             @foreach($shopping as $key => $item)
-                <div style="border-bottom: 1px solid #dedede;padding-bottom: 10px;padding-top: 10px;">
+                <div style="max-width:100%;width:80px;height:100px;object-fit: contain;">
                     <div class="" style="width: 15%;float: left;">
-                        <a href="">
-                            <img style="max-width: 100%;width: 80px;height: 100px" src="{{ pare_url_file($item->options->image) }}">
+                        <a href="{{ route('get.product.detail',Str::slug($item->name).'-'.$item->id )}}">
+                            <img style="max-width: 100%;width: 80px;height: 100px" src="{{ $item->options->image }}">
                         </a>
                     </div>
                     <div style="width: 80%;float: right;">
