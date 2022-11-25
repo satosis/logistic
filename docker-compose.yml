@@ -2,12 +2,12 @@ version: '2'
 services:
     webserver:
         container_name: laravel_web
-        build: ./docker
+        build: ./docker/app
+        restart: always
         ports:
         - '80:80'
         volumes:
         - ./:/var/www/html
-        - ./apache.conf:/etc/apache2/sites-available/000-default.conf
         links:
         - db
 
@@ -15,12 +15,15 @@ services:
         image: mysql:8.0
         container_name: laravel_db
         volumes:
-        - "./data/db:/var/lib/mysql"
+            - db_data:/var/lib/mysql
         restart: always
         environment:
             -MYSQL_ROOT_PASSWORD: root
-            -MYSQL_DATABASE: laravel_ddb
-            -MYSQL_USER: laravel
-            -MYSQL_PASSWORD: laravel
+            -MYSQL_DATABASE: watch
+            -MYSQL_USER: root
+            -MYSQL_PASSWORD: root
         ports:
         - "3306:3306"
+
+volumes:
+    db_data:

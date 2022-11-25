@@ -18,6 +18,14 @@ RUN docker-php-ext-enable imagick
 
 RUN a2enmod rewrite ssl
 
+RUN echo "=====INSTALL COMPOSER====="
+RUN curl -sS https://getcomposer.org/installer | php
+
+RUN mv composer.phar /usr/local/bin/composer
+RUN echo "=====INSTALL COMPOSER COMPLETED====="
+CMD ["/var/www/html/docker/web/run.sh"]
+
+
 WORKDIR /var/www/html
 
 EXPOSE 80 443
