@@ -3,17 +3,19 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\RequestRegister;
+use App\Mail\RegisterSuccess;
+use App\Models\Category;
+use App\Models\User;
 use App\Providers\RouteServiceProvider;
+use Auth;
+use Carbon\Carbon;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Validator;
-use App\Models\User;
-use App\Models\Category;
-use App\Http\Requests\RequestRegister;
-use Carbon\Carbon;
-
 use Illuminate\Support\Facades\Mail;
-use App\Mail\RegisterSuccess;
+use Illuminate\Support\Facades\Validator;
+use Session;
+
 class RegisterController extends Controller
 {
     /*
@@ -46,20 +48,42 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
-    public function getFormRegister(){
-        $register= User::all();
-        $category =Category::all();
-        $viewData=[
-            'register'=>$register,
-            'category' =>$category,
+    public function getFormRegister()
+    {
+        $register = User::all();
+        $category = Category::all();
+        $viewData = [
+            'register' => $register,
+            'category' => $category,
         ];
-        return view('auth.register',$viewData);
+        return view('auth.register', $viewData);
+    }
+
+    public function postRegister(RequestRegister $request)
+    {
+        $data = $request->except('_token');
+        $data['password'] = Hash::make($data['password']);
+        $data['created_at'] = Carbon::now();
+        $id = User::InsertGetId($data);
+        if ($id) {
+            Session::flash('toastr', [
+                'type' => 'success',
+                'message' => 'Chào mừng bạn đến với shop chúng tôi'
+            ]);
+
+            Mail::to($request->email)->send(new RegisterSuccess($request->name));
+            if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+                return redirect()->intended('/');
+            }
+            return redirect()->route('get.login');
+        }
+        return redirect()->back();
     }
 
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array  $data
+     * @param array $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
@@ -74,7 +98,7 @@ class RegisterController extends Controller
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array  $data
+     * @param array $data
      * @return \App\User
      */
     protected function create(array $data)
@@ -84,24 +108,5 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
-    }
-    public function postRegister(RequestRegister $request){
-        $data =$request->except('_token');
-        $data['password'] = Hash::make($data['password']);
-        $data['created_at'] = Carbon::now();
-        $id = User::InsertGetId($data);
-        if($id){
-            \Session::flash('toastr',[
-                'type'      =>'success',
-                'message'   =>'Chào mừng bạn đến với shop chúng tôi'
-            ]); 
-            
-            Mail::to($request->email)->send(new RegisterSuccess($request->name));
-            if (\Auth::attempt(['email' => $request->email,'password' => $request->password])) {
-                return redirect()->intended('/');
-            }
-            return redirect()->route('get.login');
-        }
-        return redirect()->back();
     }
 }

@@ -3,30 +3,34 @@
 namespace App\Http\Controllers\Admin\Auth;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+
 class AdminController extends Controller
 {
-    
+
     use AuthenticatesUsers;
-        
-    public function getLoginAdmin(){
-        return view ('admin.auth.login');
+
+    public function getLoginAdmin()
+    {
+        return view('admin.auth.login');
     }
+
     public function postLoginAdmin(Request $request)
-	{
-		if (\Auth::guard('admins')->attempt(['email' => $request->email, 'password' => $request->password])) {
+    {
+        if (Auth::guard('admins')->attempt(['email' => $request->email, 'password' => $request->password])) {
 
-			return redirect()->route('admin.index');
-		}
-		
-		return redirect()->back();
-	}
+            return redirect()->route('admin.index');
+        }
 
-	public function getLogoutAdmin()
-	{
-		\Auth::guard('admins')->logout();
-		return redirect()->to('/');
-	}
-    
+        return redirect()->back();
+    }
+
+    public function getLogoutAdmin()
+    {
+        Auth::guard('admins')->logout();
+        return redirect()->to('/');
+    }
+
 }

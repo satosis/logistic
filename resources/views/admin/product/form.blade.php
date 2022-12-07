@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="{{ asset('view/css/style.css') }}">
 
 <div class="row">
       <form action="" role="form" method="POST" enctype="multipart/form-data">
@@ -29,12 +30,12 @@
                 <div class="form-group">
                   <label for="pass">Giảm giá</label>
                   <input type="number" class="form-control" name="pro_sale" id="pass" value="{{ $product->pro_sale ?? old('pro_sale',0) }}"placeholder="10" autocomplete="off">
-                  </div> 
+                  </div>
               </div><br>
               <br>
               <br>
 
-              <div class="col-md-8" style="margin-bottom:20px"> 
+              <div class="col-md-8" style="margin-bottom:20px">
               @if(isset($image))
               <div class="row">
               @foreach($image as $item)
@@ -47,29 +48,29 @@
               <h3 class="box-title">Album ảnh</h3>
               <input type="file" class="file" name="file[]" id="images" multiple>
               </div>
-            </div>   
+            </div>
 
             <div class="col-md-12">
             <div class="form-group">
             <label for="da">Từ khóa mới</label><br>
                 <input type="text" data-role="tagsinput" class="form-control" id="da" name="keywordseo" value="{{ $product->keywordseo ?? old('keywordseo','') }}">
-              
+
               </div>
             </div>
               <div class="col-md-11">
               <div class="form-group">
               <label for="fs" class="control-label">Từ khóa có sẵn <b class="col-red">(*)</b></label>
               <select name="keywords[]" id="fs" class="form-control js-select2-keyword" multiple="">
-                 
+
                @foreach($keywords as $listcate)
                <option value="{{ $listcate->id }}" {{ in_array($listcate->id,$keywordOld) ? "selected='selected'" : "" }}>
                {{$listcate ->k_name}}
                </option>
                @endforeach
               </select>
-              
+
               </div></div>
-  
+
 
               <div class="col-md-12">
             <div class="form-group {{$errors->first('pro_description') ?'has-error':''}}">
@@ -114,13 +115,16 @@
       <div class="col-sm-4">
         <div class="box box-warning">
           <div class="box-header with-border">
-          <h3 class="box-title">Ảnh đại diện</h3> 
+          <h3 class="box-title">Ảnh đại diện</h3>
           </div>
           <div class="box-body block-images">
-                <div style="margin-bottom: 10px">
-                <img src="{{ $product->pro_avatar ?? '' }}" onerror="this.onerror=null;this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTzMcYWJkLEXnPD7zTbRwdnNRjjNPJDdP4ePQ&usqp=CAU';" class="img-thumbnail" style="width: 200px;height: 200px;">
+                <div style="margin-bottom: 10px" class="image-area">
+                <img src="{{ $product->pro_avatar ?? asset('view/img/no-image.png') }}" class="img-thumbnail">
                 </div>
-                <div style="position:relative;"> <a class="btn btn-primary" href="javascript:;"> Choose File... <input type="file" style="position:absolute;z-index:2;top:0;left:0;filter: alpha(opacity=0);-ms-filter:&quot;progid:DXImageTransform.Microsoft.Alpha(Opacity=0)&quot;;opacity:0;background-color:transparent;color:transparent;" name="pro_avatar" size="40" class="js-upload"> </a> &nbsp; <span class="label label-info" id="upload-file-info"></span> </div>
+                <!-- <div style="position:relative;"> <a class="btn btn-primary" href="javascript:;"> Choose File...
+                <input type="file" name="pro_avatar" size="40" class="d-none js-upload"> </a> &nbsp; <span class="label label-info" id="upload-file-info"></span> </div> -->
+                <label for="thumbnail-stage" class="btn btn-primary">Choose File...</label>
+                <input class="imageID d-none" type="file" id="thumbnail-stage" name="thumbnail_stage" accept="image/*">
             </div>
         </div>
       </div>
@@ -131,3 +135,4 @@
         </div>
       </form>
     </div>
+    <script src="{{ asset('view/js/script.js') }}"></script>

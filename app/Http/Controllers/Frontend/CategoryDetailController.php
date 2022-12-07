@@ -1,19 +1,20 @@
 <?php
 
 namespace App\Http\Controllers\Frontend;
- 
-use App\Http\Controllers\Controller; 
-use Illuminate\Http\Request;
+
+use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Product;
+use Illuminate\Http\Request;
+
 class CategoryDetailController extends Controller
 {
     public function getCategoryDetail(Request $request,$slug){
         $category =Category::all();
         $arraySlug =explode('-',$slug);
         $id =array_pop($arraySlug);
-        
-        if($id){ 
+
+        if($id){
             $cate =Category::with('product')->findOrFail($id);
             $products =Product::where([
                 'pro_category' => $id,
@@ -26,7 +27,7 @@ class CategoryDetailController extends Controller
                 case '1':
                     $products->where('pro_price','<',2000000);
                     break;
-                
+
                 case '2':
                     $products->whereBetween('pro_price',[2000000,5000000]);
                     break;

@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use App\Http\Controllers\Controller;
-use App\Http\Controllers\Frontend\BlogBaseController;
-use Illuminate\Http\Request;
-use App\Models\Category;
 use App\Models\Article;
+use App\Models\Category;
+
 class BlogController extends BlogBaseController
 {
     public function index(){
@@ -17,7 +15,7 @@ class BlogController extends BlogBaseController
         ->select('id','a_name','a_slug','a_description','a_content','a_avatar')
         ->orderByDesc('id')
         ->paginate(20);
-        
+
         $viewData=[
             'article' => $article,
             'category'=> $category,

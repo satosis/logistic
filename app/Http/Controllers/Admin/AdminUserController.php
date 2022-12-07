@@ -3,15 +3,16 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use App\Models\User ;
+use App\Models\User;
+
 class AdminUserController extends Controller
 {
-    public function index(){
-        $user =User ::paginate(10);
-        $viewData=[
-            'user'=>$user
+    public function index()
+    {
+        $user = User::paginate(10);
+        $viewData = [
+            'user' => $user
         ];
-        return view('admin.user.index',$viewData);
+        return view('admin.user.index', $viewData);
     }
 }

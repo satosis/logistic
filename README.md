@@ -26,7 +26,8 @@
 - docker exec -it laravel_db mysql --version
 
 ### Check log docker
-- docker logs --tail 50 --follow --timestamps laravel_web
+ docker logs --tail 50 --follow --timestamps laravel_web
+ docker logs --tail 50 --follow --timestamps laravel_db
 
 ### Chức năng chính
 + Trang đăng nhập dành cho người dùng
