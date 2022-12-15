@@ -5,7 +5,8 @@ services:
         build: ./docker/app
         restart: always
         ports:
-        - '80:80'
+          - "8000:80"
+          - "4443:443"
         volumes:
         - ./:/var/www/html
         links:
@@ -18,14 +19,12 @@ services:
             - db_data:/var/lib/mysql
         restart: always
         environment:
-            -MYSQL_ROOT_PASSWORD: root
-            -MYSQL_DATABASE: watch
-            -MYSQL_USER: root
-            -MYSQL_PASSWORD: root
-            -MYSQL_ALLOW_EMPTY_PASSWORD: yes
-            -MYSQL_RANDOM_ROOT_PASSWORD: root
+          - MYSQL_DATABASE=watch
+          - MYSQL_USER=developer
+          - MYSQL_PASSWORD=developer
+          - MYSQL_ROOT_PASSWORD=root
         ports:
-        - "3306:3306"
+        - "3316:3306"
 
 volumes:
     db_data:

@@ -13,4 +13,3 @@ composer update --ignore-platform-reqs
 composer dump-autoload
 php artisan key:generate
 php artisan migrate
-php-fpm
