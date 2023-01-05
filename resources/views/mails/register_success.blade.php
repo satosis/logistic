@@ -2,8 +2,9 @@
     <div style="height: 55px;background: #3a2615;padding: 10px">
         <div style="width: 50%">
             <a href="">
-                <img style="height: 55px" src="https://www.dangquangwatch.vn/upload/slideshow/1787736165_bannerweb148.jpg">
-              </a>
+                <img style="height: 55px"
+                     src="https://www.dangquangwatch.vn/upload/slideshow/1787736165_bannerweb148.jpg">
+            </a>
         </div>
         <div style="width: 50%"></div>
     </div>
@@ -14,6 +15,6 @@
     </div>
     <div style="background: #f4f5f5;box-sizing: border-box;padding: 15px">
         <p style="margin:2px 0;color: #333">Email : hung0913003358@gmail.com</p>
-        <p style="margin:2px 0;color: #333">Phone : 08789428091</p> 
+        <p style="margin:2px 0;color: #333">Phone : 08789428091</p>
     </div>
 </div>
