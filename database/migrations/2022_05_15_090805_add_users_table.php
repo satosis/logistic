@@ -11,7 +11,7 @@ class AddUsersTable extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->string('birthday')->nullable();
             $table->integer('gender')->default(0);
-    });
+        });
     }
 
     public function down()

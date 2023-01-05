@@ -45,9 +45,9 @@ if (!function_exists('upload_image')) {
         move_uploaded_file($_FILES[$file]['tmp_name'], $path . $filename);
 
         $data = [
-            'name'     => $filename,
-            'code'     => $code,
-            'path'     => $path,
+            'name' => $filename,
+            'code' => $code,
+            'path' => $path,
             'path_img' => 'uploads/' . $filename
         ];
 
@@ -114,11 +114,11 @@ if (!function_exists('number_price')) {
     function number_price($price, $sale)
     {
         if ($sale == 0) {
-            return number_format($price,0,',','.');
+            return number_format($price, 0, ',', '.');
         }
 
         $price = ((100 - $sale) * $price) / 100;
-        $price =number_format($price,0,',','.');
+        $price = number_format($price, 0, ',', '.');
         return $price;
     }
 }
@@ -128,20 +128,20 @@ if (!function_exists('get_data_user')) {
     {
         return Auth::guard($type)->user() ? Auth::guard($type)->user()->$field : '';
     }
-} 
+}
 
 if (!function_exists('get_name_short')) {
     function get_name_short($name)
     {
         if ($name == '') return "[N\A]";
 
-        $name      = trim($name);
+        $name = trim($name);
 
-        $arrayName = explode(' ', $name,2);
+        $arrayName = explode(' ', $name, 2);
         $string = '';
         if (count($arrayName)) {
             foreach ($arrayName as $item) {
-                $string .= mb_substr($item,0,1);
+                $string .= mb_substr($item, 0, 1);
             }
         }
 
@@ -149,8 +149,7 @@ if (!function_exists('get_name_short')) {
     }
 }
 
-if (!function_exists('detectDevice'))
-{
+if (!function_exists('detectDevice')) {
     function detectDevice()
     {
         $instance = new Jenssegers\Agent\Agent();
@@ -159,23 +158,21 @@ if (!function_exists('detectDevice'))
     }
 }
 
-if (!function_exists('get_agent'))
-{
+if (!function_exists('get_agent')) {
     function get_agent()
     {
         return [
-            'device'       => detectDevice()->device(),
-            'platform'     => $platform = detectDevice()->platform(),
+            'device' => detectDevice()->device(),
+            'platform' => $platform = detectDevice()->platform(),
             'platform_ver' => detectDevice()->version($platform),
-            'browser'      => $browser = detectDevice()->browser(),
-            'browser_ver'  => detectDevice()->version($browser),
-            'time'         => Carbon::now()
+            'browser' => $browser = detectDevice()->browser(),
+            'browser_ver' => detectDevice()->version($browser),
+            'time' => Carbon::now()
         ];
     }
 }
 
-if( !function_exists('get_time_login'))
-{
+if (!function_exists('get_time_login')) {
     function get_time_login($data)
     {
         $data = json_decode($data, true);
@@ -183,16 +180,16 @@ if( !function_exists('get_time_login'))
     }
 }
 
-if (!function_exists('check_admin'))
-{
-	function check_admin()
-	{
-		return get_data_user('admins','level') == 1 ? true : false;
-	}
+if (!function_exists('check_admin')) {
+    function check_admin()
+    {
+        return get_data_user('admins', 'level') == 1 ? true : false;
+    }
 }
 
 if (!function_exists('create_time_carbon')) {
-	function create_time_carbon($time) {
-		return \Illuminate\Support\Carbon::createFromTimeString($time);
-	}
+    function create_time_carbon($time)
+    {
+        return \Illuminate\Support\Carbon::createFromTimeString($time);
+    }
 }
