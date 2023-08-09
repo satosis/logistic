@@ -171,11 +171,14 @@
             </a>
             <a href="{{ route('get.shopping.index')}}" class="btnCart">
                 <i class="fa fa-shopping-cart"></i>
-                <span class="number">{{  Cart::count() }}</span>
+                <span class="number">{{  Cart::count() }}</span> 
             </a>
         </div>
     </div>
 </div>
+<div class="zalo-chat-widget" data-oaid="3317742618024098879" data-welcome-message="Rất vui khi được hỗ trợ bạn!" data-autopopup="0" data-width="300" data-height="300"> </div>
+
+<script src="https://sp.zalo.me/plugins/sdk.js"> </script>
 <!-- Load Facebook SDK for JavaScript -->
 <div id="fb-root"></div>
 <script>
