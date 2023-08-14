@@ -5,35 +5,35 @@ namespace App\Exports;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 
-class TransactionExport implements FromCollection, WithHeadings
+class logisticExport implements FromCollection, WithHeadings
 {
-    private $transactions;
+    private $logistics;
 
-    public function __construct($transactions)
+    public function __construct($logistics)
     {
-        $this->transactions = $transactions;
+        $this->logistics = $logistics;
     }
 
     public function collection()
     {
-        $transactions = $this->transactions;
-        $formatTransaction = [];
-        foreach ($transactions as $key => $item) {
+        $logistics = $this->logistics;
+        $formatlogistic = [];
+        foreach ($logistics as $key => $item) {
 
-            $formatTransaction[] = [
+            $formatlogistic[] = [
                 'id' => $item->id,
                 'total' => $item->tst_total_money,
                 'name' => $item->tst_name,
                 'email' => $item->tst_email,
                 'phone' => $item->tst_phone,
                 'address' => $item->tst_address,
-                'status' => $item->getStatus($item->tst_status)['name'],
+                'status' => $item->getStatus($item->status)['name'],
                 'type' => $item->tst_user_id ? " Thành viên " : "Khách",
                 'create' => $item->created_at
             ];
         }
 
-        return collect($formatTransaction);
+        return collect($formatlogistic);
     }
 
     public function headings(): array

@@ -23,14 +23,14 @@
                     <!-- small box -->
                     <div class="small-box bg-aqua">
                         <div class="inner">
-                            <h3>{{ $totalTransaction}}</h3>
+                            <h3>{{ $totallogistic}}</h3>
 
                             <p>Orders</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-bag"></i>
                         </div>
-                        <a href="{{ route('admin.transaction.index') }}" class="small-box-footer">More info <i
+                        <a href="{{ route('admin.logistic.index') }}" class="small-box-footer">More info <i
                                     class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
@@ -106,11 +106,6 @@
                         </div>
                         <div class="box-body border-radius-none">
 
-                            <figure class="highcharts-figure">
-                                <div id="container2" data-json={{ $listDay }} data-money={{ $arrRevenueTransactionMonth }}
-                                data-money-default={{ $arrRevenueTransactionMonthDefault }}></div>
-
-                            </figure>
                         </div>
 
                         <!-- /.box-footer -->
@@ -383,7 +378,7 @@
                         </div>
 
                         <figure class="highcharts-figure">
-                            <div id="container" data-json="{{$statusTransaction}} "></div>
+                            <div id="container" data-json="{{$statuslogistic}} "></div>
 
                         </figure>
 
@@ -533,7 +528,7 @@
     <script src="https://code.highcharts.com/modules/export-data.js"></script>
     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
     <script>
-        let dataTransaction = $('#container').attr('data-json');
+        let datalogistic = $('#container').attr('data-json');
         let dataTurnOver = $('#container2').attr('data-json');
         let dataListMoney = $('#container2').attr('data-money');
         let dataListMoneyDefault = $('#container2').attr('data-money-default');
@@ -541,7 +536,7 @@
             style: 'currency',
             currency: 'VND',
         });
-        data = JSON.parse(dataTransaction);
+        data = JSON.parse(datalogistic);
         ListDay = JSON.parse(dataTurnOver);
         dataListMoney = JSON.parse(dataListMoney);
         dataListMoneyDefault = JSON.parse(dataListMoneyDefault);

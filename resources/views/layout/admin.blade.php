@@ -54,11 +54,11 @@
 
     <header class="main-header">
         <!-- Logo -->
-        <a href="{{ route('admin.index')}}" class="logo">
+        <a href="{{ route('admin.logistic.index')}}" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
             <span class="logo-mini"><b>A</b>LT</span>
             <!-- logo for regular state and mobile devices -->
-            <span class="logo-lg"><b>Admin</b>Watch </span>
+            <span class="logo-lg"><b>Logistics</span>
         </a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top">
@@ -129,43 +129,8 @@
                 <li class="header">Thanh điều hướng</li>
 
                 <li class="">
-                    <a href="{{ route('admin.transaction.index') }}">
-                        <i class="fa fa-money"></i> <span>Đơn hàng</span>
-                    </a>
-                </li>
-                <li class="">
-                    <a href="{{ route('admin.category.index') }}">
-                        <i class="fa fa-files-o"></i>
-                        <span>Danh mục</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{route('admin.product.index') }}">
-                        <i class="fa fa-th"></i> <span>Sản phẩm</span>
-                    </a>
-                </li>
-                <li class="">
-                    <a href="{{route('admin.keyword.index') }}">
-                        <i class="fa fa-key"></i>
-                        <span>Từ khóa</span>
-                    </a>
-                </li>
-                <li class="">
-                    <a href="{{route('admin.article.index') }}">
-                        <i class="fa fa-edit"></i>
-                        <span>Tin tức</span>
-                    </a>
-
-                </li>
-                <li class="">
-                    <a href="{{route('admin.user.index') }}">
-                        <i class="fa fa-user"></i>
-                        <span>Người dùng</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{route('admin.rating')}}">
-                        <i class="fa fa-star"></i> <span>Phản hồi</span>
+                    <a href="{{ route('admin.logistic.index') }}">
+                        <i class="fa fa-money"></i> <span>Trang chủ</span>
                     </a>
                 </li>
             </ul>
@@ -371,6 +336,9 @@
 <!-- ./wrapper -->
 
 <!-- jQuery 3 -->
+<div class="zalo-chat-widget" data-oaid="3317742618024098879" data-welcome-message="Rất vui khi được hỗ trợ bạn!" data-autopopup="0" data-width="300" data-height="300"> </div>
+
+<script src="https://sp.zalo.me/plugins/sdk.js"> </script>
 <script src="{{ asset('bower_components/jquery/dist/jquery.min.js') }}"></script>
 
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
@@ -417,12 +385,6 @@
 <script src="{{ asset('dist/js/demo.js') }}"></script>
 <script src="//cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
 <script>
-    CKEDITOR.replace('content', {
-        filebrowserUploadUrl: "{{route('upload', ['_token' => csrf_token() ])}}",
-        filebrowserUploadMethod: 'form'
-    });
-</script>
-<script>
     $(function () {
         if ($(".js-select2-keyword").length > 0) {
             $('.js-select2-keyword').select2({
@@ -430,18 +392,18 @@
                 maximumSelectionLength: 3
             })
         }
-        $('.js-preview-transaction').click(function (event) {
+        $('.js-preview-logistic').click(function (event) {
             event.preventDefault();
             let $this = $(this);
             let URL = $this.attr('data-href');
             let ID = $this.attr('data-id');
-            $("#idTransaction").html("#" + ID);
+            $("#idlogistic").html("#" + ID);
             $.ajax({
                 url: URL
             })
                 .done(function (results) {
-                    $('#modal-preview-transaction .content').html(results.html)
-                    $("#modal-preview-transaction").modal({
+                    $('#modal-preview-logistic .content').html(results.html)
+                    $("#modal-preview-logistic").modal({
                         show: true
                     })
                 })

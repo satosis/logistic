@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Hash;
 
 $factory->define(Admin::class, function (Faker $faker) {
     return [
-        'name' => $faker->name,
+        'name' => 'admin@gmail.com',
         'email' => $faker->unique()->safeEmail,
         'password' => Hash::make(123456789),
     ];

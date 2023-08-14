@@ -21,7 +21,7 @@ class AdminController extends Controller
     {
         if (Auth::guard('admins')->attempt(['email' => $request->email, 'password' => $request->password])) {
 
-            return redirect()->route('admin.index');
+            return redirect()->route('admin.logistic.index');
         }
 
         return redirect()->back();
